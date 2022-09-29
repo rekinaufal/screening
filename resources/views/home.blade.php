@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('content')
+{{-- @section('content')
 <div class="ww-section" id="couple">
   <div class="container">
     <h2 class="h1 text-center pb-3 ww-title" data-aos="zoom-in-down" data-aos-duration="1000">Recki & Rusnia</h2>
@@ -280,4 +280,4 @@
       </div>
     </div>
   </div>
-@endsection
+@endsection --}}

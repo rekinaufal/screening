@@ -11,6 +11,16 @@ use App\Http\Controllers\PriaController;
 use App\Http\Controllers\WanitaController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\GaleriController;
+
+// FE screening
+// use App\Http\Controllers\Frontend\HomeController;
+
+use App\Http\Controllers\Frontend\AboutController;
+use App\Http\Controllers\Frontend\ArticlesController;
+use App\Http\Controllers\Frontend\CompanyController;
+use App\Http\Controllers\Frontend\ContactUsController;
+use App\Http\Controllers\Frontend\OurTeamController;
+
 use App\Models\Category;
 use App\Models\User;
 
@@ -27,18 +37,27 @@ use App\Models\User;
 
 Route::get('/', function (MempelaiController $mempelai) {
     // dd($mempelai);
-    return view('home', [
+    return view('frontend/home', [
         'pageTitle' => "Home"
         // ,
         // 'pria' => $mempelai->pria_id
     ]);
 });
 
-Route::get('/about', function () {
-    return view('about', [
-        'pageTitle' => "About"
-    ]);
-});
+// Route::get('/about-us', function () {
+//     return view('frontend/about', [
+//         'pageTitle' => "About"
+//     ]);
+// });
+
+Route::get('/about-us', [AboutController::class, 'index']); //->middleware('guest');  
+Route::get('/articles', [ArticlesController::class, 'index']); //->middleware('guest');  
+Route::get('/company', [CompanyController::class, 'index']); //->middleware('guest');  
+Route::get('/contact-us', [ContactUsController::class, 'index']); //->middleware('guest');  
+Route::get('/our-team', [OurTeamController::class, 'index']); //->middleware('guest'); 
+
+Route::get('/article/{id}', [ArticlesController::class, 'detail'])->name('detail.article');
+Route::get('/company/{id}', [CompanyController::class, 'detail'])->name('detail.company');
 
 //Route::get('/post', [PostController::class, 'index']);
 
