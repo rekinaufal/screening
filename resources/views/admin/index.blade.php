@@ -20,10 +20,14 @@
     <!-- Custom styles for this template-->
     <link href="{{ url('assets_BE/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <!-- Custom styles for this page -->
-    <link href="{{ url('assets_BE/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ url('assets_BE/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet"> --}}
     <!-- css dropzone -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
+
+   {{-- datatable --}}
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+   
    <style>
       .dz-image img {
          width: 120px;
@@ -438,11 +442,11 @@
     <script src="{{ url('assets_BE/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ url('assets_BE/js/demo/chart-pie-demo.js') }}"></script>
     <!-- Page level plugins -->
-    <script src="{{ url('assets_BE/vendor/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ url('assets_BE/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    {{-- <script src="{{ url('assets_BE/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url('assets_BE/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script> --}}
 
     <!-- Page level custom scripts -->
-    <script src="{{ url('assets_BE/js/demo/datatables-demo.js') }}"></script>
+    {{-- <script src="{{ url('assets_BE/js/demo/datatables-demo.js') }}"></script> --}}
     <!-- Ajax get data pria dan wanita -->
     <script>
       $('body').on('click', '.pilih-pria', function() {
@@ -521,6 +525,11 @@
             $('form').find('input[name="gambar[]"][value="' + name + '"]').remove()
          }
       }
+   </script>
+   {{-- datatable --}}
+   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+   <script>
+        $('#dataTable').DataTable();
    </script>
 </body>
 

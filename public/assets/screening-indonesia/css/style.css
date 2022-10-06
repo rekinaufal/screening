@@ -3084,7 +3084,7 @@ body {
         -ms-flex-direction: column;
         flex-direction: column;
         padding-top: var(--chakra-space-5);
-        padding-bottom: var(--chakra-space-5);
+        /* padding-bottom: var(--chakra-space-5); */
       }
     
     
@@ -3094,7 +3094,7 @@ body {
       @media screen and (min-width: 48em) {
         .css-1u1s7a2 {
           padding-top: var(--chakra-space-10);
-          padding-bottom: var(--chakra-space-10);
+          /* padding-bottom: var(--chakra-space-10); */
         }
       }
     

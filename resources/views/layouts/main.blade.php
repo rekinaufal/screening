@@ -29,6 +29,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    {{-- owlcarousel / slider --}}
+    <link rel="stylesheet" href="{{ url('assets/owlcarousel/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/owlcarousel/css/owl.theme.default.min.css') }}">
+
+  
+
+
 
     <noscript id="__next_css__DO_NOT_USE__"></noscript>
     <style data-emotion="css-global" data-s="">
@@ -113,40 +120,14 @@
       </div>
       <span></span>
     </div>
-    <script src="{{ url('assets/screening-indonesia/js/react-refresh.js') }}"></script>
-    <script id="__NEXT_DATA__" type="application/json">
-      {
-        "props": {
-          "pageProps": {
-            "allPosts": [{
-              "title": "3 Basic Differences between Permanent and Contract Employments",
-              "slug": "3-basic-differences-between-permanent-and-contract-employments"
-            }, {
-              "title": "4 Most Popular Freelance Jobs",
-              "slug": "4-most-popular-freelance-jobs"
-            }, {
-              "title": "4 Things To Do Before Having an Online Job Interview",
-              "slug": "4-things-to-do-before-having-an-online-job-interview"
-            }, {
-              "title": "4 Time Management Tips for Employees",
-              "slug": "4-time-management-tips-for-employees"
-            }, {
-              "title": "4 Tips to Use Office Facilities Wisely",
-              "slug": "4-tips-to-use-office-facilities-wisely"
-            }],
-            "revalidate": 10,
-            "useCdn": false
-          },
-          "__N_SSG": true
-        },
-        "page": "/",
-        "query": {},
-        "buildId": "development",
-        "isFallback": false,
-        "gsp": true,
-        "scriptLoader": []
-      }
-    </script>
+    {{-- jquery --}}
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"></script>
+    {{-- carousel --}}
+    <script src="{{ url('assets/owlcarousel/js/owl.carousel.min.js') }}"></script>
+    {{-- <script src="{{ url('assets/screening-indonesia/js/react-refresh.js') }}"></script> --}}
+  
+    
     <!-- untuk password visibility -->
     <script>
         function myFunction() {
@@ -157,6 +138,40 @@
                 x.type = "password";
             }
         }
+
+        var owlClient = $('.carousel-clients');
+        owlClient.owlCarousel({
+            center: true,
+            items: 5,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 2500,
+            autoplayHoverPause: false, // set true if want to pause when mouse hover on slider
+            responsive:{
+              0:{
+                  items:1
+              },
+              600:{
+                  items:3
+              },
+              1000:{
+                  items:5
+              }
+          }
+        });
+
+        var owl = $('.carousel-testi');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 20,
+            responsiveClass: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+        });
+        
     </script>
     <div id="__next-build-watcher" style="position: fixed; bottom: 10px; right: 20px; width: 0px; height: 0px; z-index: 99999;"></div>
     <next-route-announcer>

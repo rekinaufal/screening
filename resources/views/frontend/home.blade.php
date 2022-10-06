@@ -109,10 +109,11 @@
           </li>
         </ul>
       </div>
+      {{-- slider 1 --}}
       <div class="css-gmuwbf">
         <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-autoheight swiper-backface-hidden" style="padding-top: 10px;">
-          <div class="swiper-wrapper" style="cursor: grab; transition-duration: 0ms; transform: translate3d(-1842px, 0px, 0px); height: 297px;">
-            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="6" style="width: 584px; margin-right: 30px;">
+          <div class="swiper-wrapper owl-carousel carousel-testi">
+            <div class="swiper-slide" style="width: 584px;">
               <div class="css-1mex2s8">
                 <div class="css-iu9wxq">
                   <p class="chakra-text css-mts6wi">
@@ -126,7 +127,7 @@
                 </span>
               </div>
             </div>
-            <div class="swiper-slide" data-swiper-slide-index="0" style="width: 584px; margin-right: 30px;">
+            <div class="swiper-slide" style="width: 584px;">
               <div class="css-1mex2s8">
                 <div class="css-iu9wxq">
                   <p class="chakra-text css-mts6wi">Saat ini kita perlu memastikan <i>screening</i> dilakukan untuk mengetahui kebenaran orang yang akan direkrut atau untuk agenda kerja sama, karena kebenaran seringkali berada di luar daripada CV atau profil yang ditulis dengan baik. Maka jika Anda inginkan pekerja atau mitra yang baik, Anda sebaiknya mencari tahu lebih banyak daripada yang tertulis itu. </p>
@@ -138,7 +139,7 @@
                 </span>
               </div>
             </div>
-            <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" style="width: 584px; margin-right: 30px;">
+            <div class="swiper-slide" style="width: 584px;">
               <div class="css-1mex2s8">
                 <div class="css-iu9wxq">
                   <p class="chakra-text css-mts6wi">
@@ -152,7 +153,7 @@
                 </span>
               </div>
             </div>
-            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2" style="width: 584px; margin-right: 30px;">
+            <div class="swiper-slide" style="width: 584px;">
               <div class="css-1mex2s8">
                 <div class="css-iu9wxq">
                   <p class="chakra-text css-mts6wi">
@@ -166,7 +167,7 @@
                 </span>
               </div>
             </div>
-            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3" style="width: 584px; margin-right: 30px;">
+            <div class="swiper-slide" style="width: 584px;">
               <div class="css-1mex2s8">
                 <div class="css-iu9wxq">
                   <p class="chakra-text css-mts6wi">Karyawan adalah aset penting perusahaan yang akan memberikan <i>impact</i> untuk masa depan untuk Perusahaan. Maka dari itu <i>screening</i> kandidat karyawan menjadi kebutuhan yang perlu dilakukan oleh setiap Perusahaan. Screening Indonesia hadir untuk membantu menyaring kandidat terbaik bagi masa depan Perusahaan </p>
@@ -178,7 +179,7 @@
                 </span>
               </div>
             </div>
-            <div class="swiper-slide" data-swiper-slide-index="4" style="width: 584px; margin-right: 30px;">
+            <div class="swiper-slide" style="width: 584px;">
               <div class="css-1mex2s8">
                 <div class="css-iu9wxq">
                   <p class="chakra-text css-mts6wi">Latar belakang karyawan perlu dilakukan dengan detail, selain untuk mengetahui dimana letak kekuatan <i>knowlegde</i> dan talentanya juga untuk mengetahui perilakunya. Karena Perusahaan dalam industrial 4.0 di samping menekankan pada akselerasi juga menekankan pada sisi integritas karyawan agar tercapai target maksimal dan itu bisa di lakukan saat harmonisasi tercapai. </p>
@@ -190,7 +191,7 @@
                 </span>
               </div>
             </div>
-            <div class="swiper-slide" data-swiper-slide-index="5" style="width: 584px; margin-right: 30px;">
+            <div class="swiper-slide" style="width: 584px;">
               <div class="css-1mex2s8">
                 <div class="css-iu9wxq">
                   <p class="chakra-text css-mts6wi">
@@ -204,7 +205,7 @@
                 </span>
               </div>
             </div>
-            <div class="swiper-slide" data-swiper-slide-index="6" style="width: 584px; margin-right: 30px;">
+            <div class="swiper-slide" style="width: 584px;">
               <div class="css-1mex2s8">
                 <div class="css-iu9wxq">
                   <p class="chakra-text css-mts6wi">
@@ -218,7 +219,7 @@
                 </span>
               </div>
             </div>
-            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 584px; margin-right: 30px;">
+            <div class="swiper-slide" style="width: 584px;">
               <div class="css-1mex2s8">
                 <div class="css-iu9wxq">
                   <p class="chakra-text css-mts6wi">Saat ini kita perlu memastikan <i>screening</i> dilakukan untuk mengetahui kebenaran orang yang akan direkrut atau untuk agenda kerja sama, karena kebenaran seringkali berada di luar daripada CV atau profil yang ditulis dengan baik. Maka jika Anda inginkan pekerja atau mitra yang baik, Anda sebaiknya mencari tahu lebih banyak daripada yang tertulis itu. </p>
@@ -231,15 +232,6 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
-            <span class="swiper-pagination-bullet"></span>
-            <span class="swiper-pagination-bullet"></span>
-            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
-            <span class="swiper-pagination-bullet"></span>
-            <span class="swiper-pagination-bullet"></span>
-            <span class="swiper-pagination-bullet"></span>
-            <span class="swiper-pagination-bullet"></span>
-          </div>
         </div>
       </div>
     </div>
@@ -248,9 +240,10 @@
     <div class="css-1u1s7a2">
       <h2 class="chakra-heading css-11efhfg">Our Clients</h2>
     </div>
+    {{-- slider 2 --}}
     <div class="css-yeoe63">
       <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events mySwiper">
-        <div class="swiper-wrapper" style="cursor: grab; transform: translate3d(-4217.6px, 0px, 0px); transition-duration: 0ms;">
+        <div class="swiper-wrapper owl-carousel carousel-clients">
           <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="28" style="width: 213.6px; margin-right: 50px;">
             <img alt="" src="{{ url('assets/images/screening-indonesia/home/29_xe0wir.png')}}" class="chakra-image css-se3s9m">
           </div>
