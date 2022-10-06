@@ -9,7 +9,7 @@
       </div>
       <div class="css-0">
         <div class="chakra-aspect-ratio css-1m7tg19">
-          <iframe title="video" src="{{ url('assets/images/screening-indonesia/home/5kon32.html')}}" allowfullscreen=""></iframe>
+          <iframe title="video" src="{{ url('assets/images/screening-indonesia/home/video.mp4')}}" allowfullscreen=""></iframe>
         </div>
       </div>
     </div>

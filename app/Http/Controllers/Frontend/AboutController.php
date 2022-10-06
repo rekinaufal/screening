@@ -4,20 +4,18 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Mempelai;
-use App\Models\Pria;
-use App\Models\Wanita;
-use App\Models\TempatAcara;
+use App\Models\About;
+
 
 class AboutController
 {
-    public static $pageTitle = 'Mempelai';
+    public static $pageTitle = 'About';
     
     public function index ()
     {
-        // $Mempelai = Mempelai::all();
-        // $pageTitle = self::$pageTitle;
-        return view ('frontend.about');
+        $About = About::all();
+        $pageTitle = "About";
+        return view ('frontend.about', compact('pageTitle', 'About'));
     }
 
 }

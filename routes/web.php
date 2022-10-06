@@ -15,11 +15,17 @@ use App\Http\Controllers\GaleriController;
 // FE screening
 // use App\Http\Controllers\Frontend\HomeController;
 
+// STARTS FRONTEND
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\ArticlesController;
 use App\Http\Controllers\Frontend\CompanyController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\OurTeamController;
+// END FRONTEND
+
+// STARTS BACKEND
+use App\Http\Controllers\AboutBackendController;
+// END BACKEND
 
 use App\Models\Category;
 use App\Models\User;
@@ -49,15 +55,15 @@ Route::get('/', function (MempelaiController $mempelai) {
 //         'pageTitle' => "About"
 //     ]);
 // });
-
+// START FRONT END
 Route::get('/about-us', [AboutController::class, 'index']); //->middleware('guest');  
 Route::get('/articles', [ArticlesController::class, 'index']); //->middleware('guest');  
 Route::get('/company', [CompanyController::class, 'index']); //->middleware('guest');  
 Route::get('/contact-us', [ContactUsController::class, 'index']); //->middleware('guest');  
 Route::get('/our-team', [OurTeamController::class, 'index']); //->middleware('guest'); 
-
 Route::get('/article/{id}', [ArticlesController::class, 'detail'])->name('detail.article');
 Route::get('/company/{id}', [CompanyController::class, 'detail'])->name('detail.company');
+// START FRONT END
 
 //Route::get('/post', [PostController::class, 'index']);
 
@@ -79,14 +85,20 @@ Route::get('/dashboard', function(){
 // jika ingin setting masuk ke register tidak harus login terlebih dahulu, pakai middleware'guest'
 // jika ingin setting tidak bisa masuk ke dashboard harus login terlebih dahulu, pakai middleware'auth'
 
+// START BACKEND
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::resource('user', 'App\Http\Controllers\UserController');
+
+Route::get('/about', [AboutBackendController::class, 'index'])->name('about.index');
+Route::resource('about', 'App\Http\Controllers\AboutBackendController');
+
+Route::get('/ourteam', [OurTeamBackendController::class, 'index'])->name('ourteam.index');
+Route::resource('ourteam', 'App\Http\Controllers\OurTeamBackendController');
+// END BACKEND
 
 Route::get('/mempelai', [MempelaiController::class, 'index'])->name('mempelai.index');
 Route::resource('mempelai', 'App\Http\Controllers\MempelaiController');
 
-Route::get('/pria', [PriaController::class, 'index'])->name('pria.index');
-Route::resource('pria', 'App\Http\Controllers\PriaController');
 
 Route::get('/wanita', [WanitaController::class, 'index'])->name('wanita.index');
 Route::resource('wanita', 'App\Http\Controllers\WanitaController');
@@ -101,13 +113,13 @@ Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
 Route::resource('galeri', 'App\Http\Controllers\GaleriController');
 
 Route::prefix('galeri')->group(function () {
-    Route::get('/', [\App\Http\Controllers\GaleriController::class, 'index'])->name('galeri.index');
-    Route::get('/create', [\App\Http\Controllers\GaleriController::class, 'create'])->name('galeri.create');
-    Route::post('/store', [\App\Http\Controllers\GaleriController::class, 'store'])->name('galeri.store');
+    // Route::get('/', [\App\Http\Controllers\GaleriController::class, 'index'])->name('galeri.index');
+    // Route::get('/create', [\App\Http\Controllers\GaleriController::class, 'create'])->name('galeri.create');
+    // Route::post('/store', [\App\Http\Controllers\GaleriController::class, 'store'])->name('galeri.store');
     Route::post('/store/media', [\App\Http\Controllers\GaleriController::class, 'storeMedia'])->name('galeri.storeMedia');
-    Route::get('/{id}', [\App\Http\Controllers\GaleriController::class, 'edit'])->name('galeri.edit');
-    Route::put('/{id}', [\App\Http\Controllers\GaleriController::class, 'update'])->name('galeri.update');
-    Route::delete('/{id}', [\App\Http\Controllers\GaleriController::class, 'destroy'])->name('galeri.delete');
+    // Route::get('/{id}', [\App\Http\Controllers\GaleriController::class, 'edit'])->name('galeri.edit');
+    // Route::put('/{id}', [\App\Http\Controllers\GaleriController::class, 'update'])->name('galeri.update');
+    // Route::delete('/{id}', [\App\Http\Controllers\GaleriController::class, 'destroy'])->name('galeri.delete');
 });
 
 Route::get('/post', [PostController::class, 'index'])->name('post.index');

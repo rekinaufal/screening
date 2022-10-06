@@ -11,17 +11,49 @@ class LoginController extends Controller
     public static $pageTitle = 'Login';
     
     public function index() {
+        $operator  = array('+', '-');
+        $rand_operator = $operator[array_rand($operator, 1)];
+        $min_number = 1;
+        $max_number = 10;
+        $bilangan1 = mt_rand($min_number, $max_number);
+        $bilangan2 = mt_rand($min_number, $max_number);
+        if($bilangan1 < $bilangan2){
+            $bilangan1 = $bilangan2;
+            $bilangan2 = $bilangan1;
+        }
+        $Capctha = "$bilangan1 $rand_operator $bilangan2";
+        if($rand_operator == "+"){
+            $Hasil = $bilangan1 + $bilangan2;
+        }else{
+            $Hasil = $bilangan1 - $bilangan2;
+        }
+
         $pageTitle = self::$pageTitle;
-        return view ('login.index', compact('pageTitle'));
+        return view ('login.index', compact('pageTitle', 'bilangan1', 'bilangan2','rand_operator','Capctha','Hasil'));
     }
 
     public function authenticate(Request $request){
+        $request->validate([
+            'email' => 'required|email:dns',
+            'password' => 'required',
+            '_answer'   =>  'required',
+        ]);
         $credentials = $request->validate([
             'email' => 'required|email:dns',
-            'password' => 'required' 
+            'password' => 'required',
         ]);
-        $GetDataUser1           = DB::table('users')->where('email', $credentials['email'])->get();
-        $GetDataUserStatus 	    = json_decode(json_encode($GetDataUser1[0]), true);
+
+        if($_POST['Hasil'] == $_POST['_answer']){
+            $GetDataUser1           = DB::table('users')->where('email', $credentials['email'])->first();
+            if (!empty($GetDataUser1)) {
+            $GetDataUserStatus 	    = json_decode(json_encode($GetDataUser1), true);
+            }else{
+                return back()->with('loginError', 'Email Not Found');
+            }
+        }else{
+            return back()->with('loginError', 'Invalid Capcha');
+        }
+        
         if ($GetDataUserStatus['status'] == 'Admin') {
             if(Auth::attempt($credentials)){
                 $request->session()->put('id',$GetDataUserStatus['id']);

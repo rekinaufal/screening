@@ -20,6 +20,16 @@
     <script src="{{ url('assets/screening-indonesia/js/_buildManifest.js') }}" defer=""></script>
     <script src="{{ url('assets/screening-indonesia/js/_ssgManifest.js') }}" defer=""></script>
     <link rel="stylesheet" href="{{ url('assets/screening-indonesia/css/style.css') }}">
+
+    <!-- css untuk select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- jika menggunakan bootstrap4 gunakan css ini  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+    <link href="{{ url('css/style.css') }}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
     <noscript id="__next_css__DO_NOT_USE__"></noscript>
     <style data-emotion="css-global" data-s="">
       body {
@@ -136,6 +146,17 @@
         "gsp": true,
         "scriptLoader": []
       }
+    </script>
+    <!-- untuk password visibility -->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("showpassword");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
     </script>
     <div id="__next-build-watcher" style="position: fixed; bottom: 10px; right: 20px; width: 0px; height: 0px; z-index: 99999;"></div>
     <next-route-announcer>
