@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link href="{{ url('assets/image/logolci.png') }}" rel="shortcut icon">
 
-    <title>Wedding Invitation | RR</title>
+    <title>Screening Indonesia</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ url('assets_BE/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -49,7 +50,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <!-- <i class="fas fa-laugh-wink"></i> emot ketawa -->
                 </div>
-                <div class="sidebar-brand-text mx-3">WeddInv | <sup>RR</sup></div>
+                <div class="sidebar-brand-text mx-3">Screening<sup>Indonesia</sup></div>
             </a>
 
             <!-- Divider -->
@@ -96,9 +97,9 @@
 
             <!-- Nav Item - Wanita -->
             <li class="nav-item">
-                <a class="nav-link" href="/wanita">
+                <a class="nav-link" href="/articles">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Wanita</span>
+                    <span>Articles</span>
                 </a>
             </li>
 

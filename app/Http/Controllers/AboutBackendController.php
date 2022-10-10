@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Models\About;
+use Session;
 // use App\Models\Mempelai;
 use Illuminate\Support\Facades\Storage;
 use DB;

@@ -17,7 +17,7 @@ use App\Http\Controllers\GaleriController;
 
 // STARTS FRONTEND
 use App\Http\Controllers\Frontend\AboutController;
-use App\Http\Controllers\Frontend\ArticlesController;
+use App\Http\Controllers\Frontend\ArticleController;
 use App\Http\Controllers\Frontend\CompanyController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\OurTeamController;
@@ -25,6 +25,7 @@ use App\Http\Controllers\Frontend\OurTeamController;
 
 // STARTS BACKEND
 use App\Http\Controllers\AboutBackendController;
+use App\Http\Controllers\ArticleBackendController;
 // END BACKEND
 
 use App\Models\Category;
@@ -57,11 +58,11 @@ Route::get('/', function (MempelaiController $mempelai) {
 // });
 // START FRONT END
 Route::get('/about-us', [AboutController::class, 'index']); //->middleware('guest');  
-Route::get('/articles', [ArticlesController::class, 'index']); //->middleware('guest');  
+Route::get('/articles', [ArticleController::class, 'index']); //->middleware('guest');  
 Route::get('/company', [CompanyController::class, 'index']); //->middleware('guest');  
 Route::get('/contact-us', [ContactUsController::class, 'index']); //->middleware('guest');  
 Route::get('/our-team', [OurTeamController::class, 'index']); //->middleware('guest'); 
-Route::get('/article/{id}', [ArticlesController::class, 'detail'])->name('detail.article');
+Route::get('/article/{id}', [ArticleController::class, 'detail'])->name('detail.article');
 Route::get('/company/{id}', [CompanyController::class, 'detail'])->name('detail.company');
 // START FRONT END
 
@@ -94,6 +95,8 @@ Route::resource('about', 'App\Http\Controllers\AboutBackendController');
 
 Route::get('/ourteam', [OurTeamBackendController::class, 'index'])->name('ourteam.index');
 Route::resource('ourteam', 'App\Http\Controllers\OurTeamBackendController');
+
+Route::resource('articles', 'App\Http\Controllers\ArticleBackendController');
 // END BACKEND
 
 Route::get('/mempelai', [MempelaiController::class, 'index'])->name('mempelai.index');

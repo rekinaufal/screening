@@ -9,7 +9,7 @@ use App\Models\Pria;
 use App\Models\Wanita;
 use App\Models\TempatAcara;
 
-class ArticlesController
+class ArticleController
 {
     public static $pageTitle = 'Mempelai';
     

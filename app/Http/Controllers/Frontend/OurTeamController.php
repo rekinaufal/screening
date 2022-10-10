@@ -4,10 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Mempelai;
-use App\Models\Pria;
-use App\Models\Wanita;
-use App\Models\TempatAcara;
+use App\Models\Ourteam;
 
 class OurTeamController
 {
@@ -15,9 +12,10 @@ class OurTeamController
     
     public function index ()
     {
-        // $Mempelai = Mempelai::all();
-        // $pageTitle = self::$pageTitle;
-        return view ('frontend.ourTeam');
+        $Ourteam = Ourteam::all();
+        $pageTitle = self::$pageTitle;
+        
+        return view ('frontend.ourTeam', compact('pageTitle', 'Ourteam'));
     }
 
 }
