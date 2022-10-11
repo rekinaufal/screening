@@ -244,10 +244,12 @@
     <div class="css-yeoe63">
       <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events mySwiper">
         <div class="swiper-wrapper owl-carousel carousel-clients">
-          <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="28" style="width: 213.6px; margin-right: 50px;">
-            <img alt="" src="{{ url('assets/images/screening-indonesia/home/29_xe0wir.png')}}" class="chakra-image css-se3s9m">
-          </div>
-          <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="29" style="width: 213.6px; margin-right: 50px;">
+          @foreach ($OurClient as $item)
+            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="28" style="width: 213.6px; margin-right: 50px;">
+              <img alt="" src="{{ $item->image }}" class="chakra-image css-se3s9m">
+            </div>
+          @endforeach
+          {{-- <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="29" style="width: 213.6px; margin-right: 50px;">
             <img alt="" src="{{ url('assets/images/screening-indonesia/home/30_iztjsq.png')}}" class="chakra-image css-se3s9m">
           </div>
           <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="30" style="width: 213.6px; margin-right: 50px;">
@@ -372,7 +374,7 @@
           </div>
           <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" style="width: 213.6px; margin-right: 50px;">
             <img alt="" src="{{ url('assets/images/screening-indonesia/home/5_ovb5wh.png')}}" class="chakra-image css-se3s9m">
-          </div>
+          </div> --}}
         </div>
         <div class="swiper-pagination"></div>
       </div>

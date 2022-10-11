@@ -95,6 +95,14 @@
                 </a>
             </li>
 
+            <!-- Nav Item - Our Client -->
+            <li class="nav-item">
+                <a class="nav-link" href="/our-clients">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Our Clients</span>
+                </a>
+            </li>
+
             <!-- Nav Item - Wanita -->
             <li class="nav-item">
                 <a class="nav-link" href="/articles">
