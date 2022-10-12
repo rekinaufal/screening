@@ -9,7 +9,7 @@
 </div>
 <div class="chakra-container css-n759ug">
   <div class="css-fxrbma">
-    <div class="css-1nghwg2">
+    <div class="css-1nghwg2" style="height: 535px !important; max-height: 600px !important;">
       <h2 class="chakra-heading css-6oi6xv">CONTACT US</h2>
       <p class="chakra-text css-oi2svy">Please contact us using the information below. To locate contacts in the business office closent to you, visit our office websites.</p>
       <div class="chakra-stack css-1n8zje7">

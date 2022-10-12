@@ -3,7 +3,7 @@
 <div class="chakra-container css-n759ug">
   <div class="css-1upthpv">
     <a class="chakra-link css-xilj3k" href="{{ url('/company') }}">
-      <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-xcmdz3">
+      <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-xcmdz3" style="position: relative; bottom: 8px">
         <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
       </svg>
       <p class="chakra-text css-0">Back to Company List</p>
@@ -12,7 +12,7 @@
       <div class="chakra-stack css-u85z97">
         <div class="chakra-stack css-11kgd3k">
           <a target="_blank" rel="noopener" class="chakra-link css-spn4bz" href="http://localhost:4000/company/detail/5/www.-.com">
-            <h2 class="chakra-heading css-1ram4mi">Perusahaan 11
+            <h2 class="chakra-heading css-1ram4mi">Cindrum
               <!-- -->
               <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1otglqi">
                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
@@ -23,14 +23,9 @@
               </svg>
             </h2>
           </a>
-          <p class="chakra-text css-10qt2wr">ASAHAN
-            <!-- -->,
-            <!-- -->SUMATERA UTARA
+          <p class="chakra-text css-10qt2wr">APL Tower, Jl. Letjen. S. Parman No.Kav 28, RT.12/RW.7, Petamburan, Kec. Grogol petamburan, Daerah Khusus Ibukota Jakarta 11440
           </p>
           <div class="css-gujxtr">
-            <p class="chakra-text css-0">Nama Pimpinan :
-              <!-- -->JONI
-            </p>
             <p class="chakra-text css-0">Sektor :
               <!-- -->IT
             </p>
@@ -42,7 +37,7 @@
               </svg>
               <!-- -->09878
             </p>
-            <p class="chakra-text css-0">
+            <p class="chakra-text css-0" style="position: relative; bottom: 10px;">
               <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-l5wtxs">
                 <g fill="currentColor">
                   <path d="M11.114,14.556a1.252,1.252,0,0,0,1.768,0L22.568,4.87a.5.5,0,0,0-.281-.849A1.966,1.966,0,0,0,22,4H2a1.966,1.966,0,0,0-.289.021.5.5,0,0,0-.281.849Z"></path>
@@ -57,7 +52,12 @@
       </div>
       <div class="css-i394l7">
         <h2 class="chakra-heading css-1389ja7">Deskripsi Perusahaan</h2>
-        <p class="chakra-text css-1y0llr0">-</p>
+        <p class="chakra-text css-1y0llr0">
+          CINDRUM is a virtual world based on the blockchain technology where users can construct, own, and monetize their digital assets.
+        </p>
+      </div>
+      <div class="mb-2">
+        <iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=cindrum&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
       </div>
     </div>
   </div>
