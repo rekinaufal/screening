@@ -68,6 +68,16 @@ Route::get('/article/{id}', [ArticleController::class, 'detail'])->name('detail.
 Route::get('/company/{id}', [CompanyController::class, 'detail'])->name('detail.company');
 // START FRONT END
 
+//TEMPORARY
+
+Route::get('/see-all-job', function () {
+    return view('frontend/seeAllJob', [
+        'pageTitle' => "About"
+    ]);
+});
+
+//TEMPIRARY
+
 //Route::get('/post', [PostController::class, 'index']);
 
 // middleware > defaultnya itu /home, untuk mengubahnya (app/http/providers/routeservice) ganti /home
