@@ -112,6 +112,9 @@ Route::resource('articles', 'App\Http\Controllers\ArticleBackendController');
 
 Route::get('/our-clients', [OurClientBackendController::class, 'index'])->name('ourclient.index');
 Route::resource('our-clients', 'App\Http\Controllers\OurClientBackendController');
+
+Route::get('/companies', [CompanyBackendController::class, 'index'])->name('company.index');
+Route::resource('companies', 'App\Http\Controllers\CompanyBackendController');
 // END BACKEND
 
 Route::get('/mempelai', [MempelaiController::class, 'index'])->name('mempelai.index');
