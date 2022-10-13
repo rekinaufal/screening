@@ -24,7 +24,7 @@
                                 <a class="chakra-link css-1wlo66z" href="{{ url('/our-team') }}">Our Team</a>
                             </div>
                             <div class="css-0">
-                                <a class="chakra-link css-1wlo66z" href="{{ url('/articles') }}">Articles</a>
+                                <a class="chakra-link css-1wlo66z" href="{{ url('/article') }}">Articles</a>
                             </div>
                             <div class="css-0">
                                 <a class="chakra-link css-1wlo66z" href="{{ url('/contact-us') }}">Contact</a>

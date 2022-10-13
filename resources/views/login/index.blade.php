@@ -69,13 +69,13 @@
 
     .line {
         height: 1px;
-        width: 45%;
+        width: 25%;
         background-color: #E0E0E0;
         margin-top: 10px;
     }
 
     .or {
-        width: 10%;
+        width: 25%;
         font-weight: bold;
     }
 
@@ -232,65 +232,110 @@
             </div>
             <div class="col-lg-6">
                 <div class="card2 card border-0 px-4 py-5">
-                    <form action="/login" method="post">
-                        @csrf
-                        <!-- <div class="row mb-4 px-3">
-                            <h6 class="mb-0 mr-4 mt-2">Sign in with</h6>
-                            <div class="facebook text-center mr-3"><div class="fa fa-facebook"></div></div>
-                            <div class="twitter text-center mr-3"><div class="fa fa-twitter"></div></div>
-                            <div class="linkedin text-center mr-3"><div class="fa fa-linkedin"></div></div>
-                        </div> -->
-                        <div class="row px-3 mb-4">
-                            <div class="line"></div>
-                            <small class="or text-center">LOG IN</small>
-                            <div class="line"></div>
-                        </div>
-                        <div class="row px-3">
-                            <label class="mb-1"><h6 class="mb-0 text-sm">Email</h6></label>
-                            <input class="mb-4" type="text" name="email" placeholder="Enter a valid email address">
-                        </div>
-                        <div class="row px-3">
-                            <label class="mb-1"><h6 class="mb-0 text-sm">Password</h6></label>
-                            <input type="password" name="password" placeholder="Enter password" id="showpassword">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <div class="form-inline">
-                                <label for="" class="">
-                                    <input type="checkbox" onclick="myFunction()" style="transform: scale(1.30);">&nbsp;Show
-                                </label>
-                                <label for="">&nbsp;Password</label>
+                    <!-- <div class="row mb-4 px-3">
+                        <h6 class="mb-0 mr-4 mt-2">Sign in with</h6>
+                        <div class="facebook text-center mr-3"><div class="fa fa-facebook"></div></div>
+                        <div class="twitter text-center mr-3"><div class="fa fa-twitter"></div></div>
+                        <div class="linkedin text-center mr-3"><div class="fa fa-linkedin"></div></div>
+                    </div> -->
+                    <div class="row mb-3 px-3" style="justify-content: center;">
+                        <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:100px; width: 100px;" onclick="talent()">Talent</button>
+                        <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:100px; width: 100px;" onclick="company()">Company</button>
+                    </div>  
+                    <div id="mytalent">
+                        <form action="/login" method="post">
+                            @csrf
+                            <div class="row px-3 mb-4" style="justify-content:center;">
+                                <div class="line"></div>
+                                    <small class="or text-center">LOG IN TALENT</small>
+                                <div class="line"></div>
                             </div>
-                                
-                        </div>
-                        <!-- captcha -->
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">{{ __('Captcha') }} : <strong>{{$Capctha}}</strong></label>
+                            <div class="row px-3">
+                                <label class="mb-1"><h6 class="mb-0 text-sm">Email</h6></label>
+                                <input class="mb-4" type="text" name="email" placeholder="Enter a valid email address">
+                            </div>
+                            <div class="row px-3">
+                                <label class="mb-1"><h6 class="mb-0 text-sm">Password</h6></label>
+                                <input type="password" name="password" placeholder="Enter password" id="showpassword">
+                            </div>
                             
-                            <input name="_answer" type="text" class="form-control form-control-lg @error('_answer') is-invalid @enderror" placeholder="Jawaban">
-                            <input name="bilangan1" type="hidden" value="{{$bilangan1}}">
-                            <input name="bilangan2" type="hidden" value="{{$bilangan2}}">
-                            <input name="operator" type="hidden" value="{{$rand_operator}}">
-                            <input name="Hasil" type="hidden" value="{{$Hasil}}">
-                            @error('_answer')
-                            <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                        <!-- captcha -->
-
-                        <div class="row px-3 mb-4">
-                            <!-- <div class="custom-control custom-checkbox custom-control-inline">
-                                <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> 
-                                <label for="chk1" class="custom-control-label text-sm">Remember me</label>
-                            </div> -->
-                            <!-- <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a> -->
-                        </div>
-                        <div class="row mb-3 px-3">
-                            <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:20px; width: 100px;">Log In</button>
-                        </div>         
-                    </form>
+                            <div class="mb-3">
+                                <div class="form-inline">
+                                    <label for="" class="">
+                                        <input type="checkbox" onclick="myFunction()" style="transform: scale(1.30);">&nbsp;Show
+                                    </label>
+                                    <label for="">&nbsp;Password</label>
+                                </div>
+                                    
+                            </div>
+                            <!-- captcha -->
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">{{ __('Captcha') }} : <strong>{{$Capctha}}</strong></label>
+                                
+                                <input name="_answer" type="text" class="form-control form-control-lg @error('_answer') is-invalid @enderror" placeholder="Jawaban">
+                                <input name="bilangan1" type="hidden" value="{{$bilangan1}}">
+                                <input name="bilangan2" type="hidden" value="{{$bilangan2}}">
+                                <input name="operator" type="hidden" value="{{$rand_operator}}">
+                                <input name="Hasil" type="hidden" value="{{$Hasil}}">
+                                @error('_answer')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <!-- captcha -->
+                            <div class="row mb-3 px-3">
+                                <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:20px; width: 100px;">Log In</button>
+                            </div>         
+                        </form>
+                    </div>         
+                    <div id="mycompany" style="display: none;">
+                        <form action="/login" method="post">
+                            @csrf
+                            <div class="row px-3 mb-4" style="justify-content:center;">
+                                <div class="line"></div>
+                                    <small class="or text-center">LOG IN COMPANY</small>
+                                <div class="line"></div>
+                            </div>
+                            <div class="row px-3">
+                                <label class="mb-1"><h6 class="mb-0 text-sm">Email</h6></label>
+                                <input class="mb-4" type="text" name="email" placeholder="Enter a valid email address">
+                            </div>
+                            <div class="row px-3">
+                                <label class="mb-1"><h6 class="mb-0 text-sm">Password</h6></label>
+                                <input type="password" name="password" placeholder="Enter password" id="showpassword">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="form-inline">
+                                    <label for="" class="">
+                                        <input type="checkbox" onclick="myFunction()" style="transform: scale(1.30);">&nbsp;Show
+                                    </label>
+                                    <label for="">&nbsp;Password</label>
+                                </div>
+                                    
+                            </div>
+                            <!-- captcha -->
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">{{ __('Captcha') }} : <strong>{{$Capctha}}</strong></label>
+                                
+                                <input name="_answer" type="text" class="form-control form-control-lg @error('_answer') is-invalid @enderror" placeholder="Jawaban">
+                                <input name="bilangan1" type="hidden" value="{{$bilangan1}}">
+                                <input name="bilangan2" type="hidden" value="{{$bilangan2}}">
+                                <input name="operator" type="hidden" value="{{$rand_operator}}">
+                                <input name="Hasil" type="hidden" value="{{$Hasil}}">
+                                @error('_answer')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <!-- captcha -->
+                            <div class="row mb-3 px-3">
+                                <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:20px; width: 100px;">Log In</button>
+                            </div>         
+                        </form>
+                    </div>         
                     <div class="row mb-1 px-3">
                         <small class="font-weight-bold">Don't have an account? <a class="text-danger" href="/register">Register</a></small>
                     </div>
@@ -310,4 +355,29 @@
         </div> -->
     </div>
 </div>
+@endsection
+@section('javascript')
+    <script>
+        function talent() {
+            var x = document.getElementById('mytalent');
+            var y = document.getElementById('mycompany');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+                y.style.display = 'none';
+            } else {
+                x.style.display = 'none';
+
+            }
+        }
+        function company() {
+            var x = document.getElementById('mycompany');
+            var y = document.getElementById('mytalent');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+                y.style.display = 'none';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </script>
 @endsection

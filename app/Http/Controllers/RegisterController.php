@@ -12,7 +12,25 @@ class RegisterController extends Controller
     
     public function index() {
         $pageTitle = self::$pageTitle;
-        return view ('register.index', compact('pageTitle'));
+
+        $operator  = array('+', '-');
+        $rand_operator = $operator[array_rand($operator, 1)];
+        $min_number = 1;
+        $max_number = 10;
+        $bilangan1 = mt_rand($min_number, $max_number);
+        $bilangan2 = mt_rand($min_number, $max_number);
+        if($bilangan1 < $bilangan2){
+            $bilangan1 = $bilangan2;
+            $bilangan2 = $bilangan1;
+        }
+        $Capctha = "$bilangan1 $rand_operator $bilangan2";
+        if($rand_operator == "+"){
+            $Hasil = $bilangan1 + $bilangan2;
+        }else{
+            $Hasil = $bilangan1 - $bilangan2;
+        }
+
+        return view ('register.index', compact('pageTitle', 'bilangan1', 'bilangan2', 'rand_operator', 'Capctha', 'Hasil'));
     }
 
     public function store(Request $request) {

@@ -120,14 +120,14 @@
       </div>
       <span></span>
     </div>
+    {{-- javascript --}}
+    @yield('javascript')
     {{-- jquery --}}
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
     crossorigin="anonymous"></script>
     {{-- carousel --}}
     <script src="{{ url('assets/owlcarousel/js/owl.carousel.min.js') }}"></script>
     {{-- <script src="{{ url('assets/screening-indonesia/js/react-refresh.js') }}"></script> --}}
-  
-    
     <!-- untuk password visibility -->
     <script>
         function myFunction() {
