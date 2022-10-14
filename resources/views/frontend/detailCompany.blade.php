@@ -59,82 +59,42 @@
           {!! $Company->deskripsi_perusahaan !!}
         </p>
       </div>
-      {{-- <div class="row mb-2">
+      <div class="row mb-2">
         <div class="col-md-6">
           <h3>Jobs Opportunity</h3>
         </div>
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
           <div class="d-inline-block btn text-white btn-jobfair float-right" style="width: 130px;border-radius:30px 30px 30px 30px; background-color: #394c82;"><a href="{{ url("see-all-job") }}" style="color: white"> See All Jobs</a></div>
-        </div>
-      </div> --}}
-      {{-- <div class="row mb-2">
+        </div> --}}
+      </div>
+      <div class="row mb-2">
         <div class="col-md-4 target">
-          
-            <div style="background-color:#F9F1DD; border-radius:20px;">
-              <div class="card-body">
-                <div class="d-flex justify-content-center w-100">
-                    <img src="https://jobfair.screeningindonesia.com/assets/company/9ynufzTyWTpmaIO7ie54CAX6nNcndw_Cindrum.png" height="150" width="190">
+          @if (count($Jobs) > 0)
+            @foreach ($Jobs as $item)
+              <div style="background-color:#F9F1DD; border-radius:20px;">
+                <div class="card-body">
+                  <div class="d-flex justify-content-center w-100 mb-4">
+                      <img src="{{ $Company->logo }}" height="150" width="190">
+                  </div>
+                  <p class="m-0 text-jobfair" style="font-size:14px;">
+                    {{ $Company->nama_perusahaan }}<br>
+                    <b>{{ $item->position }}</b><br>
+                    {{ $item->job_type }}<br><br>
+                  </p>
+                  <div class="d-inline-block btn text-white btn-jobfair float-right" style="border-radius:30px 30px 30px 30px; padding:9px;background-color: #394c82;">Apply</div>
+                  <span class="d-inline-block bg-white text-jobfair" style="border-radius:30px 30px 30px 30px; padding:9px;">
+                    <b>{{ $item->location }}</b>
+                  </span>
+                  <p></p>
                 </div>
-                <p class="m-0 text-jobfair" style="font-size:14px;">
-                  Cindrum<br>
-                  <b>Junior Front-End Developer</b><br>
-                  Web Development<br><br>
-                </p>
-                <div class="d-inline-block btn text-white btn-jobfair float-right" style="border-radius:30px 30px 30px 30px; padding:9px;background-color: #394c82;">Apply</div>
-                <span class="d-inline-block bg-white text-jobfair" style="border-radius:30px 30px 30px 30px; padding:9px;">
-                  <b>Jakarta</b>
-                </span>
-                <p></p>
               </div>
-            </div>
-          
-        </div>
-
-        <div class="col-md-4 target">
-          
-            <div style="background-color:#F9F1DD; border-radius:20px;">
-              <div class="card-body">
-                <div class="d-flex justify-content-center w-100">
-                    <img src="https://jobfair.screeningindonesia.com/assets/company/9ynufzTyWTpmaIO7ie54CAX6nNcndw_Cindrum.png" height="150" width="190">
-                </div>
-                <p class="m-0 text-jobfair" style="font-size:14px;">
-                  Cindrum<br>
-                  <b>Junior Front-End Developer</b><br>
-                  Web Development<br><br>
-                </p>
-                <div class="d-inline-block btn text-white btn-jobfair float-right" style="border-radius:30px 30px 30px 30px; padding:9px;background-color: #394c82;">Apply</div>
-                <span class="d-inline-block bg-white text-jobfair" style="border-radius:30px 30px 30px 30px; padding:9px;">
-                  <b>Jakarta</b>
-                </span>
-                <p></p>
-              </div>
-            </div>
-          
-        </div>
-
-        <div class="col-md-4 target">
-          
-            <div style="background-color:#F9F1DD; border-radius:20px;">
-              <div class="card-body">
-                <div class="d-flex justify-content-center w-100">
-                    <img src="https://jobfair.screeningindonesia.com/assets/company/9ynufzTyWTpmaIO7ie54CAX6nNcndw_Cindrum.png" height="150" width="190">
-                </div>
-                <p class="m-0 text-jobfair" style="font-size:14px;">
-                  Cindrum<br>
-                  <b>Junior Front-End Developer</b><br>
-                  Web Development<br><br>
-                </p>
-                <div class="d-inline-block btn text-white btn-jobfair float-right" style="border-radius:30px 30px 30px 30px; padding:9px;background-color: #394c82;">Apply</div>
-                <span class="d-inline-block bg-white text-jobfair" style="border-radius:30px 30px 30px 30px; padding:9px;">
-                  <b>Jakarta</b>
-                </span>
-                <p></p>
-              </div>
-            </div>
-          
+            @endforeach
+          @else
+              -
+          @endif
         </div>
         
-      </div> --}}
+      </div>
       {{-- <div class="mb-4 mt-4">
         <h3>Maps</h3>
       </div>

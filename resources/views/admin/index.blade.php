@@ -111,6 +111,14 @@
                 </a>
             </li>
 
+            <!-- Nav Item - Jobs -->
+            <li class="nav-item">
+                <a class="nav-link" href="/jobs">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Jobs</span>
+                </a>
+            </li>
+
             <!-- Nav Item - Wanita -->
             <li class="nav-item">
                 <a class="nav-link" href="/articles">

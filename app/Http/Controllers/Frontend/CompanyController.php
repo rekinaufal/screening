@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Company;
+use App\Models\Jobs;
 
 class CompanyController
 {
@@ -20,6 +21,7 @@ class CompanyController
     {
         $id = decrypt($id);
         $Company = Company::find($id);
-        return view ('frontend.detailCompany', compact("Company"));
+        $Jobs = Jobs::where("id_company", $id)->get();
+        return view ('frontend.detailCompany', compact("Company", "Jobs"));
     }
 }
