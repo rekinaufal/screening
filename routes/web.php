@@ -123,6 +123,9 @@ Route::resource('companies', 'App\Http\Controllers\CompanyBackendController');
 
 Route::get('/jobs', [JobsBackendController::class, 'index'])->name('jobs.index');
 Route::resource('jobs', 'App\Http\Controllers\JobsBackendController');
+
+Route::get('/talents', [TalentBackendController::class, 'index'])->name('talents.index');
+Route::resource('talents', 'App\Http\Controllers\TalentBackendController');
 // END BACKEND
 
 Route::get('/mempelai', [MempelaiController::class, 'index'])->name('mempelai.index');

@@ -119,6 +119,14 @@
                 </a>
             </li>
 
+            <!-- Nav Item - Talents -->
+            <li class="nav-item">
+                <a class="nav-link" href="/talents">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Talents</span>
+                </a>
+            </li>
+
             <!-- Nav Item - Wanita -->
             <li class="nav-item">
                 <a class="nav-link" href="/articles">
