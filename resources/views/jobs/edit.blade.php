@@ -2,7 +2,7 @@
     @section('content')
     <div class="card-body">
         <div class="table-responsive">
-            <form method="POST" action="{{ route('jobs.update', $Jobs->id_jobfair) }}"  role="form" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('jobs.update', $Jobs->id) }}"  role="form" enctype="multipart/form-data">
                 {{ method_field('PATCH') }}
                 @csrf
                 <div class="row">

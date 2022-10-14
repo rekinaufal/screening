@@ -9,7 +9,7 @@
 </div>
 <div class="chakra-container css-n759ug">
   <div class="css-tdbenz">
-    <input placeholder="Search company..." class="chakra-input css-10ex9a1" value="">
+    <input placeholder="Search company..." id="Search" onkeyup="Search()"class="chakra-input css-10ex9a1" value="">
     <div class="chakra-stack css-qnsy8p">
       <p class="chakra-text css-s2uf1z">Companies Count :
         <!-- -->{{count($Company)}}
@@ -45,4 +45,21 @@
     </div>
   </div>
 </div>
+@endsection
+@section('javascript')
+<script>
+    function Search() {
+        var input = document.getElementById("Search");
+        var filter = input.value.toLowerCase();
+        var nodes = document.getElementsByClassName('target');
+
+        for (i = 0; i < nodes.length; i++) {
+            if (nodes[i].innerText.toLowerCase().includes(filter)) {
+                nodes[i].style.display = "block";
+            } else {
+                nodes[i].style.display = "none";
+            }
+        }
+    }
+</script>
 @endsection

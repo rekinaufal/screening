@@ -91,7 +91,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/ourteam">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Ourteam</span>
+                    <span>Our Team</span>
                 </a>
             </li>
 
@@ -128,20 +128,20 @@
             </li>
 
             <!-- Nav Item - mempelai -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="/mempelai">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Mempelai</span>
                 </a>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Tempat Acara -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="/tempatacara">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tempat Acara</span>
                 </a>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Kategori -->
             <li class="nav-item">

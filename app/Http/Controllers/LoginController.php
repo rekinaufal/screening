@@ -68,7 +68,7 @@ class LoginController extends Controller
                 $request->session()->put('name',$GetDataUserStatus['name']);
                 $request->session()->put('status',$GetDataUserStatus['status']);
                 $request->session()->regenerate();
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('/');
             }
         }
         return back()->with('loginError', 'Login Failed');

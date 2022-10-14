@@ -32,18 +32,18 @@
                         <label for="sel1">Kelurahan:</label>
                         <select class="form-control" name="kelurahan">
                             <option value="">-- Select one --</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Company">Company</option>
-                            <option value="User">User</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Company</option>
+                            <option value="3">User</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="sel1">Desa:</label>
                         <select class="form-control" name="desa">
                             <option value="">-- Select one --</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Company">Company</option>
-                            <option value="User">User</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Company</option>
+                            <option value="3">User</option>
                         </select>
                     </div>
                     <div class="form-group">

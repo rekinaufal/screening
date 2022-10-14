@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Session;
+use DB ;
+use File;
+use Str;
 
 class UserController extends Controller
 {
@@ -82,5 +87,38 @@ class UserController extends Controller
 
         return redirect()->route('user.index')
             ->with('success', self::$pageTitle.' deleted successfully');
+    }
+
+    public function profile ()
+    {   
+        if(optional(Auth::user())->id == null OR optional(Auth::user())->id == ''){
+           Session::flash('message', 'Session Expired, Please Login Again!'); 
+           Session::flash('alert-class', 'alert-danger'); 
+           return redirect('/login');
+       }
+        $id = Auth::user()->id;
+        $Profile = DB::table('users')
+        ->where('id', $id)
+        ->first();
+
+        $Abouts = DB::table('about')
+        // ->where('status', 1)
+        ->first();
+        
+        // $Category = DB::table('category')
+        // ->where('status', 1)
+        // ->get();
+        
+        // $Applied = DB::table('applied')
+        // ->select('*')
+        // ->join('jobfair', 'applied.id_jobfair', '=', 'jobfair.id_jobfair')
+        // ->join('company', 'jobfair.id_company', '=', 'company.id_company')
+        // ->join('users', 'applied.id_user', '=', 'users.id')
+        // ->where('applied.status', 1)
+        // ->where('applied.id_user',  $id)
+        // ->get();
+        // dd($Profile);
+        $pageTitle = self::$pageTitle;
+        return view ('user.profile', compact('pageTitle', 'Profile', 'Abouts'));
     }
 }

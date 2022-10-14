@@ -22,55 +22,43 @@
                     <div class="chakra-stack__divider css-15sliu"></div>
                     <p class="chakra-text css-0">{{ $item->position}} Screening Indonesia</p>
                     <div class="chakra-stack__divider css-15sliu"></div>
-                    <button type="button" class="chakra-button css-e5a8s0">Read More</button>
+                    <button type="button" class="chakra-button css-e5a8s0" data-toggle="modal" data-target="#getDataOutTeamModal{{ $item->id }}">Read More</button>
                 </div>
             </div>
+            <!-- Data out team Modal-->
+                <div class="modal fade" id="getDataOutTeamModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Detail Our Team</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            <div class="row">
+                                <div class="col-8" style="padding-left: 45px;">
+                                    <p><h3> {{$item->name}}</h3></p>
+                                    <p><h6> {{$item->position}}</h6></p>
+                                    <hr>
+                                    <p maxresults="10">{!! $item->description !!}</p>
+                                </div>
+                                <div class="col-4">
+                                    <img src="{{ url('assets/images/screening-indonesia/our-team/logolci.png') }}" style="position: absolute; opacity:0.25;width:90%;">
+                                    <div align="right">
+                                        <img src="{{ $item->image }}" alt="User Pic" width="120" style="position: relative; top;">
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal" style="background-color: rgb(33, 156, 189);">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Data out team Modal-->
         @endforeach
-        <!-- <div class="chakra-stack css-6ryjmt">
-            <div class="css-17ht4ld">
-                <img alt="" src="{{ url('assets/images/screening-indonesia/our-team/2_ny1twu.jpg') }}" class="chakra-image css-1fzn27e">
-            </div>
-            <div class="chakra-stack css-1vr2anf">
-                <div class="css-wt5l11">
-                    <p class="chakra-text css-1k1vewa">Ratri Wahyu Mulyani</p>
-                    <p class="chakra-text css-1x3cxaj">CO-FOUNDER</p>
-                </div>
-                <div class="chakra-stack__divider css-15sliu"></div>
-                <p class="chakra-text css-0">Co-Founder Screening Indonesia</p>
-                <div class="chakra-stack__divider css-15sliu"></div>
-                <button type="button" class="chakra-button css-e5a8s0">Read More</button>
-            </div>
-        </div> -->
-        <!-- <div class="chakra-stack css-6ryjmt">
-            <div class="css-17ht4ld">
-                <img alt="" src="{{ url('assets/images/screening-indonesia/our-team/3_wqcmg2.jpg') }}" class="chakra-image css-1fzn27e">
-            </div>
-            <div class="chakra-stack css-1vr2anf">
-                <div class="css-wt5l11">
-                <p class="chakra-text css-1k1vewa">Rifki Nurputra</p>
-                <p class="chakra-text css-1x3cxaj">General Manager</p>
-                </div>
-                <div class="chakra-stack__divider css-15sliu"></div>
-                <p class="chakra-text css-0">GM Screening Indonesia</p>
-                <div class="chakra-stack__divider css-15sliu"></div>
-                <button type="button" class="chakra-button css-e5a8s0">Read More</button>
-            </div>
-        </div> -->
-        <!-- <div class="chakra-stack css-6ryjmt">
-            <div class="css-17ht4ld">
-                <img alt="" src="{{ url('assets/images/screening-indonesia/our-team/4_bruzun.jpg') }}" class="chakra-image css-1fzn27e">
-            </div>
-            <div class="chakra-stack css-1vr2anf">
-                <div class="css-wt5l11">
-                <p class="chakra-text css-1k1vewa">Sonia Yolanda</p>
-                <p class="chakra-text css-1x3cxaj">Business Development Manager</p>
-                </div>
-                <div class="chakra-stack__divider css-15sliu"></div>
-                <p class="chakra-text css-0">Business Development Manager</p>
-                <div class="chakra-stack__divider css-15sliu"></div>
-                <button type="button" class="chakra-button css-e5a8s0">Read More</button>
-            </div>
-        </div> -->
     </div>
 </div>
 @endsection

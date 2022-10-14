@@ -35,8 +35,8 @@
                     <td>{{ $item->location }}</td>
                     <td>{{ $item->status === 1 ? "Active" : "Not Active" }}</td>
                     <td align="center"> 
-                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('jobs.destroy', $item->id_jobfair) }}" method="POST">
-                            <a href="{{ route('jobs.edit', Crypt::encrypt($item->id_jobfair)) }}" class="btn btn-sm btn-primary">
+                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('jobs.destroy', $item->id) }}" method="POST">
+                            <a href="{{ route('jobs.edit', Crypt::encrypt($item->id)) }}" class="btn btn-sm btn-primary">
                                 <i class="fa fa-edit" style="color:white"></i>
                             </a>
                             @csrf

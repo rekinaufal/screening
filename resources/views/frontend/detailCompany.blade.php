@@ -71,6 +71,7 @@
         <div class="col-md-4 target">
           @if (count($Jobs) > 0)
             @foreach ($Jobs as $item)
+            <a href="{{ route('detailJobfair.jobfairDetail', Crypt::encrypt($item->id)) }}" class="col-md-3 mb-3" style="text-decoration: none;">
               <div style="background-color:#F9F1DD; border-radius:20px;">
                 <div class="card-body">
                   <div class="d-flex justify-content-center w-100 mb-4">
@@ -88,6 +89,7 @@
                   <p></p>
                 </div>
               </div>
+            </a>
             @endforeach
           @else
               -

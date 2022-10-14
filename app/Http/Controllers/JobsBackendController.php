@@ -86,7 +86,7 @@ class JobsBackendController extends Controller
         $list_company = Company::select("nama_perusahaan", "id")->get();
         // dd($list_company);
         $Jobs = DB::table('jobfair')
-        ->where('id_jobfair', decrypt($id))
+        ->where('id', decrypt($id))
         ->first();
 
         $pageTitle = self::$pageTitle;
@@ -124,7 +124,7 @@ class JobsBackendController extends Controller
             'updated_by'    => Auth::user()->id,
         ];
       
-        $update = DB::table('jobfair')->where('id_jobfair', $id)->update($fieldUpdate);
+        $update = DB::table('jobfair')->where('id', $id)->update($fieldUpdate);
 
         return redirect()->route('jobs.index')
             ->with('success', self::$pageTitle.' updated successfully');
@@ -138,7 +138,7 @@ class JobsBackendController extends Controller
             return redirect('/login');
         }
 
-        $Jobs = Jobs::where('id_jobfair', $id)->delete();
+        $Jobs = Jobs::where('id', $id)->delete();
 
         if ($request->ajax()) {
             return response()->json([

@@ -22,6 +22,7 @@ use App\Http\Controllers\Frontend\ArticleController;
 use App\Http\Controllers\Frontend\CompanyController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\OurTeamController;
+use App\Http\Controllers\Frontend\JobfairController;
 // END FRONTEND
 
 // STARTS BACKEND
@@ -66,6 +67,10 @@ Route::get('/contact-us', [ContactUsController::class, 'index']); //->middleware
 Route::get('/our-team', [OurTeamController::class, 'index']); //->middleware('guest'); 
 Route::get('/article/{id}', [ArticleController::class, 'detail'])->name('detail.article');
 Route::get('/company/{id}', [CompanyController::class, 'detail'])->name('detail.company');
+Route::get('profile!', 'App\Http\Controllers\UserController@profile');
+Route::get('/detailJobfair/{id}', [JobfairController::class, 'jobfairDetail'])->name('detailJobfair.jobfairDetail');
+Route::put('Applied!', [JobfairController::class, 'Applied'])->name('Applied!.Applied');
+
 // START FRONT END
 
 //TEMPORARY
