@@ -61,19 +61,17 @@
             <div class="col">
                 <div class="form-group">
                     <label for="sel1">Provinsi:</label>
-                    <select class="form-control" name="provinsi">
+                    <select class="form-control" name="provinsi" id="provinsi">
                         <option value="">-- Select one --</option>
-                        <option value="1">Jawa Barat</option>
-                        <option value="2">DKI Jakarta</option>
-                        <option value="3">Jawa Timur</option>
+                        @foreach ($list_provinces as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="sel1">Kota Kabupaten:</label>
-                    <select class="form-control" name="kota_kabupaten">
+                    <select class="form-control" name="kota_kabupaten" id="kota_kabupaten">
                         <option value="">-- Select one --</option>
-                        <option value="1">Kota Bogor</option>
-                        <option value="2">Kabupaten Bogor</option>
                     </select>
                 </div>
                 <div class="form-group">

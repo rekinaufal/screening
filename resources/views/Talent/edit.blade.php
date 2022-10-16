@@ -71,19 +71,20 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="sel1">Provinsi:</label>
-                            <select class="form-control" name="provinsi">
+                            <select class="form-control" name="provinsi" id="provinsi">
                                 <option value="">-- Select one --</option>
-                                <option value="1" {{ $Talent->provinsi === 1 ? "selected" : null }}>Jawa Barat</option>
-                                <option value="2" {{ $Talent->provinsi === 2 ? "selected" : null }}>DKI Jakarta</option>
-                                <option value="3" {{ $Talent->provinsi === 3 ? "selected" : null }}>Jawa Timur</option>
+                                @foreach ($list_provinces as $item)
+                                    <option value="{{ $item->id }}" {{ $Talent->provinsi === $item->id ? "selected" : null }}>{{ $item->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="sel1">Kota Kabupaten:</label>
-                            <select class="form-control" name="kota_kabupaten">
+                            <select class="form-control" name="kota_kabupaten" id="kota_kabupaten">
                                 <option value="">-- Select one --</option>
-                                <option value="1" {{ $Talent->kota_kabupaten === 1 ? "selected" : null }}>Kota Bogor</option>
-                                <option value="2" {{ $Talent->kota_kabupaten === 2 ? "selected" : null }}>Kabupaten Bogor</option>
+                                @foreach ($list_cities as $item)
+                                    <option value="{{ $item->id }}" {{ $Talent->kota_kabupaten === $item->id ? "selected" : null }}>{{ $item->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">

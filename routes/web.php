@@ -125,6 +125,7 @@ Route::get('/jobs', [JobsBackendController::class, 'index'])->name('jobs.index')
 Route::resource('jobs', 'App\Http\Controllers\JobsBackendController');
 
 Route::get('/talents', [TalentBackendController::class, 'index'])->name('talents.index');
+Route::get('/get-cities-by-province', 'App\Http\Controllers\TalentBackendController@getCitiesByProvince')->name('get-cities-by-province');
 Route::resource('talents', 'App\Http\Controllers\TalentBackendController');
 // END BACKEND
 

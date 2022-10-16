@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Models\Talent;
 use App\Models\User;
+use App\Models\Province;
+use App\Models\Cities;
 use Illuminate\Support\Facades\Storage;
 use DB;
 use File;
@@ -42,8 +44,14 @@ class TalentBackendController extends Controller
         }
         $Talent = new Talent();
         $list_user = User::select("id", "name")->get();
+        $list_provinces = Province::select("id", "name")->get();
         $pageTitle = self::$pageTitle;
-        return view('Talent.create', compact('Talent', 'pageTitle', 'list_user'));
+        return view('Talent.create', compact('Talent', 'pageTitle', 'list_user', 'list_provinces'));
+    }
+
+    public function getCitiesByProvince(Request $request){
+        $cities = Cities::select("id", "name")->where("province_id", $request->id)->get();
+        return response()->json($cities);
     }
 
     public function store(Request $request)
@@ -120,8 +128,11 @@ class TalentBackendController extends Controller
         $Talent = DB::table('talent')
         ->where('id',decrypt($id))
         ->first();
+        // dd($Talent);
 
         $list_user = User::select("id", "name")->get();
+        $list_provinces = Province::select("id", "name")->get();
+        $list_cities = Cities::select("id", "name")->where("province_id", $Talent->provinsi)->get();
 
         $pageTitle = self::$pageTitle;
         // $pageBreadcrumbs = self::$pageBreadcrumbs;
@@ -130,7 +141,7 @@ class TalentBackendController extends Controller
         //     'title' => 'Update '.self::$pageTitle,
         // ];
 
-        return view('Talent.edit', compact('Talent', 'pageTitle', 'list_user'));
+        return view('Talent.edit', compact('Talent', 'pageTitle', 'list_user', 'list_cities', 'list_provinces'));
     }
 
     public function update(Request $request, $id)

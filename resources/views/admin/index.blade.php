@@ -564,6 +564,27 @@
    <script>
         $('#dataTable').DataTable();
    </script>
+   <script>
+        $("#provinsi").change(function(){
+            var val = $("#provinsi option:selected").val()
+            $("#kota_kabupaten option").remove()
+            
+            $.ajax({
+                url: "{{ route('get-cities-by-province') }}", 
+                data: {id: val},
+                success: function(result){
+                    $('#kota_kabupaten').append(`<option value="">
+                        -- Select one --
+                    </option>`);
+                    $.each(result, function( index, value ) {
+                        $('#kota_kabupaten').append(`<option value="${value.id}">
+                            ${value.name}
+                        </option>`);
+                    });
+                }
+            });
+        })
+   </script>
 </body>
 
 </html>
