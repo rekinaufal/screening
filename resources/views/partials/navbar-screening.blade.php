@@ -89,7 +89,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <?php $status =  Session::get('status') ?>
-                                @if ($status == 'User')
+                                @if ($status == 'Talent')
                                     <li><a class="dropdown-item" href="/profile!">Profile</a></li>
                                 @else
                                     <li><a class="dropdown-item" href="/admin">My Admin</a></li>

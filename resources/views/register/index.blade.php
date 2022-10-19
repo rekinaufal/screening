@@ -27,10 +27,10 @@
                 </div>  
                 <div id="registtalent">
                     <h1 class="h3 mb-3 fw-normal text-center">Registrasi Form Talent</h1>
-                    <form action="/register" method="post" role="form" enctype="multipart/form-data">
+                    <form action="/registertalent" method="post" role="form" enctype="multipart/form-data">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control rounded-top" name="name" id="nama" placeholder="Nama" required value="">
+                            <input type="text" class="form-control rounded-top" name="nama_lengkap" id="nama" placeholder="Nama" required value="">
                         </div>
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
@@ -40,9 +40,9 @@
                         </div>
                         <div class="form-floating mb-3">
                             <label for="password">Upload CV</label>
-                            <input type="file" class="rounded-button" name="cv[]" multiple placeholder="Upload CV" required>
+                            <input type="file" class="rounded-button" name="file_cv[]" multiple placeholder="Upload CV" required>
                         </div>
-                        <input type="hidden" class="form-control" name="status" id="status" placeholder="status" value="User" required readonly>
+                        <input type="hidden" class="form-control" name="status" id="status" placeholder="status" value="Talent" required readonly>
                         <!-- captcha -->
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">{{ __('Captcha') }} : <strong>{{$Capctha}}</strong></label>
@@ -65,22 +65,22 @@
                 </div>
                 <div id="registcompany" style="display:none;">
                     <h1 class="h3 mb-3 fw-normal text-center">Registrasi Form Company</h1>
-                    <form action="/register" method="post" role="form" enctype="multipart/form-data">
+                    <form action="/register1" method="post" role="form" enctype="multipart/form-data">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control rounded-top" name="name" id="nama" placeholder="Nama" required value="">
+                            <input type="text" class="form-control rounded-top" name="n1ame" id="nama" placeholder="Nama" required value="">
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                            <input type="email" class="form-control" name="ema1il" id="email" placeholder="Email" required>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control rounded-button" name="password" id="password" placeholder="Password" required>
+                            <input type="password" class="form-control rounded-button" name="pa1ssword" id="password" placeholder="Password" required>
                         </div>
                         <!-- <div class="form-floating mb-3">
                             <label for="password">Upload CV</label>
                             <input type="file" class="rounded-button" name="cv[]" multiple placeholder="Upload CV" required>
                         </div> -->
-                        <input type="hidden" class="form-control" name="status" id="status" placeholder="status" value="User" required readonly>
+                        <input type="hidden" class="form-control" name="stat1us" id="status" placeholder="status" value="User" required readonly>
                         <!-- captcha -->
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">{{ __('Captcha') }} : <strong>{{$Capctha}}</strong></label>

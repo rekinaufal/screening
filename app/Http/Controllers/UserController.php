@@ -97,10 +97,13 @@ class UserController extends Controller
            return redirect('/login');
        }
         $id = Auth::user()->id;
-        $Profile = DB::table('users')
+        $Profile = DB::table('talent')
+        ->where('id_user', $id)
+        ->first();
+        $User = DB::table('users')
         ->where('id', $id)
         ->first();
-
+        // dd($User);
         $Abouts = DB::table('about')
         // ->where('status', 1)
         ->first();
@@ -119,6 +122,6 @@ class UserController extends Controller
         // ->get();
         // dd($Profile);
         $pageTitle = self::$pageTitle;
-        return view ('user.profile', compact('pageTitle', 'Profile', 'Abouts'));
+        return view ('user.profile', compact('pageTitle', 'Profile', 'Abouts', 'User'));
     }
 }

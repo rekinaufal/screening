@@ -22,8 +22,9 @@
             @else
               <option value="">-- Select one --</option>
             @endif
-            <option value="Admin">Admin</option>
-            <option value="User">User</option>
+              <option value="Admin">Admin</option>
+              <option value="Talent">Talent</option>
+              <option value="Company">Company</option>
           </select>
         </div>
         <div class="form-group">

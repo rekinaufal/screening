@@ -160,60 +160,116 @@ class TalentBackendController extends Controller
 
         $file_cv = null;
         $file_name_cv = null;
+
+        $pageTitle = self::$pageTitle;
+        if ($request->uri == 'profile!') {
+            if($request->hasFile("foto_diri")){
+                File::delete(base_path() . '/public' . $request->input('foto_diri_old')); //hapus foto old
+
+                $file_foto_diri = $request->file('foto_diri');
+                $file_name_foto = Str::random(30) . '_' . $file_foto_diri->getClientOriginalName();
+                $file_foto_diri->move(base_path() . '/public/assets/image/screening-indonesia/talent/backend', $file_name_foto);
+            }
+
+            if($request->hasFile("file_identitas")){
+                File::delete(base_path() . '/public' . $request->input('file_identitas_old')); //hapus foto old
+
+                $file_identitas = $request->file('file_identitas');
+                $file_name_identitas = Str::random(8) . '_' . $file_identitas->getClientOriginalName();
+                $file_identitas->move(base_path() . '/public/assets/image/screening-indonesia/talent/backend', $file_name_identitas);
+            }
+
+            if($request->hasFile("file_cv")){
+                File::delete(base_path() . '/public' . $request->input('file_cv_old')); //hapus foto old
+
+                $file_cv = $request->file('file_cv');
+                $file_name_cv = Str::random(8) . '_' . $file_cv->getClientOriginalName();
+                $file_cv->move(base_path() . '/public/assets/image/screening-indonesia/talent/backend', $file_name_cv);
+            }
+            
+            $fieldUpdate = [
+                'nama_lengkap' => $request->nama_lengkap,
+                'foto_diri' => $file_name_foto === null ? $request->foto_diri_old : '/assets/image/screening-indonesia/talent/backend/' . $file_name_foto,
+                'nama_panggilan' => $request->nama_panggilan,
+                'no_identitas' => $request->no_identitas,
+                'file_identitas' => $file_name_identitas === null ? $request->file_identitas_old : '/assets/image/screening-indonesia/talent/backend/' . $file_name_identitas,
+                'tempat_lahir' => $request->tempat_lahir,
+                'tgl_lahir' => $request->tanggal_lahir,
+                'no_hp' => $request->no_hp,
+                'status_pernikahan' => $request->status_pernikahan,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'agama' => $request->agama,
+                'provinsi' => $request->provinsi,
+                'kota_kabupaten' => $request->kota_kabupaten,
+                'file_cv' => $file_name_cv === null ? $request->file_cv_old : '/assets/image/screening-indonesia/talent/backend/' . $file_name_cv,
+                'tanggal_daftar' => $request->tanggal_daftar,
+                'status' => $request->status,
+                'ig' => $request->ig,
+                'linkin' => $request->linkin,
+                'twiter' => $request->twiter,
+                'tiktok' => $request->tiktok,
+                'id_user' => $request->id_user,
+                'updated_by'    => Auth::user()->id,
+            ];
         
-        if($request->hasFile("foto_diri")){
-            File::delete(base_path() . '/public' . $request->input('foto_diri_old')); //hapus foto old
+            $update = DB::table('talent')->where('id', $id)->update($fieldUpdate);
+            return redirect('/profile!');
+        }else {  
+            if($request->hasFile("foto_diri")){
+                File::delete(base_path() . '/public' . $request->input('foto_diri_old')); //hapus foto old
 
-            $file_foto_diri = $request->file('foto_diri');
-            $file_name_foto = Str::random(30) . '_' . $file_foto_diri->getClientOriginalName();
-            $file_foto_diri->move(base_path() . '/public/assets/image/screening-indonesia/talent/backend', $file_name_foto);
-        }
+                $file_foto_diri = $request->file('foto_diri');
+                $file_name_foto = Str::random(30) . '_' . $file_foto_diri->getClientOriginalName();
+                $file_foto_diri->move(base_path() . '/public/assets/image/screening-indonesia/talent/backend', $file_name_foto);
+            }
 
-        if($request->hasFile("file_identitas")){
-            File::delete(base_path() . '/public' . $request->input('file_identitas_old')); //hapus foto old
+            if($request->hasFile("file_identitas")){
+                File::delete(base_path() . '/public' . $request->input('file_identitas_old')); //hapus foto old
 
-            $file_identitas = $request->file('file_identitas');
-            $file_name_identitas = Str::random(8) . '_' . $file_identitas->getClientOriginalName();
-            $file_identitas->move(base_path() . '/public/assets/image/screening-indonesia/talent/backend', $file_name_identitas);
-        }
+                $file_identitas = $request->file('file_identitas');
+                $file_name_identitas = Str::random(8) . '_' . $file_identitas->getClientOriginalName();
+                $file_identitas->move(base_path() . '/public/assets/image/screening-indonesia/talent/backend', $file_name_identitas);
+            }
 
-        if($request->hasFile("file_cv")){
-            File::delete(base_path() . '/public' . $request->input('file_cv_old')); //hapus foto old
+            if($request->hasFile("file_cv")){
+                File::delete(base_path() . '/public' . $request->input('file_cv_old')); //hapus foto old
 
-            $file_cv = $request->file('file_cv');
-            $file_name_cv = Str::random(8) . '_' . $file_cv->getClientOriginalName();
-            $file_cv->move(base_path() . '/public/assets/image/screening-indonesia/talent/backend', $file_name_cv);
-        }
+                $file_cv = $request->file('file_cv');
+                $file_name_cv = Str::random(8) . '_' . $file_cv->getClientOriginalName();
+                $file_cv->move(base_path() . '/public/assets/image/screening-indonesia/talent/backend', $file_name_cv);
+            }
+            
+            $fieldUpdate = [
+                'id_user' => $request->id_user,
+                'nama_lengkap' => $request->nama_lengkap,
+                'foto_diri' => $file_name_foto === null ? $request->foto_diri_old : '/assets/image/screening-indonesia/talent/backend/' . $file_name_foto,
+                'nama_panggilan' => $request->nama_panggilan,
+                'no_identitas' => $request->no_identitas,
+                'file_identitas' => $file_name_identitas === null ? $request->file_identitas_old : '/assets/image/screening-indonesia/talent/backend/' . $file_name_identitas,
+                'tempat_lahir' => $request->tempat_lahir,
+                'tgl_lahir' => $request->tanggal_lahir,
+                'no_hp' => $request->no_hp,
+                'status_pernikahan' => $request->status_pernikahan,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'agama' => $request->agama,
+                'provinsi' => $request->provinsi,
+                'kota_kabupaten' => $request->kota_kabupaten,
+                'file_cv' => $file_name_cv === null ? $request->file_cv_old : '/assets/image/screening-indonesia/talent/backend/' . $file_name_cv,
+                'tanggal_daftar' => $request->tanggal_daftar,
+                'status' => $request->status,
+                'ig' => $request->ig,
+                'linkin' => $request->linkin,
+                'twiter' => $request->twiter,
+                'tiktok' => $request->tiktok,
+                'id_user' => $request->id_user,
+                'updated_by'    => Auth::user()->id,
+            ];
         
-        $fieldUpdate = [
-            'nama_lengkap' => $request->nama_lengkap,
-            'foto_diri' => $file_name_foto === null ? $request->foto_diri_old : '/assets/image/screening-indonesia/talent/backend/' . $file_name_foto,
-            'nama_panggilan' => $request->nama_panggilan,
-            'no_identitas' => $request->no_identitas,
-            'file_identitas' => $file_name_identitas === null ? $request->file_identitas_old : '/assets/image/screening-indonesia/talent/backend/' . $file_name_identitas,
-            'tempat_lahir' => $request->tempat_lahir,
-            'tgl_lahir' => $request->tanggal_lahir,
-            'no_hp' => $request->no_hp,
-            'status_pernikahan' => $request->status_pernikahan,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'agama' => $request->agama,
-            'provinsi' => $request->provinsi,
-            'kota_kabupaten' => $request->kota_kabupaten,
-            'file_cv' => $file_name_cv === null ? $request->file_cv_old : '/assets/image/screening-indonesia/talent/backend/' . $file_name_cv,
-            'tanggal_daftar' => $request->tanggal_daftar,
-            'status' => $request->status,
-            'ig' => $request->ig,
-            'linkin' => $request->linkin,
-            'twiter' => $request->twiter,
-            'tiktok' => $request->tiktok,
-            'id_user' => $request->id_user,
-            'updated_by'    => Auth::user()->id,
-        ];
-      
-        $update = DB::table('talent')->where('id', $id)->update($fieldUpdate);
+            $update = DB::table('talent')->where('id', $id)->update($fieldUpdate);
 
-        return redirect()->route('talents.index')
-            ->with('success', self::$pageTitle.' updated successfully');
+            return redirect()->route('talents.index')
+                ->with('success', self::$pageTitle.' updated successfully');
+        }
     }
 
     public function destroy(Request $request, $id)

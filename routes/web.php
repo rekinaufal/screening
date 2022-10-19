@@ -92,7 +92,8 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);   
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');  
-Route::post('/register', [RegisterController::class, 'store']); 
+// Route::get('/registertalent', 'App\Http\Controllers\RegisterController@storeTalent');
+Route::post('/registertalent', [RegisterController::class, 'storeTalent']);
 
 Route::get('/admin', function(){
     return view ('admin.index');
