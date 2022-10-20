@@ -20,6 +20,13 @@ class ArticleController
         return view ('frontend.articles');
     }
 
+    public function indexEvent ()
+    {
+        // $Mempelai = Mempelai::all();
+        // $pageTitle = self::$pageTitle;
+        return view ('frontend.events');
+    }
+
     public function detail ($id)
     {
         $id = decrypt($id);

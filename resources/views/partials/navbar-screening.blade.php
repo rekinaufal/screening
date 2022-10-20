@@ -24,7 +24,13 @@
                                 <a class="chakra-link css-1wlo66z" href="{{ url('/our-team') }}">Our Team</a>
                             </div>
                             <div class="css-0">
-                                <a class="chakra-link css-1wlo66z" href="{{ url('/article') }}">Articles</a>
+                                <div class="dropdown">
+                                    <a class="chakra-link css-1wlo66z dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" id="dropdownMenuButton">Media</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="{{ url('/article') }}">Article</a>
+                                        <a class="dropdown-item" href="{{ url('/events') }}">Event</a>
+                                      </div>
+                                </div>
                             </div>
                             <div class="css-0">
                                 <a class="chakra-link css-1wlo66z" href="{{ url('/contact-us') }}">Contact</a>
