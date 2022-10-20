@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Province;
+use App\Models\Cities;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use DB ;
@@ -122,6 +124,9 @@ class UserController extends Controller
         // ->get();
         // dd($Profile);
         $pageTitle = self::$pageTitle;
-        return view ('user.profile', compact('pageTitle', 'Profile', 'Abouts', 'User'));
+        $list_provinces = Province::select("id", "name")->get();
+        $list_cities = Cities::select("id", "name")->where("province_id", $Profile->provinsi)->get();
+        
+        return view ('user.profile', compact('pageTitle', 'Profile', 'Abouts', 'User', 'list_provinces', 'list_cities'));
     }
 }

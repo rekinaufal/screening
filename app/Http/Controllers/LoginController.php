@@ -32,6 +32,28 @@ class LoginController extends Controller
         return view ('login.index', compact('pageTitle', 'bilangan1', 'bilangan2','rand_operator','Capctha','Hasil'));
     }
 
+    public function adminPanel() {
+        $operator  = array('+', '-');
+        $rand_operator = $operator[array_rand($operator, 1)];
+        $min_number = 1;
+        $max_number = 10;
+        $bilangan1 = mt_rand($min_number, $max_number);
+        $bilangan2 = mt_rand($min_number, $max_number);
+        if($bilangan1 < $bilangan2){
+            $bilangan1 = $bilangan2;
+            $bilangan2 = $bilangan1;
+        }
+        $Capctha = "$bilangan1 $rand_operator $bilangan2";
+        if($rand_operator == "+"){
+            $Hasil = $bilangan1 + $bilangan2;
+        }else{
+            $Hasil = $bilangan1 - $bilangan2;
+        }
+
+        $pageTitle = self::$pageTitle;
+        return view ('login.admin_panel', compact('pageTitle', 'bilangan1', 'bilangan2','rand_operator','Capctha','Hasil'));
+    }
+
     public function authenticate(Request $request){
         $request->validate([
             'email' => 'required|email:dns',
@@ -60,7 +82,7 @@ class LoginController extends Controller
                 $request->session()->put('name',$GetDataUserStatus['name']);
                 $request->session()->put('status',$GetDataUserStatus['status']);
                 // $request->session()->regenerate();
-                return redirect()->intended('/');
+                return redirect()->intended('/admin');
             }
         }else {
             if(Auth::attempt($credentials)){

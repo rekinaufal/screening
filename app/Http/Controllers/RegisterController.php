@@ -66,7 +66,7 @@ class RegisterController extends Controller
                         'email'         => $request->email,
                         'password'      => $validateData['password'],
                         'status'        => $request->status,
-                        'created_by'    => Auth::user()->id,
+                        'created_by'    => (Auth::user()) ? Auth::user()->id : null,
 
                     ]);
                     $email = $request->email;

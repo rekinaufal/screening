@@ -89,6 +89,7 @@ Route::get('/see-all-job', function () {
 // middleware > defaultnya itu /home, untuk mengubahnya (app/http/providers/routeservice) ganti /home
 // berikan name('login'), karna pada (app/http/middleware/authenticate) 'login', agar membaca route get/login itu namanya login   
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/admin_panel', [LoginController::class, 'adminPanel'])->name('login_admin')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);   
 Route::post('/logout', [LoginController::class, 'logout']);   
 
