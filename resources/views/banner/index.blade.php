@@ -1,8 +1,8 @@
 @extends('admin.index')
 @section('content')
 <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Data Our Clients</h6>
-    <a href="{{ route('our-clients.create') }}" class="btn btn-sm btn-primary">
+    <h6 class="m-0 font-weight-bold text-primary">Data Banner</h6>
+    <a href="{{ route('banners.create') }}" class="btn btn-sm btn-primary">
       <i class="fa fa-plus" style="color:white"></i>
     </a>
 </div>
@@ -11,32 +11,29 @@
         <table class="table table-bordered" id="dataTable" width="100%" >
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Text</th>
                     <th width="40%">Image</th>
-                    <th>Status</th>                    
-                    <th>Created By</th>                    
+                    <th>Status</th>               
                     <th width="10%">Action</th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
-                    <th>Name</th>
+                    <th>Text</th>
                     <th width="40%">Image</th>
-                    <th>Status</th>                    
-                    <th>Created By</th>                    
+                    <th>Status</th>                
                     <th width="10%">Action</th>
                 </tr>
             </tfoot>
             <tbody>
-            @foreach ($OurClient as $item)
+            @foreach ($Banner as $item)
                 <tr>
-                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->text }}</td>
                     <td><img src="{{ $item->image }}" width="40%"></td>
                     <td>{{ $item->status == 1 ? "Active" : "Not-Active" }}</td>
-                    <td>{{ $item->user->name ?? 'unknows' }}</td>
                     <td align="center"> 
-                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('our-clients.destroy', $item->id) }}" method="POST">
-                            <a href="{{ route('our-clients.edit', Crypt::encrypt($item->id)) }}" class="btn btn-sm btn-primary">
+                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('banners.destroy', $item->id) }}" method="POST">
+                            <a href="{{ route('banners.edit', Crypt::encrypt($item->id)) }}" class="btn btn-sm btn-primary">
                                 <i class="fa fa-edit" style="color:white"></i>
                             </a>
                             @csrf

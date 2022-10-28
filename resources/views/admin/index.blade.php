@@ -159,6 +159,30 @@
                 </a>
             </li>
 
+            <!-- Nav Item - Kategori -->
+            <li class="nav-item">
+                <a class="nav-link" href="/banners">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Banner</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Kategori -->
+            <li class="nav-item">
+                <a class="nav-link" href="/news">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>News</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Kategori -->
+            <li class="nav-item">
+                <a class="nav-link" href="/events">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Events</span>
+                </a>
+            </li>
+
             <!-- Nav Item - Galeri -->
             <!-- <li class="nav-item">
                 <a class="nav-link" href="/galeri">

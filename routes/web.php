@@ -136,6 +136,16 @@ Route::resource('jobs', 'App\Http\Controllers\JobsBackendController');
 Route::get('/talents', [TalentBackendController::class, 'index'])->name('talents.index');
 Route::get('/get-cities-by-province', 'App\Http\Controllers\TalentBackendController@getCitiesByProvince')->name('get-cities-by-province');
 Route::resource('talents', 'App\Http\Controllers\TalentBackendController');
+
+Route::get('/banners', [BannersBackendController::class, 'index'])->name('banners.index');
+Route::resource('banners', 'App\Http\Controllers\BannerBackendController');
+
+Route::get('/news', [NewsBackendController::class, 'index'])->name('news.index');
+Route::resource('news', 'App\Http\Controllers\NewsBackendController');
+
+Route::get('/events', [EventBackendController::class, 'index'])->name('events.index');
+Route::resource('events', 'App\Http\Controllers\EventBackendController');
+
 // END BACKEND
 
 Route::get('/mempelai', [MempelaiController::class, 'index'])->name('mempelai.index');
