@@ -23,6 +23,8 @@ use App\Http\Controllers\Frontend\CompanyController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\OurTeamController;
 use App\Http\Controllers\Frontend\JobfairController;
+use App\Http\Controllers\Frontend\ServiceEBCController;
+use App\Http\Controllers\Frontend\ServiceTSController;
 // END FRONTEND
 
 // STARTS BACKEND
@@ -61,6 +63,8 @@ use App\Models\User;
 // START FRONT END
 Route::get('/', [HomeController::class, 'index']); //->middleware('guest');  
 Route::get('/about-us', [AboutController::class, 'index']); //->middleware('guest');  
+Route::get('/services-ebc', [ServiceEBCController::class, 'index']); //->middleware('guest');  
+Route::get('/services-ts', [ServiceTSController::class, 'index']); //->middleware('guest');  
 Route::get('/article', [ArticleController::class, 'index']); //->middleware('guest');  
 Route::get('/events', [ArticleController::class, 'indexEvent']); //->middleware('guest');  
 Route::get('/company', [CompanyController::class, 'index']); //->middleware('guest');  
@@ -92,6 +96,8 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::get('/admin_panel', [LoginController::class, 'adminPanel'])->name('login_admin')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);   
 Route::post('/logout', [LoginController::class, 'logout']);   
+Route::resource('applied', 'App\Http\Controllers\AppliedController');
+
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');  
 // Route::get('/registertalent', 'App\Http\Controllers\RegisterController@storeTalent');
@@ -179,6 +185,9 @@ Route::get('/authors/{user}', function(User $user){
 });
 
 Route::group(['prefix' => 'api'], function () {
+    Route::get('getDataAppliedCompany', 'App\Http\Controllers\ApiController@getDataAppliedCompany')->name('DataAppliedCompany');
+    Route::get('getDataCompany', 'App\Http\Controllers\ApiController@getDataCompany')->name('DataCompany');
+    Route::get('getDataJobfair', 'App\Http\Controllers\ApiController@getDataJobfair')->name('DataJobfair');
     Route::get('getDataPria', 'App\Http\Controllers\ApiController@getDataPria')->name('DataPria');
     Route::get('getDataWanita', 'App\Http\Controllers\ApiController@getDataWanita')->name('DataWanita');
     Route::get('getDataTempatAcara', 'App\Http\Controllers\ApiController@getDataTempatAcara')->name('DataTempatAcara');

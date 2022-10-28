@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\About;
+use App\Models\Ourteam;
 
 
 class AboutController
@@ -14,8 +15,10 @@ class AboutController
     public function index ()
     {
         $About = About::all();
+        $Ourteam = Ourteam::all();
+
         $pageTitle = "About";
-        return view ('frontend.about', compact('pageTitle', 'About'));
+        return view ('frontend.about', compact('pageTitle', 'About', 'Ourteam'));
     }
 
 }

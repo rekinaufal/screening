@@ -32,11 +32,18 @@
     {{-- owlcarousel / slider --}}
     <link rel="stylesheet" href="{{ url('assets/owlcarousel/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ url('assets/owlcarousel/css/owl.theme.default.min.css') }}">
-  <!-- modal -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- banner slider -->
+    <link rel="stylesheet" href="{{ url('assets_banner/fonts/icomoon/style.css') }}">
+    <link rel="stylesheet" href="{{ url('assets_banner/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets_banner/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets_banner/css/style.css') }}">
+
+    <!-- modal -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   
 
 
@@ -89,29 +96,35 @@
         <div class="css-15x0zfb">
           <div class="chakra-stack css-q7ecfj">
             <h2 class="chakra-heading css-1gukj4y">Headquarter</h2>
-            <p class="chakra-text css-jneyc">Beltway Office Park Tower B, Level 5 Jl. Letjen. TB Simatupang No. 41 Jakarta Selatan 12550, Indonesia</p>
+            <p class="chakra-text css-jneyc"><b>SCREENING INDONESIA</b></p>
+            <p class="chakra-text css-jneyc">Beltway Office Park Tower B, Level 5 <br> Jl. Letjen. TB Simatupang No. 41 Jakarta Selatan 12550, Indonesia</p>
+            <iframe width="400" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=beltway%20office%20park%20-%20tower%20b&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
           </div>
           <div class="chakra-stack css-q7ecfj">
             <h2 class="chakra-heading css-1gukj4y">Contact Us</h2>
-            <p class="chakra-text css-jneyc">+ 62-21-2985-7266 <br>contactus@screeningindonesia.com </p>
+            <p class="chakra-text css-jneyc">Office Number : + 62-21-2985-7279 <br> Email : contactus@screeningindonesia.com </p>
+            <p class="chakra-text css-jneyc">Follow Us on Social Media <br> Instagram : @screeningindonesia <br> LinkedIn: SCREENING INDONESIA <br> YouTube: Screening Indonesia  </p>
           </div>
           <div class="chakra-stack css-q7ecfj">
-            <h2 class="chakra-heading css-1gukj4y">Recent Posts</h2>
+            <h2 class="chakra-heading css-1gukj4y">Upcoming Event</h2>
+            <p class="chakra-text css-jneyc">Virtual Global Job Fair 2022 <br> 9 September - 9 October 2022 <br> <a href="#"><< Visit >></a> </p>
+            <h2 class="chakra-heading css-1gukj4y">Latest Article</h2>
             <ul role="list" class="css-1uqk1hg">
               <li class="css-0">
-                <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">3 Basic Differences between Permanent and Contract Employments</a>
+                <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">- How To Basic Differences between Permanent and Contract Employments</a>
               </li>
               <li class="css-0">
-                <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">4 Most Popular Freelance Jobs</a>
+                <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">- Tips and Trick Most Popular Freelance Jobs</a>
               </li>
-              <li class="css-0">
+              <!-- <li class="css-0">
                 <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">4 Things To Do Before Having an Online Job Interview</a>
               </li>
               <li class="css-0">
                 <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">4 Time Management Tips for Employees</a>
-              </li>
+              </li> -->
               <li class="css-0">
-                <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">4 Tips to Use Office Facilities Wisely</a>
+                <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">- Tips and Trick to Use Office Facilities Wisely</a>
               </li>
             </ul>
           </div>
@@ -132,6 +145,13 @@
     {{-- carousel --}}
     <script src="{{ url('assets/owlcarousel/js/owl.carousel.min.js') }}"></script>
     {{-- <script src="{{ url('assets/screening-indonesia/js/react-refresh.js') }}"></script> --}}
+    <!-- js banner slider -->
+    <script src="{{ url('assets_banner/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url('assets_banner/js/popper.min.js') }}"></script>
+    <!-- js dibawah di command karna bentrok dengan dropdown -->
+    <!-- <script src="{{ url('assets_banner/js/bootstrap.min.js') }}"></script> --> 
+    <script src="{{ url('assets_banner/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url('assets_banner/js/main.js') }}"></script>
     <!-- untuk password visibility -->
     <script>
         function myFunction() {

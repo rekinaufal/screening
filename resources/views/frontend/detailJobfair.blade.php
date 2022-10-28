@@ -39,9 +39,13 @@
                             <form onsubmit="return confirm('Are You Sure ?');" action="{{ route('Applied!.Applied') }}" method="POST" class="btn-group" role="form" enctype="multipart/form-data">
                                 @csrf
                                 {{ method_field('PUT') }} 
-                                <input type="hidden" class="form-control" name="id_jobfair" value="{{ $Jobfair->id }}">
-                                <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:20px; width: 150px;">Apply</button>
-                                <!-- <a href="/register" class="btn btn-secondary mt-3 mr-3" style="background-color: rgb(33, 156, 189);">Register</a> -->
+                                <input type="hidden" class="form-control" name="id_jobfair" value="{{ $Jobfair->id_jobfair }}">
+                                @if ($Jobfair->status == 1)
+                                    <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:20px; width: 150px;">Apply</button>
+                                @else
+                                    <p class="chakra-button text-white" style="border-radius:20px; width: 150px; padding:9px; background-color: #dc3545;" align="center">Close</p>
+                                @endif
+                                    <!-- <a href="/register" class="btn btn-secondary mt-3 mr-3" style="background-color: rgb(33, 156, 189);">Register</a> -->
                             </form>
                         @endif
                     </div>

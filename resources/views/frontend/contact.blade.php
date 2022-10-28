@@ -9,7 +9,7 @@
 </div>
 <div class="chakra-container css-n759ug">
   <div class="css-fxrbma">
-    <div class="css-1nghwg2" style="height: 535px !important; max-height: 600px !important;">
+    <div class="css-1nghwg2 mb-5" style="height: 100% !important; max-height: 100% !important;">
       <h2 class="chakra-heading css-6oi6xv">CONTACT US</h2>
       <p class="chakra-text css-oi2svy">Please contact us using the information below. To locate contacts in the business office closent to you, visit our office websites.</p>
       <div class="chakra-stack css-1n8zje7">
@@ -43,13 +43,56 @@
             <p class="chakra-text css-35ezg3">contactus@screeningindonesia.com</p>
           </div>
         </div>
+        <iframe  style="height: 100% !important; max-height: 100% !important;width: 100% !important; max-width: 100% !important;" id="gmap_canvas" src="https://maps.google.com/maps?q=beltway%20office%20park%20-%20tower%20b&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
       </div>
+      
     </div>
-    <div class="css-oe84xm">
+    <!-- before -->
+    <!-- <div class="css-oe84xm">
       <div class="chakra-aspect-ratio css-1m7tg19">
         {{-- <iframe src="./Contact Us _ Screening Indonesia_files/embed.html" alt="Screening Indonesia"></iframe> --}}
         <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=beltway%20office%20park%20-%20tower%20b&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
       </div>
+    </div> -->
+    <div class="">
+        <div class="chakra-aspect-ratio"   align="center">
+            <h2 class="">Hi, I'm Citra</h2>
+            <p class="">Let me help you.</p>
+        </div>
+        <div style="background-color:white; border-radius:5px; border: 1px solid;">
+            <div class="card-body">
+                <p class="m-0 text-jobfair" style="font-size:18px; text-align: center">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" name="nama_lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="nama_panggilan" value="info@screeningindonesia.com" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Job Title</label>
+                        <input type="text" class="form-control" name="nama_panggilan">
+                    </div>
+                    <div class="form-group">
+                        <label>Company Name</label>
+                        <input type="text" class="form-control" name="nama_panggilan">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" class="form-control" name="nama_panggilan">
+                    </div> -->
+                    <!-- <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" class="form-control" name="nama_panggilan">
+                    </div> -->
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                </p>
+            </div>
+        </div>
     </div>
   </div>
 </div>

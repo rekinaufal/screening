@@ -40,6 +40,18 @@
         <form method="POST" action="{{ route('talents.update', $Profile->id) }}"  role="form" enctype="multipart/form-data">
             {{ method_field('PATCH') }}
             @csrf
+            <!-- alert -->
+                @if(Session::has('message'))
+                    <p class="alert {{ Session::get('alert-class', 'alert-info') }}" align="center">{{ Session::get('message') }}</p>
+                @endif
+                
+                @if(session()->has('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{ session('success') }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+            <!-- alert -->
             <div class="row">
                 <div class="col-md-3 border-right">
                     <div class="d-flex flex-column align-items-center text-center p-3 py-5">
@@ -81,7 +93,7 @@
                             </div> 
                             <div class="col-md-6">
                                 <label class="labels">Nomor Telephone</label>
-                                <input type="date"  name="no_hp" class="form-control" placeholder="Nomor Telephone" value="{{$Profile->no_hp}}">
+                                <input type="number"  name="no_hp" class="form-control" placeholder="Nomor Telephone" value="{{$Profile->no_hp}}" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;">
                             </div> 
                             <div class="col-md-6">
                                 <label class="labels">Status Pernikahan</label><br>
@@ -137,9 +149,11 @@
                                 <label class="labels">Provinsi:</label>
                                 <select class="form-control" name="provinsi" id="provinsi">
                                     <option value="">-- Select one --</option>
-                                    @foreach ($list_provinces as $item)
-                                        <option value="{{ $item->id }}" {{ $Profile->provinsi === $item->id ? "selected" : null }}>{{ $item->name }}</option>
-                                    @endforeach
+                                    @if(!empty($list_provinces))
+                                        @foreach ($list_provinces as $item)
+                                            <option value="{{ $item->id }}" {{ $Profile->provinsi === $item->id ? "selected" : null }}>{{ $item->name }}</option>
+                                        @endforeach
+                                    @endif
                                 </select>
                             </div> 
                             <div class="col-md-6">

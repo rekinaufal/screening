@@ -136,12 +136,12 @@
             </li>
 
             <!-- Nav Item - mempelai -->
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="/mempelai">
+            <li class="nav-item">
+                <a class="nav-link" href="/applied">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Mempelai</span>
+                    <span>Applied</span>
                 </a>
-            </li> -->
+            </li>
 
             <!-- Nav Item - Tempat Acara -->
             <!-- <li class="nav-item">
@@ -480,6 +480,84 @@
 
     <!-- Page level custom scripts -->
     {{-- <script src="{{ url('assets_BE/js/demo/datatables-demo.js') }}"></script> --}}
+
+    <script>
+    // get data detail applied percompany
+    $('body').on('click', '.pilih-appliedcompany', function() {
+        var val = $(this).data('id');
+        var APP_URL = {!! json_encode(url('/')) !!}
+        $("#exampleid").empty();
+        console.log(APP_URL);
+        $.ajax({
+        type: "get",
+        url: "{{ route('DataAppliedCompany') }}",
+        data: {
+            id: val
+        },
+        dataType: "json",
+            success: function (data) {
+                var no = 0;
+                console.log(data.data);
+                $.each(data.data, function(index, element) {
+                    no++;
+                    $("#exampleid").append("<tr >" + "<td>" + no + "." + "</td>" + "<td>" + element.name + "</td>" + "<td>" + "<a href='" + APP_URL + element.cv + "' target='_blank'>View CV</a>" + "</td>" + "</tr>"); 
+                    // $("#exampleid").append("<tr >" + "<td>" + no + "." + "</td>" + "<td>" + element.name_company + "</td>" + "<td>" + "<button class='btn btn-secondary pilih-jobfairdetail' data-user=" + element.id_user + " data-company=" + element.id_company + " type='button' data-toggle='modal' data-target='#getDataDetailApplied' data-dismiss='modal' style='background-color: rgb(33, 156, 189);'>Detail Applied</button>" + "</td>" + "</tr>"); 
+                });
+            }
+        });
+    })  
+    // get data company detail
+    $('body').on('click', '.pilih-companydetail', function() {
+        var val = $(this).data('id');
+        
+        $("#exampleid").empty();
+        console.log(val);
+        $.ajax({
+        type: "get",
+        url: "{{ route('DataCompany') }}",
+        data: {
+            id: val
+        },
+        dataType: "json",
+            success: function (data) {
+                var no = 0;
+                console.log(data.data);
+                $.each(data.data, function(index, element) {
+                    no++;
+                    $("#exampleid").append("<tr >" + "<td>" + no + "." + "</td>" + "<td>" + element.nama_perusahaan + "</td>" + "<td>" + "<button class='btn btn-secondary pilih-jobfairdetail' data-user=" + element.id_user + " data-company=" + element.id_company + " type='button' data-toggle='modal' data-target='#getDataDetailApplied' data-dismiss='modal' style='background-color: rgb(33, 156, 189);'>Detail Applied</button>" + "</td>" + "</tr>"); 
+                    // document.getElementById('result').append += '<td>'+ element.name_company +'</td>';
+                });
+            }
+        });
+    })  
+    // get data company detail
+    $('body').on('click', '.pilih-jobfairdetail', function() {
+        var valuser = $(this).data('user');
+        var valcompany = $(this).data('company');
+        
+        $("#detailjobfair").empty();
+        console.log(valuser);
+        console.log(valcompany);
+        $.ajax({
+        type: "get",
+        url: "{{ route('DataJobfair') }}",
+        data: {
+            id_user: valuser,
+            id_company: valcompany
+        },
+        dataType: "json",
+            success: function (data) {
+                console.log(data.data);
+                var no = 0;
+                $.each(data.data, function(index, element) {
+                    no++;
+                    $("#detailjobfair").append("<tr>" + "<td>" + no + "." + "</td>" + "<td>" + element.nama_perusahaan + "</td>" + "<td>" + element.position + "</td>" + "</tr>"); 
+                    // document.getElementById('result').append += '<td>'+ element.name_company +'</td>';
+                });
+            }
+        });
+    })  
+</script>
     <!-- Ajax get data pria dan wanita -->
     <script>
       $('body').on('click', '.pilih-pria', function() {

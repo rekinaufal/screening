@@ -58,7 +58,7 @@
                     </div>
                     <div class="form-group">
                         <label>Sallary</label>
-                        <input type="text" class="form-control" name="sallary">
+                        <input type="text" class="form-control" name="sallary" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;">
                     </div>
                     <div class="form-group">
                         <label for="sel1">Status:</label>

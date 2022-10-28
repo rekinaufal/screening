@@ -12,21 +12,15 @@
 <div class="chakra-container css-n759ug mb-6">
     <div class="row mb-2 justify-content-center">
         <div class="col-md-6 target">
-            {{-- <a href="{{ route('detailJobfair.jobfairDetail', Crypt::encrypt($item->id)) }}" class="col-md-3 mb-3" style="text-decoration: none;"> --}}
               <div style="background-color:white; border-radius:5px; border: 1px solid;">
                 <div class="card-body">
-                  <div class="d-flex justify-content-center w-100 mb-4">
-                      {{-- <img src="{{ $Company->logo }}" height="150" width="190"> --}}
-                  </div>
                   <p class="m-0 text-jobfair" style="font-size:18px; text-align: center">
                     Virtual Global Job Fair 2022<br>
                     <b>9 September - 9 October 2022</b><br><br>
                     <a href="#"><< Join Now >></a><br><br>
                   </p>
-                  {{-- <p></p> --}}
                 </div>
               </div>
-            {{-- </a> --}}
         </div>
     </div>
 </div>
