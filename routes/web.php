@@ -66,7 +66,7 @@ Route::get('/about-us', [AboutController::class, 'index']); //->middleware('gues
 Route::get('/services-ebc', [ServiceEBCController::class, 'index']); //->middleware('guest');  
 Route::get('/services-ts', [ServiceTSController::class, 'index']); //->middleware('guest');  
 Route::get('/article', [ArticleController::class, 'index']); //->middleware('guest');  
-Route::get('/events', [ArticleController::class, 'indexEvent']); //->middleware('guest');  
+Route::get('/event', [ArticleController::class, 'indexEvent']); //->middleware('guest');  
 Route::get('/company', [CompanyController::class, 'index']); //->middleware('guest');  
 Route::get('/contact-us', [ContactUsController::class, 'index']); //->middleware('guest');  
 Route::get('/our-team', [OurTeamController::class, 'index']); //->middleware('guest'); 
