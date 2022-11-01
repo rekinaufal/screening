@@ -17,6 +17,7 @@ class Article extends Model
     protected $fillable = [
         'id',
         'id_categories',
+        'image',
         'title',
         'description',
         'status',
@@ -33,7 +34,7 @@ class Article extends Model
 
     public function categories()
     {    
-        return $this->belongsTo('App\Models\categories', 'id_categories', 'id');
+        return $this->belongsTo('App\Models\Categories', 'id_categories', 'id');
     }
 
 }

@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Mempelai;
-use App\Models\Pria;
-use App\Models\Wanita;
-use App\Models\TempatAcara;
+use App\Models\Events;
+use App\Models\Article;
+use DB;
 
 class ArticleController
 {
@@ -15,23 +14,24 @@ class ArticleController
     
     public function index ()
     {
-        // $Mempelai = Mempelai::all();
-        // $pageTitle = self::$pageTitle;
-        return view ('frontend.articles');
+        $Article = Article::all();
+        return view ('frontend.articles', compact('Article'));
     }
 
     public function indexEvent ()
     {
-        // $Mempelai = Mempelai::all();
+        // $Events = Events::all();
         // $pageTitle = self::$pageTitle;
-        return view ('frontend.events');
+        $Events = DB::table('events')->first();
+        return view ('frontend.events', compact ('Events'));
     }
 
     public function detail ($id)
     {
         $id = decrypt($id);
-        // $Mempelai = Mempelai::all();
-        // $pageTitle = self::$pageTitle;
-        return view ('frontend.detailArticle');
+        $Article = DB::table('article')
+        ->where('id',$id)
+        ->first();
+        return view ('frontend.detailArticle', compact ('Article'));
     }
 }

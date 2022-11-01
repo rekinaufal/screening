@@ -16,8 +16,8 @@
                 <tr>
                     <th>No</th>
                     <th>Category</th>
+                    <th width="40%">Image</th>
                     <th>Title</th>
-                    <th>Description</th>
                     <th>Created By</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -27,8 +27,8 @@
                 <tr>
                     <th>No</th>
                     <th>Category</th>
+                    <th width="40%">Image</th>
                     <th>Title</th>
-                    <th>Description</th>
                     <th>Created By</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -41,8 +41,8 @@
                 <tr>
                     <td>{{$no}}</td>
                     <td>{{ $item->categories->name ?? 'unknows' }}</td>
+                    <td><img src="{{ $item->image }}" width="40%"></td>
                     <td>{{ $item->title }}</td>
-                    <td>{!! $item->description !!}</td>
                     <td>{{ $item->user->name ?? 'unknows' }}</td>
                     <td>
                         <?php if ( $item->status == 1) {?>

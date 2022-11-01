@@ -27,8 +27,7 @@ class ArticleBackendController extends Controller
 
     public function create()
     {
-        $Categories = DB::table('categories')
-        ->get();
+        $Categories = DB::table('categories')->get();
         $pageTitle = self::$pageTitle;
         return view('articles.create', compact('pageTitle', 'Categories'));
     }
@@ -40,14 +39,31 @@ class ArticleBackendController extends Controller
             Session::flash('alert-class', 'alert-danger'); 
             return redirect('/login');
         }
-        $Article = Article::create([
-            'id_categories' => $request->id_categories,
-            'title' => $request->title,
-            'description' => $request->description,
-            'status' => 1,
-            'created_by' =>  Auth::user()->id,
-        ]);
-      
+
+        if(!empty($_FILES['image']['name'])) {
+            $request->hasFile('image');
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            $file_name = Str::random(30) . '_' . $name;
+            $file->move(base_path() . '/public/assets/image/screening-indonesia/article/backend', $file_name);
+            $Article = Article::create([
+                'id_categories' => $request->id_categories,
+                'image' => '/assets/image/screening-indonesia/article/backend/' . $file_name,
+                'title' => $request->title,
+                'description' => $request->description,
+                'status' => 1,
+                'created_by' =>  Auth::user()->id,
+            ]);
+        }else{
+            $Article = Article::create([
+                'id_categories' => $request->id_categories,
+                'title' => $request->title,
+                'description' => $request->description,
+                'status' => 1,
+                'created_by' =>  Auth::user()->id,
+            ]);
+        }
+     
 
         return redirect()->route('articles.index')
             ->with('success', 'Article created successfully.');
@@ -64,6 +80,7 @@ class ArticleBackendController extends Controller
     public function edit($id)
     {
         $Article = Article::find($id);
+        $Categories = DB::table('categories')->get();
         $pageTitle = self::$pageTitle;
         // $pageBreadcrumbs = self::$pageBreadcrumbs;
         // $pageBreadcrumbs[] = [
@@ -71,7 +88,7 @@ class ArticleBackendController extends Controller
         //     'title' => 'Update '.self::$pageTitle,
         // ];
 
-        return view('articles.edit', compact('Article', 'pageTitle'));
+        return view('articles.edit', compact('Article', 'pageTitle', 'Categories'));
     }
 
     public function update(Request $request, $id)
@@ -87,11 +104,11 @@ class ArticleBackendController extends Controller
             $file = $request->file('image');
             $name = $file->getClientOriginalName();
             $file_name = Str::random(30) . '_' . $name;
-            $file->move(base_path() . '/public/assets/image/screening-indonesia/about/backend', $file_name);
+            $file->move(base_path() . '/public/assets/image/screening-indonesia/article/backend', $file_name);
             
             $fieldUpdate = [
                 'title'         => $request->input('title'),
-                'image'         => '/assets/image/screening-indonesia/about/backend/' . $file_name,
+                'image'         => '/assets/image/screening-indonesia/article/backend/' . $file_name,
                 'description'   => $request->input('description'),
                 'updated_by'    => Auth::user()->id,
             ];
@@ -103,19 +120,19 @@ class ArticleBackendController extends Controller
             ];
         }
       
-        $update = DB::table('about')->where('id', $id)->update($fieldUpdate);
+        $update = DB::table('article')->where('id', $id)->update($fieldUpdate);
 
-        return redirect()->route('about.index')
+        return redirect()->route('articles.index')
             ->with('success', self::$pageTitle.' updated successfully');
     }
 
     public function destroy(Request $request, $id)
     {
         // delete file foto  
-        $gambarold = About::find($id);
+        $gambarold = Article::find($id);
         File::delete(base_path() . '/public' . $gambarold->image); //hapus foto old
 
-        $About = About::find($id)->delete();
+        $Article = Article::find($id)->delete();
 
         if ($request->ajax()) {
             return response()->json([
@@ -125,7 +142,7 @@ class ArticleBackendController extends Controller
             ], 200);
         }
 
-        return redirect()->route('about.index')
+        return redirect()->route('articles.index')
             ->with('success', self::$pageTitle.' deleted successfully');
     }
 }

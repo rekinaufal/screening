@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\About;
 use App\Models\Ourteam;
-
+use DB;
 
 class AboutController
 {
@@ -14,7 +14,8 @@ class AboutController
     
     public function index ()
     {
-        $About = About::all();
+        // $About = About::all();
+        $About = DB::table('about')->first();
         $Ourteam = Ourteam::all();
 
         $pageTitle = "About";

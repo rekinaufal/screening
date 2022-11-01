@@ -10,15 +10,15 @@
 </style>
 <div class="chakra-container css-urehj3">
     <!-- banner slider -->
-    <div class="owl-carousel owl-1">
+    <div class="owl-carousel owl-1 ScreenHeight">
         <div>
-            <img src="{{ url('assets_banner/images/hero_1.jpg')}}" alt="Image" class="img-fluid">
+            <img src="{{ url('assets_banner/images/hero_1.jpg')}}" alt="Image">
             <div class="centered">
                 <h2 class="chakra-heading css-15e7php text-white">Managing Risk in Hiring Process</h2>
             </div>
         </div>        
         <div>
-            <img src="{{ url('assets_banner/images/hero_2.jpg')}}" alt="Image" class="img-fluid">
+            <img src="{{ url('assets_banner/images/hero_2.jpg')}}" alt="Image">
             <div class="centered">
                 <h2 class="chakra-heading css-15e7php text-white"><b>Employee Background Check</b></h2>
                 <h2 class="chakra-heading css-15e7php text-white">Reveals important information about Candidate’s prior behavior which can help an employer to assess potential risks posed by the Candidate.</h2>
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div>
-            <img src="{{ url('assets_banner/images/hero_3.jpg')}}" alt="Image" class="img-fluid">
+            <img src="{{ url('assets_banner/images/hero_3.jpg')}}" alt="Image">
             <div class="centered">
                 <h2 class="chakra-heading css-15e7php text-white"><b>Talent Search</b></h2>
                 <h2 class="chakra-heading css-15e7php text-white">Find your best talent with us!</h2>
@@ -34,7 +34,7 @@
             </div>
         </div>    
         <div>
-            <img src="{{ url('assets_banner/images/hero_2.jpg')}}" alt="Image" class="img-fluid">
+            <img src="{{ url('assets_banner/images/hero_2.jpg')}}" alt="Image">
             <div class="centered">
                 <h2 class="chakra-heading css-15e7php text-white"><b>Virtual Global Job Fair 2022</b></h2>
                 <h2 class="chakra-heading css-15e7php text-white">.. November - .. Desember 2022 </h2>
@@ -43,11 +43,13 @@
         </div>
     </div>
     <!-- banner slider -->
+    
+    <!-- top 10 -->
     <div class="css-qnwxch">
         <div class="chakra-stack css-rwa119">
             <!-- <h2 class="chakra-heading css-19etn4f">MANAGING RISKS IN HIRING PROCESS</h2> -->
             <h2 class="chakra-heading css-19etn4f">Top 10 Pre-Employment Screening Company</h2>
-            <p class="chakra-text css-0 text-white"><b>in Asia Pacific by Manage HR</b></p>
+            <h2 class="chakra-text css-0 text-white"><b>in Asia Pacific by Manage HR</b></h2>
             <!-- <p class="chakra-text css-0">Creating a Healthy Workplace Environment for Your Employees with Better Quality of Hires!</p> -->
             <!-- <button type="button" class="chakra-button css-1qk6nn0">Learn More</button> -->
         </div>
@@ -58,6 +60,7 @@
             </div>
         </div>
     </div>
+    <!-- top 10 -->
 </div>
 
 <!-- kakek Warren Buffet -->
@@ -172,7 +175,7 @@
 <!-- our client -->
 <div class="chakra-container css-1708512">
     <div class="css-1u1s7a2 mb-4">
-        <h2 class="chakra-heading"><b>Our Clients</b></h2>
+        <h2 class="chakra-heading"><b>OUR CLIENTS</b></h2>
     </div>
     {{-- slider 2 --}}
     <div class="mb-4">
@@ -385,4 +388,14 @@
 </div>
 <!-- news -->
 
+@endsection
+@section('javascript')
+<script type="text/javascript">
+    var nodes = document.getElementsByClassName('ScreenHeight');
+    var height = screen.height - 164;
+    console.log(height);
+    // nodes[0].style.height = + height + "px";
+//     document.write("Lebar: "+screen.width+"px<br />");
+// document.write("Tinggi: "+screen.height+"px");
+</script> 
 @endsection

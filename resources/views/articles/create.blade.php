@@ -8,10 +8,16 @@
                 <label for="sel1">Select list:</label>
                 <select class="form-control selectpicker" data-control="select2" data-live-search="true" name="id_categories" required>
                     <option value = "">-- Select one --</option>
-                    @foreach ($Categories as $key => $value)
-                        <option value="{{ $value->id }}">{{ $value->name }}</option>
-                    @endforeach
+                    @if (!empty($Categories))
+                        @foreach ($Categories as $key => $value)
+                            <option value="{{ $value->id }}">{{ $value->name }}</option>
+                        @endforeach
+                    @endif
                 </select>
+            </div>
+            <div class="form-group mt-3">
+                <label>Image</label>
+                <input type="file" class="form-control" name="image">
             </div>
             <div class="form-group">
                 <label">Title</label>

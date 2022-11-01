@@ -10,8 +10,18 @@
           <label for="sel1">Select list:</label>
           <select class="form-control selectpicker" data-control="select2" data-live-search="true" name="id_category" required>
             <option data-tokens="" value = "">-- Select one --</option>
+            @if (!empty($Categories))
+              @foreach ($Categories as $key => $value)
+                <option value="{{ $value->id }}">{{ $value->name }}</option>
+              @endforeach
+            @endif
             </select>
-
+        </div>
+        <div class="form-group">
+            <label">Image</label><br>
+            <img src="{{$Article->image}}" width="80%" class="img-thumbnail" alt="image">
+            <input type="hidden" class="form-control" name="imageold" value="{{$Article->image}}">
+            <input type="file" class="form-control" name="image" value="">
         </div>
         <div class="form-group">
           <label">Title</label>
