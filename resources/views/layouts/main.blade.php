@@ -59,33 +59,14 @@
         line-height: var(--chakra-lineHeights-base);
       }
 
+      .dropdown:hover .dropdown-menu {
+          display: block;
+          margin-top: 0; // remove the gap so it doesn't close
+      }
     </style>
-
     <title>Screening Indonesia</title>
   </head>
   <body style="background-color:#fff" class="chakra-ui-light">
-    {{-- <script id="chakra-script">
-      !(function() {
-        try {
-          var a = function(c) {
-              var v = "(prefers-color-scheme: dark)",
-                h = window.matchMedia(v).matches ? "dark" : "light",
-                r = c === "system" ? h : c,
-                o = document.documentElement,
-                s = document.body,
-                l = "chakra-ui-light",
-                d = "chakra-ui-dark",
-                i = r === "dark";
-              return s.classList.add(i ? d : l), s.classList.remove(i ? l : d), o.style.colorScheme = r, o.dataset.theme = r, r
-            },
-            n = a,
-            m = "light",
-            e = "chakra-ui-color-mode",
-            t = localStorage.getItem(e);
-          t ? a(t) : localStorage.setItem(e, a(m))
-        } catch (a) {}
-      })();
-    </script> --}}
     <div id="__next">
       {{-- include navbar --}}
       @include('partials.navbar-screening')

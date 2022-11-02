@@ -1,4 +1,4 @@
-<div class="chakra-container css-n759ug">
+<div class="chakra-container">
     <div class="css-0">
         <div class="css-1pcjyb5" style="display: none">
                 <div class="css-1twb9xo">
@@ -188,18 +188,20 @@
                                 </div>
                             </div> -->
                             
-                            <div class="chakra-stack css-uiyb8i">
-                                <a class="chakra-link css-1wlo66z dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" id="dropdownMenuButton">Media</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li>
-                                        <a class="dropdown-item" href="{{ url('/article') }}">Article</a>
-                                    </li>
-                                    <li><hr class="dropdown-divider">
-                                        <a class="dropdown-item" href="{{ url('/event') }}">Event</a>
-                                    </li>
-                                </ul>
+                            <div class="chakra-stack css-uiyb8i dropdown">
+                                <!-- <li class="dropdown"> -->
+                                    <a class="chakra-link css-1wlo66z dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" id="dropdownMenuButton">Media</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li>
+                                            <a class="dropdown-item" href="{{ url('/article') }}">Article</a>
+                                        </li>
+                                        <li><hr class="dropdown-divider">
+                                            <a class="dropdown-item" href="{{ url('/event') }}">Event</a>
+                                        </li>
+                                    </ul>
+                                <!-- </li> -->
                             </div>
-                            <div class="chakra-stack css-uiyb8i">
+                            <div class="chakra-stack css-uiyb8i dropdown">
                                 <a class="chakra-link css-1wlo66z dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" id="dropdownMenuButton">Services</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>

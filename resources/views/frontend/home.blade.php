@@ -373,18 +373,21 @@
     <h2 class="chakra-heading"><b>NEWS</b></h2>
 </div>
 <div class="css-5s906p">
-    <div class="chakra-stack space-y-2 css-1650n67">
-        <p class="chakra-text css-1kvpa7a">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe adipisci aspernatur fugiat architecto, inventore ratione nostrum quasi, enim, tenetur iusto cupiditate consectetur! Itaque, ipsa natus non exercitationem iusto suscipit delectus?</p>
-        <button type="button" class="chakra-button css-nu2dlx">Read More</button>
-    </div>
-    <div class="chakra-stack space-y-2 css-1650n67">
-        <p class="chakra-text css-1kvpa7a">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quisquam et, atque adipisci dolorem architecto distinctio facilis, molestiae cum nemo deleniti maxime numquam tempore totam ea culpa odit accusamus. Pariatur.</p>
-        <button type="button" class="chakra-button css-nu2dlx">Read More</button>
-    </div>
-    <div class="chakra-stack space-y-2 css-1650n67">
-        <p class="chakra-text css-1kvpa7a">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat neque placeat ipsum vel ad, excepturi molestiae dignissimos dolorem maxime est consequuntur eveniet cumque nesciunt autem corrupti culpa, dolore consectetur ullam!</p>
-        <button type="button" class="chakra-button css-nu2dlx">Read More</button>
-    </div>
+    @if(!empty($News))
+        @foreach ($News as $item)
+            <div class="chakra-stack space-y-2 css-1650n67">
+                <div class="text-white">
+                    <?php $jumlah_karakter =strlen($item->text); ?>
+                    @if ($jumlah_karakter > 250)
+                        {!! substr(strip_tags( $item->text), 0, 250) !!} ...
+                    @else
+                        {!! substr(strip_tags( $item->text), 0, 250) !!}
+                    @endif
+                </div>
+                <button type="button" class="chakra-button css-nu2dlx">Read More</button>
+            </div>
+        @endforeach
+    @endif
 </div>
 <!-- news -->
 
