@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\About;
 use App\Models\Ourteam;
+use DB;
 
 
 class ServiceEBCController
@@ -16,9 +17,11 @@ class ServiceEBCController
     {
         $About = About::all();
         $Ourteam = Ourteam::all();
+        $Article = DB::table('article')->limit(5)->get();
+        $Events = DB::table('events')->first();
 
         $pageTitle = "About";
-        return view ('frontend.serviceEBC', compact('pageTitle', 'About', 'Ourteam'));
+        return view ('frontend.serviceEBC', compact('pageTitle', 'About', 'Ourteam', 'Events', 'Article'));
     }
 
 }

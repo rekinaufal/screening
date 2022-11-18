@@ -41,7 +41,7 @@
                                     <p><h3> {{$item->name}}</h3></p>
                                     <p><h6> {{$item->position}}</h6></p>
                                     <hr>
-                                    <p maxresults="10">{!! $item->description !!}</p>
+                                    <p maxresults="10" style="text-align:justify; text-justify:inter-word;">{!! $item->description !!}</p>
                                 </div>
                                 <div class="col-4">
                                     <img src="{{ url('assets/images/screening-indonesia/our-team/logolci.png') }}" style="position: absolute; opacity:0.25;width:90%;">

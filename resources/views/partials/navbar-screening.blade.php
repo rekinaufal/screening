@@ -1,4 +1,4 @@
-<div class="chakra-container">
+<div class="chakra-container css-n759ug">
     <div class="css-0">
         <div class="css-1pcjyb5" style="display: none">
                 <div class="css-1twb9xo">
@@ -72,7 +72,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="" style=" opacity: 0; height: 0px;">
+                {{-- gatau ini kenapa ada menu lagi disini, dimatiin karna ga berfungsi juga --}}
+                {{-- <div class="" style=" opacity: 0; height: 0px;">
                     <div class="chakra-stack css-1lgh1g">
                         <div class="chakra-stack css-egoftb">
                             <a class="chakra-link css-wnxme9" href="{{ url('/') }}">
@@ -152,7 +153,7 @@
                             </button>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="css-1pcjyb5">
@@ -170,10 +171,10 @@
                     <div class="css-1f2x772">
                         <div class="chakra-stack css-a9v878">
                             <div class="css-0">
-                                <a class="chakra-link css-17x1qst" href="{{ url('/') }}">Home</a>
+                                <a class="chakra-link css-17x1qst {{ (request()->is('/')) ? 'navactive' : '' }}" href="{{ url('/') }}">Home</a>
                             </div>
                             <div class="css-0">
-                                <a class="chakra-link css-1wlo66z" href="{{ url('/about-us') }}">About</a>
+                                <a class="chakra-link css-1wlo66z {{ (request()->is('about-us')) ? 'navactive' : '' }}" href="{{ url('/about-us') }}">About</a>
                             </div>
                             <!-- <div class="css-0">
                                 <a class="chakra-link css-1wlo66z" href="{{ url('/our-team') }}">Our Team</a>
@@ -190,7 +191,8 @@
                             
                             <div class="chakra-stack css-uiyb8i dropdown">
                                 <!-- <li class="dropdown"> -->
-                                    <a class="chakra-link css-1wlo66z dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" id="dropdownMenuButton">Media</a>
+                                    {{-- <a class="chakra-link css-1wlo66z dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" id="dropdownMenuButton">Media</a> --}}
+                                    <a class="chakra-link css-1wlo66z {{ (request()->is('article')) ? 'navactive' : '' }} {{ (request()->is('event')) ? 'navactive' : '' }} {{ (request()->segment(1) == 'article') ? 'navactive' : '' }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" id="dropdownMenuButton">Media</a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li>
                                             <a class="dropdown-item" href="{{ url('/article') }}">Article</a>
@@ -202,7 +204,7 @@
                                 <!-- </li> -->
                             </div>
                             <div class="chakra-stack css-uiyb8i dropdown">
-                                <a class="chakra-link css-1wlo66z dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" id="dropdownMenuButton">Services</a>
+                                <a class="chakra-link css-1wlo66z {{ (request()->is('services-ebc')) ? 'navactive' : '' }} {{ (request()->is('services-ts')) ? 'navactive' : '' }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" id="dropdownMenuButton">Services</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
                                         <a class="dropdown-item" href="{{ url('/services-ebc') }}">Employee Background Check</a>
@@ -213,10 +215,10 @@
                                 </ul>
                             </div>
                             <div class="css-0">
-                                <a class="chakra-link css-1wlo66z" href="{{ url('/contact-us') }}">Contact</a>
+                                <a class="chakra-link css-1wlo66z {{ (request()->is('contact-us')) ? 'navactive' : '' }}" href="{{ url('/contact-us') }}">Contact</a>
                             </div>
                             <div class="css-0">
-                                <a class="chakra-link css-1wlo66z" href="{{ url('/company') }}">Job Fair</a>
+                                <a class="chakra-link css-1wlo66z {{ (request()->is('company')) ? 'navactive' : '' }} {{ (request()->segment(1) == 'company') ? 'navactive' : '' }} {{ (request()->segment(1) == 'detailJobfair') ? 'navactive' : '' }}" href="{{ url('/company') }}">Job Fair</a>
                             </div>
                             <!-- <div class="css-0">
                                 <a class="chakra-link css-1wlo66z" href="{{ url('/company') }}">Company</a>
@@ -267,7 +269,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="chakra-stack css-uiyb8i">
+                <div class="chakra-stack css-uiyb8i dropdown">
                     @auth
                         <!-- <li class="nav-item dropdown"> -->
                             <a class="nav-link dropdown-toggle text-jobfair" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -288,7 +290,7 @@
                             </ul>
                         <!-- </li> -->
                     @else
-                        <a class="chakra-button css-1fwz9f4" href="/login">Sign In</a>
+                        <a class="chakra-button css-1fwz9f4" href="/login" style="border-radius:20px;">Sign In</a>
                         <!-- <li class="nav-item">
                             <a class="nav-link smooth-scroll text-white" href="/register">Registrasi</a>
                         </li> -->

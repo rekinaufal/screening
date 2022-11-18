@@ -70,126 +70,122 @@
             <div class="sidebar-heading">
                 Addons
             </div>
+            
+            <?php $status =  Session::get('status') ?>
+            @if ($status == 'Admin')
+                <!-- Nav Item - Users -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/user">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Users -->
-            <li class="nav-item">
-                <a class="nav-link" href="/user">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Users</span>
-                </a>
-            </li>
+                <!-- Nav Item - About -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>About</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - About -->
-            <li class="nav-item">
-                <a class="nav-link" href="/about">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>About</span>
-                </a>
-            </li>
+                <!-- Nav Item - Ourteam -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/ourteam">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Our Team</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Ourteam -->
-            <li class="nav-item">
-                <a class="nav-link" href="/ourteam">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Our Team</span>
-                </a>
-            </li>
+                <!-- Nav Item - Our Client -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/our-clients">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Our Clients</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Our Client -->
-            <li class="nav-item">
-                <a class="nav-link" href="/our-clients">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Our Clients</span>
-                </a>
-            </li>
+                <!-- Nav Item - Company -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/companies">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Company</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Company -->
-            <li class="nav-item">
-                <a class="nav-link" href="/companies">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Company</span>
-                </a>
-            </li>
+                <!-- Nav Item - Jobs -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/jobs">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Jobs</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Jobs -->
-            <li class="nav-item">
-                <a class="nav-link" href="/jobs">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Jobs</span>
-                </a>
-            </li>
+                <!-- Nav Item - Talents -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/talents">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Talents</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Talents -->
-            <li class="nav-item">
-                <a class="nav-link" href="/talents">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Talents</span>
-                </a>
-            </li>
+                <!-- Nav Item - Articles -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/articles">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Articles</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Wanita -->
-            <li class="nav-item">
-                <a class="nav-link" href="/articles">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Articles</span>
-                </a>
-            </li>
+                <!-- Nav Item - Applied -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/applied">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Applied</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - mempelai -->
-            <li class="nav-item">
-                <a class="nav-link" href="/applied">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Applied</span>
-                </a>
-            </li>
+                <!-- Nav Item - Kategori -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/kategori">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Kategori</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Tempat Acara -->
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="/tempatacara">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tempat Acara</span>
-                </a>
-            </li> -->
+                <!-- Nav Item - Banner -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/banners">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Banner</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Kategori -->
-            <li class="nav-item">
-                <a class="nav-link" href="/kategori">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Kategori</span>
-                </a>
-            </li>
+                <!-- Nav Item - News -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/news">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>News</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Kategori -->
-            <li class="nav-item">
-                <a class="nav-link" href="/banners">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Banner</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Kategori -->
-            <li class="nav-item">
-                <a class="nav-link" href="/news">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>News</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Kategori -->
-            <li class="nav-item">
-                <a class="nav-link" href="/events">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Events</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Galeri -->
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="/galeri">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Galeri</span></a>
-            </li> -->
-
+                <!-- Nav Item - Events -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/events">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Events</span>
+                    </a>
+                </li>
+            @elseif ($status == 'Company')
+                <!-- Nav Item - Company -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/companies">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Company</span>
+                    </a>
+                </li>            
+            @else
+            @endif
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -221,9 +217,8 @@
                   </button>
 
                   <!-- Topbar Search -->
-                  <form
-                      class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                      <div class="input-group">
+                  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                      {{-- <div class="input-group">
                           <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                               aria-label="Search" aria-describedby="basic-addon2">
                           <div class="input-group-append">
@@ -231,7 +226,7 @@
                                   <i class="fas fa-search fa-sm"></i>
                               </button>
                           </div>
-                      </div>
+                      </div> --}}
                   </form>
 
                   <!-- Topbar Navbar -->
@@ -263,12 +258,12 @@
 
                       <!-- Nav Item - Alerts -->
                       <li class="nav-item dropdown no-arrow mx-1">
-                          <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                          {{-- <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               <i class="fas fa-bell fa-fw"></i>
                               <!-- Counter - Alerts -->
                               <span class="badge badge-danger badge-counter">3+</span>
-                          </a>
+                          </a> --}}
                           <!-- Dropdown - Alerts -->
                           <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                               aria-labelledby="alertsDropdown">
@@ -314,12 +309,12 @@
 
                       <!-- Nav Item - Messages -->
                       <li class="nav-item dropdown no-arrow mx-1">
-                          <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                          {{-- <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               <i class="fas fa-envelope fa-fw"></i>
                               <!-- Counter - Messages -->
                               <span class="badge badge-danger badge-counter">7</span>
-                          </a>
+                          </a> --}}
                           <!-- Dropdown - Messages -->
                           <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                               aria-labelledby="messagesDropdown">
@@ -393,14 +388,14 @@
                           <!-- Dropdown - User Information -->
                           <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                               aria-labelledby="userDropdown">
-                              <a class="dropdown-item" href="#">
+                              {{-- <a class="dropdown-item" href="#">
                                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                   Profile
                               </a>
                               <a class="dropdown-item" href="#">
                                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                   Settings
-                              </a>
+                              </a> --}}
                               <a class="dropdown-item" href="{{ url('/') }}">
                                   <i class="fas fa-arrow-left fa-sm fa-fw mr-2 text-gray-400"></i>
                                   Back To Header

@@ -24,7 +24,8 @@
                 <div class="row mb-3 px-3 mt-4" style="justify-content: center;">
                     <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:100px; width: 100px;" onclick="registtalent()">Talent</button>
                     <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:100px; width: 100px;" onclick="registcompany()">Company</button>
-                </div>  
+                </div>
+                {{-- form register talent --}}
                 <div id="registtalent">
                     <h1 class="h3 mb-3 fw-normal text-center">Registrasi Form Talent</h1>
                     <form action="/registertalent" method="post" role="form" enctype="multipart/form-data">
@@ -63,24 +64,26 @@
                         <button class="w-100 chakra-button css-1fwz9f4 mt-3 text-white" type="submit">Register</button>
                     </form>
                 </div>
+                {{-- form register talent --}}
+                {{-- form register company --}}
                 <div id="registcompany" style="display:none;">
                     <h1 class="h3 mb-3 fw-normal text-center">Registrasi Form Company</h1>
-                    <form action="/register1" method="post" role="form" enctype="multipart/form-data">
+                    <form action="/registercompany" method="post" role="form" enctype="multipart/form-data">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control rounded-top" name="n1ame" id="nama" placeholder="Nama" required value="">
+                            <input type="text" class="form-control rounded-top" name="nama" id="nama" placeholder="Nama" required>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" name="ema1il" id="email" placeholder="Email" required>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control rounded-button" name="pa1ssword" id="password" placeholder="Password" required>
+                            <input type="password" class="form-control rounded-button" name="password" id="password" placeholder="Password" required>
                         </div>
                         <!-- <div class="form-floating mb-3">
                             <label for="password">Upload CV</label>
                             <input type="file" class="rounded-button" name="cv[]" multiple placeholder="Upload CV" required>
                         </div> -->
-                        <input type="hidden" class="form-control" name="stat1us" id="status" placeholder="status" value="User" required readonly>
+                        <input type="hidden" class="form-control" name="status" id="status" placeholder="status" value="Company">
                         <!-- captcha -->
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">{{ __('Captcha') }} : <strong>{{$Capctha}}</strong></label>
@@ -101,6 +104,8 @@
                         <button class="w-100 chakra-button css-1fwz9f4 mt-3 text-white" type="submit">Register</button>
                     </form>
                 </div>
+                {{-- form register company --}}
+
             <small class="d-block text-center mt-3">Already register ? <a href="/login">Login</a></small>
             <br>
             </main>

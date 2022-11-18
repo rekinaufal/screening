@@ -96,4 +96,14 @@ class NewsBackendController extends Controller
         return redirect()->route('news.index')
             ->with('success', self::$pageTitle.' deleted successfully');
     }
+
+    
+    public function detail ($id)
+    {
+        $id = decrypt($id);
+        $News = DB::table('news')
+        ->where('id',$id)
+        ->first();
+        return view ('frontend.detailNews', compact ('News'));
+    }
 }

@@ -47,11 +47,15 @@ class JobfairController
         $Abouts = DB::table('about')
         ->first();
         
+        $Article = DB::table('article')->limit(5)->get();
+
+        $Events = DB::table('events')->first();
+
         $Categories = DB::table('categories')
         ->get();
 
         $pageTitle = self::$pageTitle;
-        return view ('frontend.detailJobfair', compact('pageTitle', 'Jobfair', 'ValidasiApply', 'Abouts', 'Categories'));
+        return view ('frontend.detailJobfair', compact('pageTitle', 'Jobfair', 'ValidasiApply', 'Abouts', 'Categories', 'Events', 'Article'));
     }
     
     public function Applied (Request $request)

@@ -23,10 +23,17 @@ class CompanyBackendController extends Controller
             Session::flash('alert-class', 'alert-danger'); 
             return redirect('/login');
         }
-        // $Ourteam = DB::table('ourteam')
-        // ->where('status', 1)
-        // ->get();
-        $Company = Company::all();
+        $status = Auth::user()->status;
+        $id = Auth::user()->id;
+        if($status == "Admin"){
+            $Company = DB::table('company')
+            ->get();
+        }else{
+            $Company = DB::table('company')
+            ->where('id_user', $id)
+            ->get();
+        }
+        // $Company = Company::all();
         // dd($Company); die;
         $pageTitle = self::$pageTitle;
         return view ('company.index', compact('pageTitle', 'Company'));

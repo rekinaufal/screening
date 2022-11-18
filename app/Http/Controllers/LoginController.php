@@ -11,6 +11,9 @@ class LoginController extends Controller
     public static $pageTitle = 'Login';
     
     public function index() {
+        $Article = DB::table('article')->limit(5)->get();
+        $Events = DB::table('events')->first();
+
         $operator  = array('+', '-');
         $rand_operator = $operator[array_rand($operator, 1)];
         $min_number = 1;
@@ -29,10 +32,13 @@ class LoginController extends Controller
         }
 
         $pageTitle = self::$pageTitle;
-        return view ('login.index', compact('pageTitle', 'bilangan1', 'bilangan2','rand_operator','Capctha','Hasil'));
+        return view ('login.index', compact('pageTitle', 'bilangan1', 'bilangan2','rand_operator','Capctha','Hasil', 'Events', 'Article'));
     }
 
     public function adminPanel() {
+        $Article = DB::table('article')->limit(5)->get();
+        $Events = DB::table('events')->first();
+
         $operator  = array('+', '-');
         $rand_operator = $operator[array_rand($operator, 1)];
         $min_number = 1;
@@ -51,7 +57,7 @@ class LoginController extends Controller
         }
 
         $pageTitle = self::$pageTitle;
-        return view ('login.admin_panel', compact('pageTitle', 'bilangan1', 'bilangan2','rand_operator','Capctha','Hasil'));
+        return view ('login.admin_panel', compact('pageTitle', 'bilangan1', 'bilangan2','rand_operator','Capctha','Hasil', 'Events', 'Article'));
     }
 
     public function authenticate(Request $request){
@@ -65,6 +71,7 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
+
         if($_POST['Hasil'] == $_POST['_answer']){
             $GetDataUser1           = DB::table('users')->where('email', $credentials['email'])->first();
             if (!empty($GetDataUser1)) {
@@ -74,6 +81,26 @@ class LoginController extends Controller
             }
         }else{
             return back()->with('loginError', 'Invalid Capcha');
+        }
+        
+        if ($request->uri == 'admin_panel') {
+            $GetDataAdmin = DB::table('users')->where('email', $credentials['email'])->first();
+            if ($GetDataUserStatus['status'] != 'Admin') {
+                return back()->with('loginError', 'You Are Not Admin, Your Status Is '.$GetDataUserStatus['status']);
+            }
+        } elseif ($request->uri == 'talent') {
+            $GetDataAdmin = DB::table('users')->where('email', $credentials['email'])->first();
+            if ($GetDataUserStatus['status'] != 'Talent') {
+                return back()->with('loginError', 'You Are Not Talent, Your Status Is '.$GetDataUserStatus['status']);
+            }
+        } elseif ($request->uri == 'company') {
+            $GetDataAdmin = DB::table('users')->where('email', $credentials['email'])->first();
+            if ($GetDataUserStatus['status'] != 'Company') {
+                return back()->with('loginError', 'You Are Not Company, Your Status Is '.$GetDataUserStatus['status']);
+            }
+        } else {
+            return back()->with('loginError', 'Warning! Please Contact Administrator');
+
         }
         
         if ($GetDataUserStatus['status'] == 'Admin') {

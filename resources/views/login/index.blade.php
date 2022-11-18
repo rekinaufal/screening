@@ -242,6 +242,7 @@
                         <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:100px; width: 100px;" onclick="talent()">Talent</button>
                         <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:100px; width: 100px;" onclick="company()">Company</button>
                     </div>  
+                    {{-- form talent --}}
                     <div id="mytalent">
                         <form action="/login" method="post">
                             @csrf
@@ -258,6 +259,8 @@
                                 <label class="mb-1"><h6 class="mb-0 text-sm">Password</h6></label>
                                 <input type="password" name="password" placeholder="Enter password" id="showpassword">
                             </div>
+                            <!-- input uri di bawah untuk validasi [ada form login Talent] -->
+                            <input type="hidden" name="uri" value="talent"> 
                             
                             <div class="mb-3">
                                 <div class="form-inline">
@@ -288,7 +291,9 @@
                                 <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:20px; width: 100px;">Log In</button>
                             </div>         
                         </form>
-                    </div>         
+                    </div>  
+                    {{-- form talent --}}
+                    {{-- form company --}}
                     <div id="mycompany" style="display: none;">
                         <form action="/login" method="post">
                             @csrf
@@ -305,6 +310,8 @@
                                 <label class="mb-1"><h6 class="mb-0 text-sm">Password</h6></label>
                                 <input type="password" name="password" placeholder="Enter password" id="showpassword">
                             </div>
+                            <!-- input uri di bawah untuk validasi [ada form login Company] -->
+                            <input type="hidden" name="uri" value="company"> 
                             
                             <div class="mb-3">
                                 <div class="form-inline">
@@ -335,7 +342,8 @@
                                 <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:20px; width: 100px;">Log In</button>
                             </div>         
                         </form>
-                    </div>         
+                    </div>   
+                    {{-- form company --}}
                     <div class="row mb-1 px-3">
                         <small class="font-weight-bold">Don't have an account? <a class="text-danger" href="/register">Register</a></small>
                     </div>

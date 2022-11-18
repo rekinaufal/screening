@@ -15,23 +15,27 @@ class ArticleController
     public function index ()
     {
         $Article = Article::all();
-        return view ('frontend.articles', compact('Article'));
+        $Events = DB::table('events')->first();
+
+        return view ('frontend.articles', compact('Article', 'Events'));
     }
 
     public function indexEvent ()
     {
-        // $Events = Events::all();
         // $pageTitle = self::$pageTitle;
+        $Article = DB::table('article')->limit(5)->get();
         $Events = DB::table('events')->first();
-        return view ('frontend.events', compact ('Events'));
+        return view ('frontend.events', compact ('Events', 'Article'));
     }
 
     public function detail ($id)
     {
         $id = decrypt($id);
-        $Article = DB::table('article')
+        $Article = Article::all();
+        $ArticleDetail = DB::table('article')
         ->where('id',$id)
         ->first();
-        return view ('frontend.detailArticle', compact ('Article'));
+        // dd($Article->image);
+        return view ('frontend.detailArticle', compact ('Article', 'ArticleDetail'));
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Talent;
+use App\Models\Company;
 use Auth;
 use Str;
 use DB;
@@ -86,6 +87,41 @@ class RegisterController extends Controller
                 }
             }
         }
+       return redirect ('/login')->with('success', 'Registration successfully, Please login');
+    }
+
+    public function storeCompany(Request $request) {
+        // dd($request);
+        $validateData = $request->validate([
+            'nama'          => 'required|max:255',
+            'email'         => 'required|email:dns|unique:users',
+            'password'      => 'required|min:1|max:255',
+            'status'        => 'required|min:1|max:255'
+            
+        ]);
+//        $validateData['password'] = bcrypt($validateData['password']);
+        $validateData['password'] = Hash::make($validateData['password']); 
+        $validateData['remember_token'] = substr(mt_rand(1000, 9999), 0, 5);
+        // dd($validateData['password']);
+
+        $User = User::create([
+            'name'          => $request->nama,
+            'email'         => $request->email,
+            'password'      => $validateData['password'],
+            'status'        => $request->status,
+            'created_by'    => (Auth::user()) ? Auth::user()->id : null,
+        ]);
+
+        $email = $request->email;
+        $User               = DB::table('users')->where('email', $email)->first();
+        $GetDataUserEmail 	= json_decode(json_encode($User), true);
+        // dd($GetDataUserEmail['id']);
+
+        $Company = Company::create([
+            'id_user' => $GetDataUserEmail['id'],
+            'nama_perusahaan' => $request->nama,
+        ]);
+                 
        return redirect ('/login')->with('success', 'Registration successfully, Please login');
     }
 }

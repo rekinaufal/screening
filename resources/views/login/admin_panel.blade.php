@@ -262,8 +262,10 @@
                                     </label>
                                     <label for="">&nbsp;Password</label>
                                 </div>
-                                    
                             </div>
+                            <!-- input uri di bawah untuk validasi [ada form login Admin] -->
+                            <input type="hidden" name="uri" value="{{ Request::segment(1) }}"> 
+
                             <!-- captcha -->
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">{{ __('Captcha') }} : <strong>{{$Capctha}}</strong></label>

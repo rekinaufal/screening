@@ -3,13 +3,13 @@
 <div class="chakra-container css-bovigs">
     <div class="css-lkhuf5">
         <div class="chakra-stack css-n21gh5">
-            <div class="css-w47i39">
-                <img alt="" src="{{ $ArticleDetail->image }}" class="chakra-image css-1mpfvmt">
-            </div>
+            {{-- <div class="css-w47i39">
+                <img alt="" src="gambar" class="chakra-image css-1mpfvmt">
+            </div> --}}
             <div class="css-agzex3">
-                <h2 class="chakra-heading css-c64fw7">{{ $ArticleDetail->title }}</h2>
+                {{-- <h2 class="chakra-heading css-c64fw7">judul</h2> --}}
                 <p class="chakra-text markdown-styles_markdown__8Ahqd css-i3jkqk">
-                    {!! $ArticleDetail->description !!}
+                    {!! $News->text !!}
                 </p>
             </div>
             <!-- <div class="chakra-stack css-vfcmju">

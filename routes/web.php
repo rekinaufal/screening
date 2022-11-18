@@ -30,6 +30,7 @@ use App\Http\Controllers\Frontend\ServiceTSController;
 // STARTS BACKEND
 use App\Http\Controllers\AboutBackendController;
 use App\Http\Controllers\ArticleBackendController;
+use App\Http\Controllers\NewsBackendController;
 // END BACKEND
 
 use App\Models\Category;
@@ -66,12 +67,13 @@ Route::get('/about-us', [AboutController::class, 'index']); //->middleware('gues
 Route::get('/services-ebc', [ServiceEBCController::class, 'index']); //->middleware('guest');  
 Route::get('/services-ts', [ServiceTSController::class, 'index']); //->middleware('guest');  
 Route::get('/article', [ArticleController::class, 'index']); //->middleware('guest');  
+Route::get('/article/{id}', [ArticleController::class, 'detail'])->name('detail.article');
+Route::get('/news/{id}', [NewsBackendController::class, 'detail'])->name('detail.news');
 Route::get('/event', [ArticleController::class, 'indexEvent']); //->middleware('guest');  
 Route::get('/company', [CompanyController::class, 'index']); //->middleware('guest');  
+Route::get('/company/{id}', [CompanyController::class, 'detail'])->name('detail.company');
 Route::get('/contact-us', [ContactUsController::class, 'index']); //->middleware('guest');  
 Route::get('/our-team', [OurTeamController::class, 'index']); //->middleware('guest'); 
-Route::get('/article/{id}', [ArticleController::class, 'detail'])->name('detail.article');
-Route::get('/company/{id}', [CompanyController::class, 'detail'])->name('detail.company');
 Route::get('profile!', 'App\Http\Controllers\UserController@profile');
 Route::get('/detailJobfair/{id}', [JobfairController::class, 'jobfairDetail'])->name('detailJobfair.jobfairDetail');
 Route::put('Applied!', [JobfairController::class, 'Applied'])->name('Applied!.Applied');
@@ -102,6 +104,7 @@ Route::resource('applied', 'App\Http\Controllers\AppliedController');
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');  
 // Route::get('/registertalent', 'App\Http\Controllers\RegisterController@storeTalent');
 Route::post('/registertalent', [RegisterController::class, 'storeTalent']);
+Route::post('/registercompany', [RegisterController::class, 'storeCompany']);
 
 Route::get('/admin', function(){
     return view ('admin.index');

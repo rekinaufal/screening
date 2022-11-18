@@ -8,6 +8,7 @@ use App\Models\Mempelai;
 use App\Models\Pria;
 use App\Models\Wanita;
 use App\Models\TempatAcara;
+use DB;
 
 class ContactUsController
 {
@@ -15,9 +16,10 @@ class ContactUsController
     
     public function index ()
     {
-        // $Mempelai = Mempelai::all();
-        // $pageTitle = self::$pageTitle;
-        return view ('frontend.contact');
+        $Article = DB::table('article')->limit(5)->get();
+        $Events = DB::table('events')->first();
+
+        return view ('frontend.contact', compact ('Events', 'Article'));
     }
 
 }

@@ -51,7 +51,8 @@
     <noscript id="__next_css__DO_NOT_USE__"></noscript>
     <style data-emotion="css-global" data-s="">
       body {
-        font-family: var(--chakra-fonts-body);
+        /* font-family: var(--chakra-fonts-body); */
+        font-family: 'Lato', sans-serif;
         color: var(--chakra-colors-chakra-body-text);
         background: var(--chakra-colors-chakra-body-bg);
         transition-property: background-color;
@@ -61,7 +62,26 @@
 
       .dropdown:hover .dropdown-menu {
           display: block;
-          margin-top: 0; // remove the gap so it doesn't close
+          margin-top: 0;
+      }
+
+      .text-blue{
+        color:#3C4E83;
+      }
+      .text-oren{
+        color:#FFBD59;
+      }
+      .text-abu{
+        color:#A6A6A6;
+      }
+      .navactive{
+        color:#FFBD59;
+      }
+      .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     </style>
     <title>Screening Indonesia</title>
@@ -73,49 +93,7 @@
       @yield('content')
       @yield('content-detail-article')
       @yield('content-detail-company')
-      <div class="chakra-container css-1bxcldb">
-        <div class="css-15x0zfb">
-          <div class="chakra-stack css-q7ecfj">
-            <h2 class="chakra-heading css-1gukj4y">Headquarter</h2>
-            <p class="chakra-text css-jneyc"><b>SCREENING INDONESIA</b></p>
-            <p class="chakra-text css-jneyc">Beltway Office Park Tower B, Level 5 <br> Jl. Letjen. TB Simatupang No. 41 Jakarta Selatan 12550, Indonesia</p>
-            <iframe width="400" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=beltway%20office%20park%20-%20tower%20b&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-
-          </div>
-          <div class="chakra-stack css-q7ecfj">
-            <h2 class="chakra-heading css-1gukj4y">Contact Us</h2>
-            <p class="chakra-text css-jneyc">Office Number : + 62-21-2985-7279 <br> Email : contactus@screeningindonesia.com </p>
-            <p class="chakra-text css-jneyc">Follow Us on Social Media <br> Instagram : @screeningindonesia <br> LinkedIn: SCREENING INDONESIA <br> YouTube: Screening Indonesia  </p>
-          </div>
-          <div class="chakra-stack css-q7ecfj">
-            <h2 class="chakra-heading css-1gukj4y">Upcoming Event</h2>
-            <p class="chakra-text css-jneyc">Virtual Global Job Fair 2022 <br> 9 September - 9 October 2022 <br> <a href="#"><< Visit >></a> </p>
-            <h2 class="chakra-heading css-1gukj4y">Latest Article</h2>
-            <ul role="list" class="css-1uqk1hg">
-              <li class="css-0">
-                <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">- How To Basic Differences between Permanent and Contract Employments</a>
-              </li>
-              <li class="css-0">
-                <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">- Tips and Trick Most Popular Freelance Jobs</a>
-              </li>
-              <!-- <li class="css-0">
-                <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">4 Things To Do Before Having an Online Job Interview</a>
-              </li>
-              <li class="css-0">
-                <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">4 Time Management Tips for Employees</a>
-              </li> -->
-              <li class="css-0">
-                <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt(1)) }}">- Tips and Trick to Use Office Facilities Wisely</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="css-0">
-          <div class="chakra-container css-1jmjpae" spacing="4" justify="[object Object]" align="center">
-            <p class="chakra-text css-jneyc">Copyright © 2022 Screening Indonesia</p>
-          </div>
-        </div>
-      </div>
+      @include('partials.footer-screening')
       <span></span>
     </div>
     {{-- javascript --}}

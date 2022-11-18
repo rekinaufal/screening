@@ -7,23 +7,37 @@
             </div>
         </div>
     </div> -->
-    <div class="chakra-container css-n759ug">
+    <div class="chakra-container">
         <div class="css-1bqt0w9">
             <div class="css-ldihrc" style="justify-content:center; align-items:center; display:flex;">
                 <button type="button" class="chakra-button css-nu2dlx">About Us</button>
             </div>
             <div class="chakra-stack css-1cfdqq0">
                 <div class="css-gmuwbf">
-                    </div>
+                </div>
                     <img alt="Screening Indonesia" src="{{ $About->image }}" class="chakra-image css-1p9qqnd">
             </div>
         </div>
-        <h2 class="chakra-heading css-12d46le">{{ $About->title }}</h2>
-        <p class="chakra-text css-tpvos8" text-justify="inter-word">{!! $About->description !!}</p>
+        <div style="justify-content:center; align-items:center; display:flex; padding:10px;">
+            <h2 class="chakra-heading css-12d46le">{{ $About->title }}</h2>
+        </div>
+        {{-- <div style="width:40%;">
+            {!! $About->description !!}
+        </div> --}}
+        <div class="row mb-2 justify-content-center">
+            <div class="col-md-5">
+                <!-- <div style="background-color:white; border-radius:5px; border: 1px solid;"> -->
+                <div style="background-color:white; border-radius:5px;">
+                    <div class="card-body" style="text-align:justify; text-justify:inter-word;">
+                        {!! $About->description !!}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- ============================================================================================================================ -->
+    <!-- ==OLD========================================================================================================================== -->
 
-    <div class="chakra-container css-n759ug mb-4">
+    {{-- <div class="chakra-container css-n759ug mb-4">
         <div class="" style="justify-content:center; align-items:center; display:flex;">
             @foreach($Ourteam as $item)
                 <div class="chakra-stack css-6ryjmt">
@@ -127,5 +141,62 @@
                 </div>
             @endforeach
         </div> -->
+    </div> --}}
+    <!-- ==OLD========================================================================================================================== -->
+    <div class="chakra-container css-n759ug">
+        <div class="css-1nu5w7e">
+            @if (!empty($Ourteam))
+                @foreach ($Ourteam as $item)
+                    <div class="css-1f4mlr5" style="width:100%;">
+                        <div class="css-1ngmj15">
+                            <img alt="image" src="{{ $item->image }}" style="height:100%;width:100%;">
+                        </div>
+                        <div class="chakra-stack css-17vcp8c" style="justify-content:center; align-items:center; display:flex;">
+                            <h2 class=" css-1pkdb2i">
+                                <p class="chakra-link css-spn4bz">{{ $item->name }}</p>
+                                <p class="chakra-text css-gprp6g">{{ $item->position }}</p>
+                            </h2>
+                            <div class="chakra-stack__divider css-15sliu"></div>
+                            <p class="chakra-text css-gprp6g">{{ $item->position }} Screening Indonesia</p>
+                            <div class="chakra-stack__divider css-15sliu mb-3"></div>
+                            <button type="button" class="chakra-button css-e5a8s0" data-toggle="modal" data-target="#getDataOutTeamModal{{ $item->id }}">Read More</button>
+                        </div>
+                    </div>
+                    <!-- Data out team Modal-->
+                    <div class="modal fade" id="getDataOutTeamModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Detail Our Team</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-8" style="padding-left: 45px;">
+                                        <p><h3> {{$item->name}}</h3></p>
+                                        <p><h6> {{$item->position}}</h6></p>
+                                        <hr>
+                                        <p maxresults="10">{!! $item->description !!}</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="{{ url('assets/images/screening-indonesia/our-team/logolci.png') }}" style="position: absolute; opacity:0.25;width:90%;">
+                                        <div align="right">
+                                            <img src="{{ $item->image }}" alt="User Pic" width="120" style="position: relative; top;">
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal" style="background-color: rgb(33, 156, 189);">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Data out team Modal-->
+                @endforeach
+            @endif
+        </div>
     </div>
 @endsection
