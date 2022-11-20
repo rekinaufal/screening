@@ -1,40 +1,51 @@
 @extends('layouts.main')
 @section('content')
     {{-- banner slider --}}
-    <div class="chakra-container css-urehj3 centered-top position-relative ScreenHeight">
+    <div class="chakra-container css-urehj3 centered-top position-relative">
         <!-- banner slider -->
-        <div class="owl-carousel owl-1 ScreenHeight">
-            <div>
-                <img src="{{ $image == '' ? '' : $image[0] }}" alt="Image" class="ScreenHeight">
-                <div class="centered">
-                    <h2 class="chakra-heading css-15e7php text-white">Managing Risk in Hiring Process</h2>
+        <div class="owl-carousel owl-1">
+            @php
+                $banner = [
+                    (object) [
+                        'title' => 'Managing Risk in Hiring Process',
+                        'sub_title' => '',
+                        'image' => $image == '' ? '' : $image[0],
+                        'button' => false,
+                    ],
+                    (object) [
+                        'title' => 'Employee Background Check',
+                        'sub_title' => 'Reveals important information about Candidate’s prior behavior which can help an employer to assess potential risks posed by the Candidate.',
+                        'image' => $image == '' ? '' : $image[1],
+                        'button' => true,
+                    ],
+                    (object) [
+                        'title' => 'Talent Search',
+                        'sub_title' => 'Find your best talent with us!',
+                        'image' => $image == '' ? '' : $image[2],
+                        'button' => true,
+                    ],
+                    (object) [
+                        'title' => 'Virtual Global Job Fair 2022',
+                        'sub_title' => '.. November - .. Desember 2022',
+                        'image' => $image == '' ? '' : $image[3],
+                        'button' => true,
+                    ],
+                ];
+            @endphp
+            @foreach ($banner as $b)
+                <div style="background: url('{{ $b->image }}');" class="responsive-banner-image">
+                    <img src="{{ $b->image }}" alt="Image" class="img-full-height">
+                    <div class="centered">
+                        <h2 class="chakra-heading css-15e7php text-white"><b>{{ $b->title }}</b></h2>
+                        @if (!empty($b->sub_title))
+                            <h2 class="chakra-heading css-15e7php text-white">{{ $b->sub_title }}</h2>
+                        @endif
+                        @if ($b->button)
+                            <button type="button" class="chakra-button css-1qk6nn0">See More</button>
+                        @endif
+                    </div>
                 </div>
-            </div>
-            <div>
-                <img src="{{ $image == '' ? '' : $image[1] }}" alt="Image" class="ScreenHeight">
-                <div class="centered">
-                    <h2 class="chakra-heading css-15e7php text-white"><b>Employee Background Check</b></h2>
-                    <h2 class="chakra-heading css-15e7php text-white">Reveals important information about Candidate’s prior
-                        behavior which can help an employer to assess potential risks posed by the Candidate.</h2>
-                    <button type="button" class="chakra-button css-1qk6nn0">See More</button>
-                </div>
-            </div>
-            <div>
-                <img src="{{ $image == '' ? '' : $image[2] }}" alt="Image" class="ScreenHeight">
-                <div class="centered">
-                    <h2 class="chakra-heading css-15e7php text-white"><b>Talent Search</b></h2>
-                    <h2 class="chakra-heading css-15e7php text-white">Find your best talent with us!</h2>
-                    <button type="button" class="chakra-button css-1qk6nn0">See More</button>
-                </div>
-            </div>
-            <div>
-                <img src="{{ $image == '' ? '' : $image[3] }}" alt="Image">
-                <div class="centered">
-                    <h2 class="chakra-heading css-15e7php text-white"><b>Virtual Global Job Fair 2022</b></h2>
-                    <h2 class="chakra-heading css-15e7php text-white">.. November - .. Desember 2022 </h2>
-                    <button type="button" class="chakra-button css-1qk6nn0">See More</button>
-                </div>
-            </div>
+            @endforeach
         </div>
         <!-- banner slider -->
 
@@ -46,20 +57,21 @@
                     <h2 class="chakra-text css-0 text-white"><b>in Asia Pacific by Manage HR</b></h2>
                 </div>
                 <div class="col-4">
-                    <img src="{{ url('assets/image/Penghargaan.png') }}" alt="Image" class="img-fluid" style="width:40%; margin-top:5%; margin-bottom:5%;">
+                    <img src="{{ url('assets/image/Penghargaan.png') }}" alt="Image" class="img-fluid"
+                        style="width:40%; margin-top:5%; margin-bottom:5%;">
                 </div>
             </div>
             {{-- <div class="css-qnwxch">
                 <div class="chakra-stack css-rwa119"> --}}
-                    <!-- <h2 class="chakra-heading css-19etn4f">MANAGING RISKS IN HIRING PROCESS</h2> -->
-                    <!-- <p class="chakra-text css-0">Creating a Healthy Workplace Environment for Your Employees with Better Quality of Hires!</p> -->
-                    <!-- <button type="button" class="chakra-button css-1qk6nn0">Learn More</button> -->
-                {{-- </div> --}}
-                {{-- <div class="css-0"> --}}
-                    {{-- <div class="chakra-aspect-ratio" style="width: 30%"> --}}
-                        <!-- <iframe title="video" src="{{ url('assets/images/screening-indonesia/home/video.mp4') }}" allowfullscreen=""></iframe> -->
-                    {{-- </div> --}}
-                {{-- </div>
+            <!-- <h2 class="chakra-heading css-19etn4f">MANAGING RISKS IN HIRING PROCESS</h2> -->
+            <!-- <p class="chakra-text css-0">Creating a Healthy Workplace Environment for Your Employees with Better Quality of Hires!</p> -->
+            <!-- <button type="button" class="chakra-button css-1qk6nn0">Learn More</button> -->
+            {{-- </div> --}}
+            {{-- <div class="css-0"> --}}
+            {{-- <div class="chakra-aspect-ratio" style="width: 30%"> --}}
+            <!-- <iframe title="video" src="{{ url('assets/images/screening-indonesia/home/video.mp4') }}" allowfullscreen=""></iframe> -->
+            {{-- </div> --}}
+            {{-- </div>
             </div> --}}
         </div>
         {{-- back up --}}
@@ -91,9 +103,9 @@
                 <!-- <h2 class="chakra-heading css-15e7php">Global Job Fair 2022</h2> -->
                 <img src="{{ url('assets/image/Warren.png') }}" alt="Image" class="img-fluid" width="200">
                 <!-- <p class="chakra-text css-0">Finding a new talent has never been an easy task to do. <br>It takes time and energy to find the right talent. </p>
-                                <a target="_blank" rel="noopener" class="chakra-link css-spn4bz" href="https://jobfair.screeningindonesia.com/">
-                                    <button type="button" class="chakra-button css-1d5i16d">Learn More</button>
-                                </a> -->
+                                        <a target="_blank" rel="noopener" class="chakra-link css-spn4bz" href="https://jobfair.screeningindonesia.com/">
+                                            <button type="button" class="chakra-button css-1d5i16d">Learn More</button>
+                                        </a> -->
             </div>
             <div class="css-k008qs css-1czogta">
                 {{-- <cite class="chakra-text css-osn4vg text-blue"> --}}
@@ -253,33 +265,33 @@
 
     <!-- back up  -->
     <!-- <div class="chakra-container css-n759ug">
-                        <div class="css-14hro1o">
-                            <div class="chakra-stack css-1czogta">
-                                <h2 class="chakra-heading css-15e7php">Global Job Fair 2022</h2>
-                                <p class="chakra-text css-0">Finding a new talent has never been an easy task to do. <br>It takes time and energy to find the right talent. </p>
-                                <a target="_blank" rel="noopener" class="chakra-link css-spn4bz" href="https://jobfair.screeningindonesia.com/">
-                                    <button type="button" class="chakra-button css-1d5i16d">Learn More</button>
-                                </a>
-                            </div>
-                        <div class="css-k008qs">
-                            <p class="chakra-text css-0">Screening Indonesia is pleased to invite your company to participate in our event, Global Job Fair 2022. A platform which helps companies to connect with thousands of potential talents. This event will be held on: <br>
-                                <br>
-                                <b class="chakra-text css-0">Date: 7-8 September 2022 (2 Days) <br>Time: 09.00 - 16.00 WIB <br>Place: Cevest BBPVP Bekasi (On-Site) </b>
-                                <br>
-                                <br>You can directly drop your opening position through the link below. There will be no investment fee charged for the company who drops their open position. <br>
-                                <a target="_blank" rel="noopener" class="chakra-link css-xko9o" href="http://bit.ly/companyregist_GJF22Bekasi">bit.ly/companyregist_GJF22Bekasi <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-2y6psj">
-                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <path d="M15 3h6v6"></path>
-                                        <path d="M10 14L21 3"></path>
-                                    </g>
-                                    </svg>
-                                </a>
-                                <br>
-                                <br>If you have any questions regarding this event, please do not hesitate to contact me through this email or you can directly send me a message through my <br>WhatsApp +62 821 1248 6251
-                            </p>
-                        </div>
-                    </div> -->
+                                <div class="css-14hro1o">
+                                    <div class="chakra-stack css-1czogta">
+                                        <h2 class="chakra-heading css-15e7php">Global Job Fair 2022</h2>
+                                        <p class="chakra-text css-0">Finding a new talent has never been an easy task to do. <br>It takes time and energy to find the right talent. </p>
+                                        <a target="_blank" rel="noopener" class="chakra-link css-spn4bz" href="https://jobfair.screeningindonesia.com/">
+                                            <button type="button" class="chakra-button css-1d5i16d">Learn More</button>
+                                        </a>
+                                    </div>
+                                <div class="css-k008qs">
+                                    <p class="chakra-text css-0">Screening Indonesia is pleased to invite your company to participate in our event, Global Job Fair 2022. A platform which helps companies to connect with thousands of potential talents. This event will be held on: <br>
+                                        <br>
+                                        <b class="chakra-text css-0">Date: 7-8 September 2022 (2 Days) <br>Time: 09.00 - 16.00 WIB <br>Place: Cevest BBPVP Bekasi (On-Site) </b>
+                                        <br>
+                                        <br>You can directly drop your opening position through the link below. There will be no investment fee charged for the company who drops their open position. <br>
+                                        <a target="_blank" rel="noopener" class="chakra-link css-xko9o" href="http://bit.ly/companyregist_GJF22Bekasi">bit.ly/companyregist_GJF22Bekasi <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-2y6psj">
+                                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <path d="M15 3h6v6"></path>
+                                                <path d="M10 14L21 3"></path>
+                                            </g>
+                                            </svg>
+                                        </a>
+                                        <br>
+                                        <br>If you have any questions regarding this event, please do not hesitate to contact me through this email or you can directly send me a message through my <br>WhatsApp +62 821 1248 6251
+                                    </p>
+                                </div>
+                            </div> -->
 
     {{-- testimoni --}}
     <div class="chakra-container css-1bxcldb">
@@ -301,10 +313,14 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(strip_tags('
-                                            <i>Employment Screening</i>
-                                            penting dalam menyaring kandidat pegawai yang memiliki integritas dan kompetensi. Setidaknya kita dapat mengetahui bahwa kandidat tersebut tidak memalsukan informasi dan dokumen dalam surat lamaran kerjanya. Screening Indonesia merupakan <i>screening provider</i> di Indonesia yang dapat dipercaya untuk membantu Anda dalam memeriksa latar belakang karyawan Anda.
-                                        '), 0, 369,) ?> ...
+                                        <?= substr(
+                                                strip_tags('
+                                                    <i>Employment Screening</i>
+                                                    penting dalam menyaring kandidat pegawai yang memiliki integritas dan kompetensi. Setidaknya kita dapat mengetahui bahwa kandidat tersebut tidak memalsukan informasi dan dokumen dalam surat lamaran kerjanya. Screening Indonesia merupakan <i>screening provider</i> di Indonesia yang dapat dipercaya untuk membantu Anda dalam memeriksa latar belakang karyawan Anda.
+                                                '),
+                                                0,
+                                                369,
+                                            ) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Muhammad Assad <span class="css-1ewvo3a"> - CEO
                                             Tamasia &amp; Ketum HIPMI BPC Jakarta Selatan</span>
@@ -322,17 +338,22 @@
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
                                         Saat ini kita perlu memastikan
-                                        <?= substr(strip_tags('
-                                            <i>screening</i>
-                                            dilakukan untuk mengetahui kebenaran orang yang akan direkrut atau untuk agenda kerja sama, karena kebenaran seringkali berada di luar daripada CV atau profil yang ditulis dengan baik. Maka jika Anda inginkan pekerja atau mitra yang baik, Anda sebaiknya mencari tahu lebih banyak daripada yang tertulis itu.
-                                        '), 0, 360, ) ?> ...
+                                        <?= substr(
+                                                strip_tags('
+                                                    <i>screening</i>
+                                                    dilakukan untuk mengetahui kebenaran orang yang akan direkrut atau untuk agenda kerja sama, karena kebenaran seringkali berada di luar daripada CV atau profil yang ditulis dengan baik. Maka jika Anda inginkan pekerja atau mitra yang baik, Anda sebaiknya mencari tahu lebih banyak daripada yang tertulis itu.
+                                                '),
+                                                0,
+                                                360,
+                                            ) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Danang Girindrawardana <span class="css-1ewvo3a"> -
-                                        SIP, MAP, Direktur Leadership Park dan Direktur Eksekutif APINDO</span>
+                                            SIP, MAP, Direktur Leadership Park dan Direktur Eksekutif APINDO</span>
                                     </p>
                                 </div>
                                 <span class="chakra-avatar css-s86bei">
-                                    <img src="{{ url('assets/images/screening-indonesia/home/Danang_Girindrawardana_n4bgzc.jpg') }}"class="chakra-avatar__img css-3a5bz2">
+                                    <img
+                                        src="{{ url('assets/images/screening-indonesia/home/Danang_Girindrawardana_n4bgzc.jpg') }}"class="chakra-avatar__img css-3a5bz2">
                                 </span>
                             </div>
                         </div>
@@ -341,10 +362,14 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(strip_tags('
-                                            <i>Employment screening</i>
-                                            dapat membantu mengukur integritas calon karyawan sebelum mereka bergabung di Perusahaan. Karena dengan <i>screening ini</i>, tentunya kita mampu melihat gambaran awal dari karakter karyawan tersebut. Bagaimanapun kemajuan Perusahaan tidak bisa dilepaskan dari peran karyawan. Dengan Screening Indonesia kita tentu merasa percaya diri dalam mencari kandidat terbaik untuk Perusahaan kita.
-                                        '), 0, 350,) ?> ...
+                                        <?= substr(
+                                                strip_tags('
+                                                    <i>Employment screening</i>
+                                                    dapat membantu mengukur integritas calon karyawan sebelum mereka bergabung di Perusahaan. Karena dengan <i>screening ini</i>, tentunya kita mampu melihat gambaran awal dari karakter karyawan tersebut. Bagaimanapun kemajuan Perusahaan tidak bisa dilepaskan dari peran karyawan. Dengan Screening Indonesia kita tentu merasa percaya diri dalam mencari kandidat terbaik untuk Perusahaan kita.
+                                                '),
+                                                0,
+                                                350,
+                                            ) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Harish Adrian <span class="css-1ewvo3a"> - Managing
                                             Director Sofyan Corporation</span>
@@ -361,14 +386,19 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(strip_tags('
-                                            <i>Background Screening</i>
-                                            penting dalam bisnis, untuk mengetahui dengan siapa kita akan bekerjasama. Apakah yang disampaikan benar adanya? Apakah kredibilitasnya baik selama ini? Hal ini untuk mengurangi <i>"surprise"</i> yang tidak menyenangkan di masa mendatang.
-                                        '), 0, 350,) ?> ...
+                                        <?= substr(
+                                                strip_tags('
+                                                    <i>Background Screening</i>
+                                                    penting dalam bisnis, untuk mengetahui dengan siapa kita akan bekerjasama. Apakah yang disampaikan benar adanya? Apakah kredibilitasnya baik selama ini? Hal ini untuk mengurangi <i>"surprise"</i> yang tidak menyenangkan di masa mendatang.
+                                                '),
+                                                0,
+                                                350,
+                                            ) ?> ...
                                     </p>
-                                    <p class="chakra-text css-1l3qapn">Felicia W. Kastary <span class="css-1ewvo3a"> 
-                                        - CFP - CEO PT Prima Sukses Promo dan Ketua Bidang Ekonomi, Keuangan &amp; Perbankan
-                                        HIPMI Jakbar</span>
+                                    <p class="chakra-text css-1l3qapn">Felicia W. Kastary <span class="css-1ewvo3a">
+                                            - CFP - CEO PT Prima Sukses Promo dan Ketua Bidang Ekonomi, Keuangan &amp;
+                                            Perbankan
+                                            HIPMI Jakbar</span>
                                     </p>
                                 </div>
                                 <span class="chakra-avatar css-s86bei">
@@ -382,11 +412,15 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(strip_tags('
-                                            Karyawan adalah aset penting perusahaan yang akan memberikan
-                                            <i>impact</i> untuk masa depan untuk Perusahaan. Maka dari itu <i>screening</i>
-                                            kandidat karyawan menjadi kebutuhan yang perlu dilakukan oleh setiap Perusahaan. Screening Indonesia hadir untuk membantu menyaring kandidat terbaik bagi masa depan Perusahaan.
-                                        '), 0, 401,) ?> ...
+                                        <?= substr(
+                                                strip_tags('
+                                                    Karyawan adalah aset penting perusahaan yang akan memberikan
+                                                    <i>impact</i> untuk masa depan untuk Perusahaan. Maka dari itu <i>screening</i>
+                                                    kandidat karyawan menjadi kebutuhan yang perlu dilakukan oleh setiap Perusahaan. Screening Indonesia hadir untuk membantu menyaring kandidat terbaik bagi masa depan Perusahaan.
+                                                '),
+                                                0,
+                                                401,
+                                            ) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Rachmat Anggara <span class="css-1ewvo3a"> -
                                             Co-Founder &amp; President Qasir.id</span>
@@ -403,10 +437,14 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(strip_tags('
-                                            Latar belakang karyawan perlu dilakukan dengan detail,
-                                            selain untuk mengetahui dimana letak kekuatan <i>knowlegde</i> dan talentanya juga untuk mengetahui perilakunya. Karena Perusahaan dalam industrial 4.0 di samping menekankan pada akselerasi juga menekankan pada sisi integritas karyawan agar tercapai target maksimal.
-                                        '), 0, 381, ) ?> ...
+                                        <?= substr(
+                                                strip_tags('
+                                                    Latar belakang karyawan perlu dilakukan dengan detail,
+                                                    selain untuk mengetahui dimana letak kekuatan <i>knowlegde</i> dan talentanya juga untuk mengetahui perilakunya. Karena Perusahaan dalam industrial 4.0 di samping menekankan pada akselerasi juga menekankan pada sisi integritas karyawan agar tercapai target maksimal.
+                                                '),
+                                                0,
+                                                381,
+                                            ) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Taufan Hunneman <span class="css-1ewvo3a"> - Sekjen
                                             Fornas Bhinneka Tunggal Ika dan Entrepreneur</span>
@@ -423,9 +461,13 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(strip_tags('
-                                            <i>Background Check</i> karyawan merupakan bagian yang tidak terpisahkan dalam proses rekrutmen di beberapa negara seperti Inggris, Amerika Serikat dan Australia. Perusahaan di Indonesia dirasa perlu untuk meningkatkan <i>awareness</i> terhadap kebutuhan <i>background Check</i> karyawan untuk memastikan integritas, kualifikasi.
-                                        '), 0, 333, ) ?> ...
+                                        <?= substr(
+                                                strip_tags('
+                                                    <i>Background Check</i> karyawan merupakan bagian yang tidak terpisahkan dalam proses rekrutmen di beberapa negara seperti Inggris, Amerika Serikat dan Australia. Perusahaan di Indonesia dirasa perlu untuk meningkatkan <i>awareness</i> terhadap kebutuhan <i>background Check</i> karyawan untuk memastikan integritas, kualifikasi.
+                                                '),
+                                                0,
+                                                333,
+                                            ) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Donke Ridhon Kahfi <span class="css-1ewvo3a"> -
                                             Senior Partner at DKMS Lawyers dan Ketua Bidang VI HIPMI Jakarta Pusat</span>
@@ -441,9 +483,13 @@
                         <div class="css-1mex2s8">
                             <div class="css-iu9wxq">
                                 <p class="chakra-text css-mts6wi">
-                                    <?= substr(strip_tags('
+                                    <?= substr(
+                                        strip_tags('
                                         <i>Employment Screening</i> penting dalam menyaring kandidat pegawai yang memiliki integritas dan kompetensi. Setidaknya kita dapat mengetahui bahwa kandidat tersebut tidak memalsukan informasi dan dokumen dalam surat lamaran kerjanya. Screening Indonesia merupakan <i>screening provider</i> di Indonesia yang dapat dipercaya untuk membantu Anda dalam memeriksa latar belakang karyawan Anda.
-                                    '), 0, 350,) ?> ...
+                                    '),
+                                        0,
+                                        350,
+                                    ) ?> ...
                                 </p>
                                 <p class="chakra-text css-1l3qapn">Muhammad Assad <span class="css-1ewvo3a"> - CEO Tamasia &amp; Ketum HIPMI BPC Jakarta Selatan</span>
                                 </p>
@@ -474,12 +520,12 @@
 
 
     <!-- <div class="chakra-container css-153i0fw">
-                        <div class="chakra-stack css-12ehlua">
-                            <h2 class="chakra-heading css-1dklj6k">READY TO GET STARTED?</h2>
-                            <p class="chakra-text css-ycvnzf">Screening Indonesia is Headquartered in Jakarta with national network of verification team covering multiple major cities in Indonesia</p>
-                            <button type="button" class="chakra-button css-1xghy84">Contact Us</button>
-                        </div>
-                    </div> -->
+                                <div class="chakra-stack css-12ehlua">
+                                    <h2 class="chakra-heading css-1dklj6k">READY TO GET STARTED?</h2>
+                                    <p class="chakra-text css-ycvnzf">Screening Indonesia is Headquartered in Jakarta with national network of verification team covering multiple major cities in Indonesia</p>
+                                    <button type="button" class="chakra-button css-1xghy84">Contact Us</button>
+                                </div>
+                            </div> -->
     <!-- <hr aria-orientation="horizontal" class="chakra-divider css-ecyy33"> -->
 
     <!-- news -->

@@ -107,10 +107,20 @@
             z-index: 9;
         }
 
-        @media screen and (max-width: 767px) {
+        /* @media screen and (max-width: 767px) {
           .top-10-area {
             position: relative !important;
           }
+        } */
+
+        .img-full-height {
+            height: calc(100vh - 80px);
+            opacity: 0;
+        }
+
+        .responsive-banner-image {
+            background-size: cover !important;
+            background-position: center !important;
         }
     </style>
     <title>Screening Indonesia</title>
