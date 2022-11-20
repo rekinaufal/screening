@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     {{-- banner slider --}}
-    <div class="chakra-container css-urehj3 centered-top position-relative">
+    <div class="chakra-container css-urehj3 centered-top position-relative ScreenHeight">
         <!-- banner slider -->
         <div class="owl-carousel owl-1 ScreenHeight">
             <div>
@@ -40,6 +40,30 @@
 
         <!-- top 10 -->
         <div class="w-100 top-10-area" style="background-color:#394C82;">
+            <div class="row">
+                <div class="col-8" style="padding-left:10%; margin-top:5%; margin-bottom:5%;">
+                    <h2 class="chakra-heading css-19etn4f text-oren">Top 10 Pre-Employment Screening Company</h2>
+                    <h2 class="chakra-text css-0 text-white"><b>in Asia Pacific by Manage HR</b></h2>
+                </div>
+                <div class="col-4">
+                    <img src="{{ url('assets/image/Penghargaan.png') }}" alt="Image" class="img-fluid" style="width:40%; margin-top:5%; margin-bottom:5%;">
+                </div>
+            </div>
+            {{-- <div class="css-qnwxch">
+                <div class="chakra-stack css-rwa119"> --}}
+                    <!-- <h2 class="chakra-heading css-19etn4f">MANAGING RISKS IN HIRING PROCESS</h2> -->
+                    <!-- <p class="chakra-text css-0">Creating a Healthy Workplace Environment for Your Employees with Better Quality of Hires!</p> -->
+                    <!-- <button type="button" class="chakra-button css-1qk6nn0">Learn More</button> -->
+                {{-- </div> --}}
+                {{-- <div class="css-0"> --}}
+                    {{-- <div class="chakra-aspect-ratio" style="width: 30%"> --}}
+                        <!-- <iframe title="video" src="{{ url('assets/images/screening-indonesia/home/video.mp4') }}" allowfullscreen=""></iframe> -->
+                    {{-- </div> --}}
+                {{-- </div>
+            </div> --}}
+        </div>
+        {{-- back up --}}
+        {{-- <div class="w-100 top-10-area" style="background-color:#394C82;">
             <div class="css-qnwxch">
                 <div class="chakra-stack css-rwa119">
                     <!-- <h2 class="chakra-heading css-19etn4f">MANAGING RISKS IN HIRING PROCESS</h2> -->
@@ -49,18 +73,18 @@
                     <!-- <button type="button" class="chakra-button css-1qk6nn0">Learn More</button> -->
                 </div>
                 <div class="css-0">
-                    <div class="chakra-aspect-ratio css-1m7tg19">
+                    <div class="chakra-aspect-ratio" style="width: 30%">
                         <!-- <iframe title="video" src="{{ url('assets/images/screening-indonesia/home/video.mp4') }}" allowfullscreen=""></iframe> -->
-                        <img src="{{ url('assets/image/Sertifikat.jpg') }}" alt="Image" class="img-fluid">
+                        <img src="{{ url('assets/image/Penghargaan.png') }}" alt="Image" class="img-fluid">
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- top 10 -->
     </div>
     {{-- banner slider --}}
 
-    <!-- kakek Warren Buffet -->
+    <!-- kakek Warren Buffet color ada di .css-1bxcldb - > before var(--chakra-colors-gradient-second)-->
     <div class="chakra-container css-n759ug">
         <div class="css-14hro1o">
             <div class="chakra-stack css-1czogta" style="display: flex; align-items: center; justify-content: center;">
@@ -72,9 +96,14 @@
                                 </a> -->
             </div>
             <div class="css-k008qs css-1czogta">
-                <cite class="chakra-text css-osn4vg text-blue"><b>"Somebody once said that in looking for people to hire,
+                {{-- <cite class="chakra-text css-osn4vg text-blue"> --}}
+                <div class="chakra-text css-osn4vg text-blue">
+                    <b>"Somebody once said that in looking for people to hire,
                         you look for three qualities : integrity, intelligence, and energy. And if you don’t have the first,
-                        the other two will kill you"</b></cite>
+                        the other two will kill you"
+                    </b>
+                </div>
+                {{-- </cite> --}}
                 <p class="chakra-text css-1kcl85d">Warren Buffet</p>
             </div>
         </div>
@@ -272,14 +301,10 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(
-                                                strip_tags('
-                                                            <i>Employment Screening</i>
-                                                            penting dalam menyaring kandidat pegawai yang memiliki integritas dan kompetensi. Setidaknya kita dapat mengetahui bahwa kandidat tersebut tidak memalsukan informasi dan dokumen dalam surat lamaran kerjanya. Screening Indonesia merupakan <i>screening provider</i> di Indonesia yang dapat dipercaya untuk membantu Anda dalam memeriksa latar belakang karyawan Anda.
-                                                        '),
-                                                0,
-                                                353,
-                                            ) ?> ...
+                                        <?= substr(strip_tags('
+                                            <i>Employment Screening</i>
+                                            penting dalam menyaring kandidat pegawai yang memiliki integritas dan kompetensi. Setidaknya kita dapat mengetahui bahwa kandidat tersebut tidak memalsukan informasi dan dokumen dalam surat lamaran kerjanya. Screening Indonesia merupakan <i>screening provider</i> di Indonesia yang dapat dipercaya untuk membantu Anda dalam memeriksa latar belakang karyawan Anda.
+                                        '), 0, 369,) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Muhammad Assad <span class="css-1ewvo3a"> - CEO
                                             Tamasia &amp; Ketum HIPMI BPC Jakarta Selatan</span>
@@ -297,22 +322,17 @@
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
                                         Saat ini kita perlu memastikan
-                                        <?= substr(
-                                                strip_tags('
-                                                            <i>screening</i>
-                                                            dilakukan untuk mengetahui kebenaran orang yang akan direkrut atau untuk agenda kerja sama, karena kebenaran seringkali berada di luar daripada CV atau profil yang ditulis dengan baik. Maka jika Anda inginkan pekerja atau mitra yang baik, Anda sebaiknya mencari tahu lebih banyak daripada yang tertulis itu.
-                                                        '),
-                                                0,
-                                                360,
-                                            ) ?> ...
+                                        <?= substr(strip_tags('
+                                            <i>screening</i>
+                                            dilakukan untuk mengetahui kebenaran orang yang akan direkrut atau untuk agenda kerja sama, karena kebenaran seringkali berada di luar daripada CV atau profil yang ditulis dengan baik. Maka jika Anda inginkan pekerja atau mitra yang baik, Anda sebaiknya mencari tahu lebih banyak daripada yang tertulis itu.
+                                        '), 0, 360, ) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Danang Girindrawardana <span class="css-1ewvo3a"> -
-                                            SIP, MAP, Direktur Leadership Park dan Direktur Eksekutif APINDO</span>
+                                        SIP, MAP, Direktur Leadership Park dan Direktur Eksekutif APINDO</span>
                                     </p>
                                 </div>
                                 <span class="chakra-avatar css-s86bei">
-                                    <img src="{{ url('assets/images/screening-indonesia/home/Danang_Girindrawardana_n4bgzc.jpg') }}"
-                                        class="chakra-avatar__img css-3a5bz2">
+                                    <img src="{{ url('assets/images/screening-indonesia/home/Danang_Girindrawardana_n4bgzc.jpg') }}"class="chakra-avatar__img css-3a5bz2">
                                 </span>
                             </div>
                         </div>
@@ -321,14 +341,10 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(
-                                                strip_tags('
-                                                            <i>Employment screening</i>
-                                                            dapat membantu mengukur integritas calon karyawan sebelum mereka bergabung di Perusahaan. Karena dengan <i>screening ini</i>, tentunya kita mampu melihat gambaran awal dari karakter karyawan tersebut. Bagaimanapun kemajuan Perusahaan tidak bisa dilepaskan dari peran karyawan. Dengan Screening Indonesia kita tentu merasa percaya diri dalam mencari kandidat terbaik untuk Perusahaan kita.
-                                                        '),
-                                                0,
-                                                350,
-                                            ) ?> ...
+                                        <?= substr(strip_tags('
+                                            <i>Employment screening</i>
+                                            dapat membantu mengukur integritas calon karyawan sebelum mereka bergabung di Perusahaan. Karena dengan <i>screening ini</i>, tentunya kita mampu melihat gambaran awal dari karakter karyawan tersebut. Bagaimanapun kemajuan Perusahaan tidak bisa dilepaskan dari peran karyawan. Dengan Screening Indonesia kita tentu merasa percaya diri dalam mencari kandidat terbaik untuk Perusahaan kita.
+                                        '), 0, 350,) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Harish Adrian <span class="css-1ewvo3a"> - Managing
                                             Director Sofyan Corporation</span>
@@ -345,18 +361,14 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(
-                                                strip_tags('
-                                                            <i>Background Screening</i>
-                                                            penting dalam bisnis, untuk mengetahui dengan siapa kita akan bekerjasama. Apakah yang disampaikan benar adanya? Apakah kredibilitasnya baik selama ini? Hal ini untuk mengurangi <i>"surprise"</i> yang tidak menyenangkan di masa mendatang.
-                                                        '),
-                                                0,
-                                                350,
-                                            ) ?> ...
+                                        <?= substr(strip_tags('
+                                            <i>Background Screening</i>
+                                            penting dalam bisnis, untuk mengetahui dengan siapa kita akan bekerjasama. Apakah yang disampaikan benar adanya? Apakah kredibilitasnya baik selama ini? Hal ini untuk mengurangi <i>"surprise"</i> yang tidak menyenangkan di masa mendatang.
+                                        '), 0, 350,) ?> ...
                                     </p>
-                                    <p class="chakra-text css-1l3qapn">Felicia W. Kastary <span class="css-1ewvo3a"> - CFP
-                                            - CEO PT Prima Sukses Promo dan Ketua Bidang Ekonomi, Keuangan &amp; Perbankan
-                                            HIPMI Jakbar</span>
+                                    <p class="chakra-text css-1l3qapn">Felicia W. Kastary <span class="css-1ewvo3a"> 
+                                        - CFP - CEO PT Prima Sukses Promo dan Ketua Bidang Ekonomi, Keuangan &amp; Perbankan
+                                        HIPMI Jakbar</span>
                                     </p>
                                 </div>
                                 <span class="chakra-avatar css-s86bei">
@@ -370,15 +382,11 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(
-                                                strip_tags('
-                                                            Karyawan adalah aset penting perusahaan yang akan memberikan
-                                                            <i>impact</i> untuk masa depan untuk Perusahaan. Maka dari itu <i>screening</i>
-                                                            kandidat karyawan menjadi kebutuhan yang perlu dilakukan oleh setiap Perusahaan. Screening Indonesia hadir untuk membantu menyaring kandidat terbaik bagi masa depan Perusahaan.
-                                                        '),
-                                                0,
-                                                401,
-                                            ) ?> ...
+                                        <?= substr(strip_tags('
+                                            Karyawan adalah aset penting perusahaan yang akan memberikan
+                                            <i>impact</i> untuk masa depan untuk Perusahaan. Maka dari itu <i>screening</i>
+                                            kandidat karyawan menjadi kebutuhan yang perlu dilakukan oleh setiap Perusahaan. Screening Indonesia hadir untuk membantu menyaring kandidat terbaik bagi masa depan Perusahaan.
+                                        '), 0, 401,) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Rachmat Anggara <span class="css-1ewvo3a"> -
                                             Co-Founder &amp; President Qasir.id</span>
@@ -395,14 +403,10 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(
-                                                strip_tags('
-                                                            Latar belakang karyawan perlu dilakukan dengan detail,
-                                                            selain untuk mengetahui dimana letak kekuatan <i>knowlegde</i> dan talentanya juga untuk mengetahui perilakunya. Karena Perusahaan dalam industrial 4.0 di samping menekankan pada akselerasi juga menekankan pada sisi integritas karyawan agar tercapai target maksimal.
-                                                        '),
-                                                0,
-                                                381,
-                                            ) ?> ...
+                                        <?= substr(strip_tags('
+                                            Latar belakang karyawan perlu dilakukan dengan detail,
+                                            selain untuk mengetahui dimana letak kekuatan <i>knowlegde</i> dan talentanya juga untuk mengetahui perilakunya. Karena Perusahaan dalam industrial 4.0 di samping menekankan pada akselerasi juga menekankan pada sisi integritas karyawan agar tercapai target maksimal.
+                                        '), 0, 381, ) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Taufan Hunneman <span class="css-1ewvo3a"> - Sekjen
                                             Fornas Bhinneka Tunggal Ika dan Entrepreneur</span>
@@ -419,13 +423,9 @@
                             <div class="css-1mex2s8">
                                 <div class="css-iu9wxq">
                                     <p class="chakra-text css-mts6wi">
-                                        <?= substr(
-                                                strip_tags('
-                                                        <i>Background Check</i> karyawan merupakan bagian yang tidak terpisahkan dalam proses rekrutmen di beberapa negara seperti Inggris, Amerika Serikat dan Australia. Perusahaan di Indonesia dirasa perlu untuk meningkatkan <i>awareness</i> terhadap kebutuhan <i>background Check</i> karyawan untuk memastikan integritas, kualifikasi.
-                                                        '),
-                                                0,
-                                                333,
-                                            ) ?> ...
+                                        <?= substr(strip_tags('
+                                            <i>Background Check</i> karyawan merupakan bagian yang tidak terpisahkan dalam proses rekrutmen di beberapa negara seperti Inggris, Amerika Serikat dan Australia. Perusahaan di Indonesia dirasa perlu untuk meningkatkan <i>awareness</i> terhadap kebutuhan <i>background Check</i> karyawan untuk memastikan integritas, kualifikasi.
+                                        '), 0, 333, ) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Donke Ridhon Kahfi <span class="css-1ewvo3a"> -
                                             Senior Partner at DKMS Lawyers dan Ketua Bidang VI HIPMI Jakarta Pusat</span>
@@ -441,13 +441,9 @@
                         <div class="css-1mex2s8">
                             <div class="css-iu9wxq">
                                 <p class="chakra-text css-mts6wi">
-                                    <?= substr(
-                                        strip_tags('
+                                    <?= substr(strip_tags('
                                         <i>Employment Screening</i> penting dalam menyaring kandidat pegawai yang memiliki integritas dan kompetensi. Setidaknya kita dapat mengetahui bahwa kandidat tersebut tidak memalsukan informasi dan dokumen dalam surat lamaran kerjanya. Screening Indonesia merupakan <i>screening provider</i> di Indonesia yang dapat dipercaya untuk membantu Anda dalam memeriksa latar belakang karyawan Anda.
-                                    '),
-                                        0,
-                                        350,
-                                    ) ?> ...
+                                    '), 0, 350,) ?> ...
                                 </p>
                                 <p class="chakra-text css-1l3qapn">Muhammad Assad <span class="css-1ewvo3a"> - CEO Tamasia &amp; Ketum HIPMI BPC Jakarta Selatan</span>
                                 </p>
@@ -530,7 +526,7 @@
     <!-- news -->
 
     <!-- location -->
-    <div class="css-1u1s7a2 mb-3">
+    {{-- <div class="css-1u1s7a2 mb-3">
         <h2 class="chakra-heading css-1gukj4y"><b>Headquarter</b></h2>
         <h4 class="chakra-heading css-1gukj4y"><b>SCREENING INDONESIA</b></h4>
         <p class="chakra-text css-jneyc"><b>Beltway Office Park Tower B, Level 5</b></p>
@@ -538,7 +534,7 @@
         <iframe width="98%" height="300" id="gmap_canvas"
             src="https://maps.google.com/maps?q=beltway%20office%20park%20-%20tower%20b&t=&z=13&ie=UTF8&iwloc=&output=embed"
             frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border-radius:10px;"></iframe>
-    </div>
+    </div> --}}
     <!-- location -->
 
     <!-- footer -->
@@ -593,13 +589,13 @@
 @endsection
 @section('javascript')
     <script type="text/javascript">
-        var nodes = document.getElementsByClassName('ScreenHeight');
-        var height = screen.height;
+        // var nodes = document.getElementsByClassName('ScreenHeight');
+        // var height = screen.height;
 
-        console.log(height);
-        nodes[0].style.height = +max - height + "px";
-        console.log(nodes[0].style.height);
-        document.write("Lebar: " + screen.width + "px<br />");
-        document.write("Tinggi: " + screen.height + "px");
+        // console.log(height);
+        // nodes[0].style.maxHeight = height + "px";
+        // console.log(nodes[0].style.maxHeight);
+        // document.write("Lebar: " + screen.width + "px");
+        // document.write("Tinggi: " + screen.height + "px");
     </script>
 @endsection
