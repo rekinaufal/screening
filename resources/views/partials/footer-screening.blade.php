@@ -4,20 +4,20 @@
             <h2 class="chakra-heading css-1gukj4y text-white">Headquarter</h2>
             <p class="chakra-text css-jneyc text-white"><b>SCREENING INDONESIA</b></p>
             <p class="chakra-text css-jneyc text-white">Beltway Office Park Tower B, Level 5 <br> Jl. Letjen. TB Simatupang No. 41 Jakarta Selatan 12550, Indonesia</p>
-            <iframe width="400" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=beltway%20office%20park%20-%20tower%20b&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <iframe style="width:100%; height:50%;" id="gmap_canvas" src="https://maps.google.com/maps?q=beltway%20office%20park%20-%20tower%20b&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 
         </div>
         <div class="chakra-stack css-q7ecfj">
             <h2 class="chakra-heading css-1gukj4y text-white">Contact Us</h2>
             <div class="css-0 text-white" style="display: flex; align-items: center; justify-content: center;">
                 <button aria-label="facebook" style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer; outline: none;">
-                    <img src="{{ url ('assets/image/1.png') }}" alt="Trulli" width="50" height="50">
+                    <img src="{{ url ('assets/image/telp.png') }}" alt="Trulli" width="50" height="50">
                 </button>
                 <span>&nbsp;&nbsp;+ 6221 2985 7279</span>
             </div>
             <div class="css-0 text-white" style="display: flex; align-items: center; justify-content: center;">
                 <button aria-label="facebook" style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer; outline: none;">
-                    <img src="{{ url ('assets/image/3.png') }}" alt="Trulli" width="50" height="50">
+                    <img src="{{ url ('assets/image/email.png') }}" alt="Trulli" width="50" height="50">
                 </button>
                 <span>&nbsp;&nbsp;contactus@screeningindonesia.com</span>
             </div>

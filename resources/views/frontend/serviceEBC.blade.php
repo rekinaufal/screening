@@ -11,9 +11,9 @@
     }
 </style>
 <div class="" style="background-image: url('assets/image/r.png'); height:500px;">
-    <div class="css-153i0fw" style="opacity: 0.7; height:500px;">
+    <div style="background-color:rgb(57, 76, 130, 0.7); height:500px;">
         {{-- <img src="{{ url('assets/image/r.png') }}" alt=""> --}}
-        <div class="" style="position: absolute; top:20%; left:30%; width:50%; transform: translate(-50%, -50%);">
+        <div class="" style="position: absolute; top:15%; left:30%; width:50%; transform: translate(-50%, -50%); font-size:3vw;">
             <h1 class="chakra-heading text-white mb-4"><b>Employee Background Check</b></h1>
             <h5 class="chakra-heading text-white">
                 <p style="text-align: justify; text-justify: inter-word;">
@@ -44,7 +44,7 @@
         <h2 class="chakra-heading text-blue"><b>Why We Should Do Employee Background Check?</b></h2>
     </div>
     {{-- <h2 class="chakra-heading css-12d46le">Talent Search</h2> --}}
-    <p class="chakra-text css-tpvos8" text-justify="inter-word">
+    <p class="chakra-text css-tpvos8" text-justify="inter-word" style="padding:10px;">
         <b>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, ex? Facere ad aliquid magni mollitia quas tenetur at libero, placeat, dolore commodi fugiat eum perspiciatis recusandae ratione. Nostrum, nisi. Fuga?
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque dolorem officiis dolore aperiam incidunt sed eius, eligendi voluptatem cum, nemo asperiores autem suscipit nihil adipisci omnis debitis sapiente rerum repudiandae.
@@ -54,7 +54,7 @@
     <div class="css-1u1s7a2 mb-4">
         <h2 class="chakra-heading text-blue"><b>FAQ</b></h2>
     </div>
-    <p class="chakra-text css-tpvos8" text-justify="inter-word">
+    <p class="chakra-text css-tpvos8" text-justify="inter-word" style="padding:10px;">
         <b>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, ex? Facere ad aliquid magni mollitia quas tenetur at libero, placeat, dolore commodi fugiat eum perspiciatis recusandae ratione. Nostrum, nisi. Fuga?
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque dolorem officiis dolore aperiam incidunt sed eius, eligendi voluptatem cum, nemo asperiores autem suscipit nihil adipisci omnis debitis sapiente rerum repudiandae.

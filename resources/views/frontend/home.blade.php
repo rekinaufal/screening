@@ -14,7 +14,8 @@
                     ],
                     (object) [
                         'title' => 'Employee Background Check',
-                        'sub_title' => 'Reveals important information about Candidate’s prior behavior which can help an employer to assess potential risks posed by the Candidate.',
+                        'sub_title' => 'Reveals important information about Candidate’s.',
+                        // 'sub_title' => 'Reveals important information about Candidate’s prior behavior which can help an employer to assess potential risks posed by the Candidate.',
                         'image' => $image == '' ? '' : $image[1],
                         'button' => true,
                     ],
@@ -34,15 +35,17 @@
             @endphp
             @foreach ($banner as $b)
                 <div style="background: url('{{ $b->image }}');" class="responsive-banner-image">
-                    <img src="{{ $b->image }}" alt="Image" class="img-full-height">
-                    <div class="centered">
-                        <h2 class="chakra-heading css-15e7php text-white"><b>{{ $b->title }}</b></h2>
-                        @if (!empty($b->sub_title))
-                            <h2 class="chakra-heading css-15e7php text-white">{{ $b->sub_title }}</h2>
-                        @endif
-                        @if ($b->button)
-                            <button type="button" class="chakra-button css-1qk6nn0">See More</button>
-                        @endif
+                    <div style="background-color:rgb(57, 76, 130, 0.5);">
+                        <img src="{{ $b->image }}" alt="Image" class="img-full-height">
+                        <div class="centered">
+                            <div class="chakra-heading css-15e7php text-white" style="font-size:3vw;"><b>{{ $b->title }}</b></div>
+                            @if (!empty($b->sub_title))
+                                <div class="chakra-heading css-15e7php text-white" style="font-size:3vw;">{{ $b->sub_title }}</div>
+                            @endif
+                            @if ($b->button)
+                                <button type="button" class="chakra-button css-1qk6nn0">See More</button>
+                            @endif
+                        </div>
                     </div>
                 </div>
             @endforeach
@@ -50,15 +53,16 @@
         <!-- banner slider -->
 
         <!-- top 10 -->
-        <div class="w-100 top-10-area" style="background-color:#394C82;">
+        {{-- <div class="w-100 top-10-area" style="background-color:#394C82;"> --}}
+        <div class="w-100 top-10-area" style="background-color:	rgb(57, 76, 130, 0.7);">
             <div class="row">
-                <div class="col-8" style="padding-left:10%; margin-top:5%; margin-bottom:5%;">
+                <div class="col-8" style="padding-left:10%; margin-top:6%; margin-bottom:6%;">
                     <h2 class="chakra-heading css-19etn4f text-oren">Top 10 Pre-Employment Screening Company</h2>
                     <h2 class="chakra-text css-0 text-white"><b>in Asia Pacific by Manage HR</b></h2>
                 </div>
                 <div class="col-4">
                     <img src="{{ url('assets/image/Penghargaan.png') }}" alt="Image" class="img-fluid"
-                        style="width:40%; margin-top:5%; margin-bottom:5%;">
+                        style="width:60%; margin-top:0%; margin-bottom:0%;">
                 </div>
             </div>
             {{-- <div class="css-qnwxch">
@@ -96,12 +100,12 @@
     </div>
     {{-- banner slider --}}
 
-    <!-- kakek Warren Buffet color ada di .css-1bxcldb - > before var(--chakra-colors-gradient-second)-->
+    <!-- kakek Warren Buffet color ada di .css-1bxcldb - > before var(--chakra-colors-gradient-second) 2.menghilangkan padding top and bottom .css-14hro1o-->
     <div class="chakra-container css-n759ug">
         <div class="css-14hro1o">
             <div class="chakra-stack css-1czogta" style="display: flex; align-items: center; justify-content: center;">
                 <!-- <h2 class="chakra-heading css-15e7php">Global Job Fair 2022</h2> -->
-                <img src="{{ url('assets/image/Warren.png') }}" alt="Image" class="img-fluid" width="200">
+                <img src="{{ url('assets/image/warren_buffet.png') }}" alt="Image" class="img-fluid" width="300">
                 <!-- <p class="chakra-text css-0">Finding a new talent has never been an easy task to do. <br>It takes time and energy to find the right talent. </p>
                                         <a target="_blank" rel="noopener" class="chakra-link css-spn4bz" href="https://jobfair.screeningindonesia.com/">
                                             <button type="button" class="chakra-button css-1d5i16d">Learn More</button>
@@ -109,7 +113,7 @@
             </div>
             <div class="css-k008qs css-1czogta">
                 {{-- <cite class="chakra-text css-osn4vg text-blue"> --}}
-                <div class="chakra-text css-osn4vg text-blue">
+                <div class="chakra-text" style="text-align:justify; text-justify:inter-word;">
                     <b>"Somebody once said that in looking for people to hire,
                         you look for three qualities : integrity, intelligence, and energy. And if you don’t have the first,
                         the other two will kill you"
@@ -132,56 +136,63 @@
                     <h2 class="chakra-heading" style="color:#ECC94B;"><b>What do we offer?</b></h2>
                     <cite class="chakra-text css-10rvbm3">The combination of our expertise and a reliable network of
                         partners enable us to efficiently and effectively support our employment screening process.</cite>
-                    <ul role="list" class="css-15neer3">
+                    {{-- <ul role="list" class="css-15neer3"> --}}
+                    <ul role="list" style="padding-left:30px;">
                         <li class="css-0 text-white">
-                            <svg viewBox="0 0 14 14" focusable="false" class="chakra-icon chakra-icon css-1ewd5ql"
+                            {{-- ini adalah icon ceklis --}}
+                            {{-- <svg viewBox="0 0 14 14" focusable="false" class="chakra-icon chakra-icon css-1ewd5ql"
                                 role="presentation">
                                 <g fill="currentColor">
                                     <polygon
                                         points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039">
                                     </polygon>
                                 </g>
-                            </svg>Comprehensive national network with fast turn around in service delivery
+                            </svg> --}}
+                            Comprehensive national network with fast turn around in service delivery
                         </li>
                         <li class="css-0 text-white">
-                            <svg viewBox="0 0 14 14" focusable="false" class="chakra-icon chakra-icon css-1ewd5ql"
+                            {{-- <svg viewBox="0 0 14 14" focusable="false" class="chakra-icon chakra-icon css-1ewd5ql"
                                 role="presentation">
                                 <g fill="currentColor">
                                     <polygon
                                         points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039">
                                     </polygon>
                                 </g>
-                            </svg>Customized consultation well-suited to the client’s need
+                            </svg> --}}
+                            Customized consultation well-suited to the client’s need
                         </li>
                         <li class="css-0 text-white">
-                            <svg viewBox="0 0 14 14" focusable="false" class="chakra-icon chakra-icon css-1ewd5ql"
+                            {{-- <svg viewBox="0 0 14 14" focusable="false" class="chakra-icon chakra-icon css-1ewd5ql"
                                 role="presentation">
                                 <g fill="currentColor">
                                     <polygon
                                         points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039">
                                     </polygon>
                                 </g>
-                            </svg>Professional, non-biased, and discreet
+                            </svg> --}}
+                            Professional, non-biased, and discreet
                         </li>
                         <li class="css-0 text-white">
-                            <svg viewBox="0 0 14 14" focusable="false" class="chakra-icon chakra-icon css-1ewd5ql"
+                            {{-- <svg viewBox="0 0 14 14" focusable="false" class="chakra-icon chakra-icon css-1ewd5ql"
                                 role="presentation">
                                 <g fill="currentColor">
                                     <polygon
                                         points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039">
                                     </polygon>
                                 </g>
-                            </svg>Verified accurate information
+                            </svg> --}}
+                            Verified accurate information
                         </li>
                         <li class="css-0 text-white">
-                            <svg viewBox="0 0 14 14" focusable="false" class="chakra-icon chakra-icon css-1ewd5ql"
+                            {{-- <svg viewBox="0 0 14 14" focusable="false" class="chakra-icon chakra-icon css-1ewd5ql"
                                 role="presentation">
                                 <g fill="currentColor">
                                     <polygon
                                         points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039">
                                     </polygon>
                                 </g>
-                            </svg>Competitive pricing
+                            </svg> --}}
+                            Competitive pricing
                         </li>
                     </ul>
                 </div>
@@ -265,33 +276,33 @@
 
     <!-- back up  -->
     <!-- <div class="chakra-container css-n759ug">
-                                <div class="css-14hro1o">
-                                    <div class="chakra-stack css-1czogta">
-                                        <h2 class="chakra-heading css-15e7php">Global Job Fair 2022</h2>
-                                        <p class="chakra-text css-0">Finding a new talent has never been an easy task to do. <br>It takes time and energy to find the right talent. </p>
-                                        <a target="_blank" rel="noopener" class="chakra-link css-spn4bz" href="https://jobfair.screeningindonesia.com/">
-                                            <button type="button" class="chakra-button css-1d5i16d">Learn More</button>
-                                        </a>
-                                    </div>
-                                <div class="css-k008qs">
-                                    <p class="chakra-text css-0">Screening Indonesia is pleased to invite your company to participate in our event, Global Job Fair 2022. A platform which helps companies to connect with thousands of potential talents. This event will be held on: <br>
-                                        <br>
-                                        <b class="chakra-text css-0">Date: 7-8 September 2022 (2 Days) <br>Time: 09.00 - 16.00 WIB <br>Place: Cevest BBPVP Bekasi (On-Site) </b>
-                                        <br>
-                                        <br>You can directly drop your opening position through the link below. There will be no investment fee charged for the company who drops their open position. <br>
-                                        <a target="_blank" rel="noopener" class="chakra-link css-xko9o" href="http://bit.ly/companyregist_GJF22Bekasi">bit.ly/companyregist_GJF22Bekasi <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-2y6psj">
-                                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
-                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                                <path d="M15 3h6v6"></path>
-                                                <path d="M10 14L21 3"></path>
-                                            </g>
-                                            </svg>
-                                        </a>
-                                        <br>
-                                        <br>If you have any questions regarding this event, please do not hesitate to contact me through this email or you can directly send me a message through my <br>WhatsApp +62 821 1248 6251
-                                    </p>
-                                </div>
-                            </div> -->
+        <div class="css-14hro1o">
+            <div class="chakra-stack css-1czogta">
+                <h2 class="chakra-heading css-15e7php">Global Job Fair 2022</h2>
+                <p class="chakra-text css-0">Finding a new talent has never been an easy task to do. <br>It takes time and energy to find the right talent. </p>
+                <a target="_blank" rel="noopener" class="chakra-link css-spn4bz" href="https://jobfair.screeningindonesia.com/">
+                    <button type="button" class="chakra-button css-1d5i16d">Learn More</button>
+                </a>
+            </div>
+        <div class="css-k008qs">
+            <p class="chakra-text css-0">Screening Indonesia is pleased to invite your company to participate in our event, Global Job Fair 2022. A platform which helps companies to connect with thousands of potential talents. This event will be held on: <br>
+                <br>
+                <b class="chakra-text css-0">Date: 7-8 September 2022 (2 Days) <br>Time: 09.00 - 16.00 WIB <br>Place: Cevest BBPVP Bekasi (On-Site) </b>
+                <br>
+                <br>You can directly drop your opening position through the link below. There will be no investment fee charged for the company who drops their open position. <br>
+                <a target="_blank" rel="noopener" class="chakra-link css-xko9o" href="http://bit.ly/companyregist_GJF22Bekasi">bit.ly/companyregist_GJF22Bekasi <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-2y6psj">
+                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </g>
+                    </svg>
+                </a>
+                <br>
+                <br>If you have any questions regarding this event, please do not hesitate to contact me through this email or you can directly send me a message through my <br>WhatsApp +62 821 1248 6251
+            </p>
+        </div>
+    </div> -->
 
     {{-- testimoni --}}
     <div class="chakra-container css-1bxcldb">
@@ -368,7 +379,7 @@
                                                     dapat membantu mengukur integritas calon karyawan sebelum mereka bergabung di Perusahaan. Karena dengan <i>screening ini</i>, tentunya kita mampu melihat gambaran awal dari karakter karyawan tersebut. Bagaimanapun kemajuan Perusahaan tidak bisa dilepaskan dari peran karyawan. Dengan Screening Indonesia kita tentu merasa percaya diri dalam mencari kandidat terbaik untuk Perusahaan kita.
                                                 '),
                                                 0,
-                                                350,
+                                                360,
                                             ) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Harish Adrian <span class="css-1ewvo3a"> - Managing
@@ -419,7 +430,7 @@
                                                     kandidat karyawan menjadi kebutuhan yang perlu dilakukan oleh setiap Perusahaan. Screening Indonesia hadir untuk membantu menyaring kandidat terbaik bagi masa depan Perusahaan.
                                                 '),
                                                 0,
-                                                401,
+                                                420,
                                             ) ?> ...
                                     </p>
                                     <p class="chakra-text css-1l3qapn">Rachmat Anggara <span class="css-1ewvo3a"> -
@@ -636,11 +647,11 @@
 @section('javascript')
     <script type="text/javascript">
         // var nodes = document.getElementsByClassName('ScreenHeight');
-        // var height = screen.height;
+        // var width = screen.width;
 
-        // console.log(height);
-        // nodes[0].style.maxHeight = height + "px";
-        // console.log(nodes[0].style.maxHeight);
+        // console.log(screen.width);
+        // nodes[0].style.fontSize = width + "px";
+        // console.log(nodes[0].style.fontSize);
         // document.write("Lebar: " + screen.width + "px");
         // document.write("Tinggi: " + screen.height + "px");
     </script>

@@ -11,9 +11,8 @@
     }
 </style>
 <div class="" style="background-image: url('assets/image/r.png'); height:500px;">
-    <div class="css-153i0fw" style="opacity: 0.7; height:500px;">
-        {{-- <img src="{{ url('assets/image/r.png') }}" alt=""> --}}
-        <div class="" style="position: absolute; top:20%; left:30%; width:50%; transform: translate(-50%, -50%);">
+    <div style="background-color:rgb(57, 76, 130, 0.7); height:500px;">
+        <div class="" style="position: absolute; top:15%; left:30%; width:50%; transform: translate(-50%, -50%); font-size:3vw;">
             <h1 class="chakra-heading text-white mb-4"><b>Talent Search</b></h1>
             <h5 class="chakra-heading text-white">
                 <p style="text-align: justify; text-justify: inter-word;">

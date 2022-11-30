@@ -87,8 +87,11 @@
 
         .centered {
             position: absolute;
-            top: 50%;
+            top:50%;
+            /* bottom: 5%; */
             left: 50%;
+            /* width: 80%; */
+            /* transform: translate(0%, -50%); */
             transform: translate(-50%, -50%);
         }
 
@@ -114,7 +117,7 @@
         } */
 
         .img-full-height {
-            height: calc(100vh - 80px);
+            height: calc(100vh - 50px);
             opacity: 0;
         }
 

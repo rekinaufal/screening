@@ -1299,7 +1299,7 @@ body {
         padding-inline-start: 1rem;
         -webkit-padding-end: 1rem;
         padding-inline-end: 1rem;
-        padding: 10px;
+        padding: 0px;
         background-color: initial;
         /* overflow: hidden; */
       }
@@ -2275,8 +2275,8 @@ body {
         margin-inline-start: auto;
         -webkit-margin-end: auto;
         margin-inline-end: auto;
-        padding-top: var(--chakra-space-10);
-        padding-bottom: var(--chakra-space-10);
+        /* padding-top: var(--chakra-space-10);
+        padding-bottom: var(--chakra-space-10); */
         -webkit-padding-start: var(--chakra-space-5);
         padding-inline-start: var(--chakra-space-5);
         -webkit-padding-end: var(--chakra-space-5);
@@ -2755,7 +2755,7 @@ body {
     
     
       .css-1kcl85d {
-        padding-left: 60px;
+        /* padding-left: 60px; */
         margin-top: -10px;
         font-weight: var(--chakra-fontWeights-bold);
         color: var(--chakra-colors-yellow-400);
@@ -4210,7 +4210,7 @@ body {
         padding-inline-start: 1rem;
         -webkit-padding-end: 1rem;
         padding-inline-end: 1rem;
-        padding: 10px;
+        padding: 0px;
         background-color: initial;
         /* overflow: hidden; */
       }
@@ -4973,7 +4973,7 @@ body {
         padding-inline-start: 1rem;
         -webkit-padding-end: 1rem;
         padding-inline-end: 1rem;
-        padding: 10px;
+        padding: 0px;
         background-color: initial;
         /* overflow: hidden; */
       }
@@ -5552,7 +5552,7 @@ body {
     padding-inline-start: 1rem;
     -webkit-padding-end: 1rem;
     padding-inline-end: 1rem;
-    padding: 10px;
+    padding: 0px;
     background-color: initial;
     /* overflow: hidden; */
   }
@@ -6315,7 +6315,7 @@ body {
     padding-inline-start: 1rem;
     -webkit-padding-end: 1rem;
     padding-inline-end: 1rem;
-    padding: 10px;
+    padding: 0px;
     background-color: initial;
     /* overflow: hidden; */
   }
@@ -6400,9 +6400,10 @@ body {
 
   .css-1fzn27e {
     object-fit: cover;
-    width: 150px;
-    height: 150px;
-    border-radius: var(--chakra-radii-full);
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    /* border-radius: var(--chakra-radii-full); */
   }
 
 
@@ -7284,7 +7285,7 @@ body {
     padding-inline-start: 1rem;
     -webkit-padding-end: 1rem;
     padding-inline-end: 1rem;
-    padding: 10px;
+    padding: 0px;
     background-color: initial;
     /* overflow: hidden; */
   }
@@ -8047,7 +8048,7 @@ body {
     padding-inline-start: 1rem;
     -webkit-padding-end: 1rem;
     padding-inline-end: 1rem;
-    padding: 10px;
+    padding: 0px;
     background-color: initial;
     /* overflow: hidden; */
   }
@@ -8821,7 +8822,7 @@ body {
         padding-inline-start: 1rem;
         -webkit-padding-end: 1rem;
         padding-inline-end: 1rem;
-        padding: 10px;
+        padding: 0px;
         background-color: initial;
         /* overflow: hidden; */
       }
@@ -9584,7 +9585,7 @@ body {
         padding-inline-start: 1rem;
         -webkit-padding-end: 1rem;
         padding-inline-end: 1rem;
-        padding: 10px;
+        padding: 0px;
         background-color: initial;
         /* overflow: hidden; */
       }
@@ -9593,7 +9594,7 @@ body {
       .css-fxrbma {
         display: grid;
         grid-gap: var(--chakra-space-5);
-        padding: 20px;
+        /* padding: 20px; */
         padding-top: 40px;
         padding-bottom: var(--chakra-space-10);
         width: var(--chakra-sizes-full);
@@ -9620,7 +9621,7 @@ body {
         border: 4px solid;
         border-color: #394C82;
         box-shadow: 10px 10px 0px 0px rgba(57, 76, 130, 1);
-        padding: 30px 20px;
+        /* padding: 30px 20px; */
         max-height: 500px;
       }
 
@@ -10296,7 +10297,7 @@ body {
         padding-inline-start: 1rem;
         -webkit-padding-end: 1rem;
         padding-inline-end: 1rem;
-        padding: 10px;
+        padding: 0px;
         background-color: initial;
         /* overflow: hidden; */
       }
@@ -11059,7 +11060,7 @@ body {
         padding-inline-start: 1rem;
         -webkit-padding-end: 1rem;
         padding-inline-end: 1rem;
-        padding: 10px;
+        padding: 0px;
         background-color: initial;
         /* overflow: hidden; */
       }
@@ -11706,7 +11707,7 @@ body {
         padding-inline-start: 1rem;
         -webkit-padding-end: 1rem;
         padding-inline-end: 1rem;
-        padding: 10px;
+        padding: 0px;
         background-color: initial;
         /* overflow: hidden; */
       }
@@ -13091,7 +13092,7 @@ body {
         padding-inline-start: 1rem;
         -webkit-padding-end: 1rem;
         padding-inline-end: 1rem;
-        padding: 10px;
+        padding: 0px;
         background-color: initial;
         /* overflow: hidden; */
       }
@@ -13770,7 +13771,7 @@ body {
         padding-inline-start: 1rem;
         -webkit-padding-end: 1rem;
         padding-inline-end: 1rem;
-        padding: 10px;
+        padding: 0px;
         background-color: initial;
         /* overflow: hidden; */
       }
