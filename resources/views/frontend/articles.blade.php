@@ -9,8 +9,8 @@
 </div>
 <div class="chakra-container css-n759ug">
     <div class="css-1nu5w7e">
-        @if (!empty($Article))
-            @foreach ($Article as $item)
+        @if (!empty($ArticleIndex))
+            @foreach ($ArticleIndex as $item)
                 <div class="css-1f4mlr5">
                     <div class="css-1ngmj15">
                         <a class="chakra-link css-spn4bz" href="{{ route('detail.article', Crypt::encrypt( $item->id )) }}">

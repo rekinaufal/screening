@@ -12,39 +12,20 @@
                         <input type="text" class="form-control" name="nama_perusahaan">
                     </div>
                     <div class="form-group">
-                        <label for="sel1">Provinsi:</label>
-                        <select class="form-control" name="provinsi">
-                            <option value="">-- Select one --</option>
-                            <option value="1">Jawa Barat</option>
-                            <option value="2">DKI Jakarta</option>
-                            <option value="3">Jawa Timur</option>
-                        </select>
+                        <label for="sel1">Provinsi</label>
+                        <input type="text" class="form-control" name="provinsi">
                     </div>
                     <div class="form-group">
-                        <label for="sel1">Kota Kabupaten:</label>
-                        <select class="form-control" name="kota_kabupaten">
-                            <option value="">-- Select one --</option>
-                            <option value="1">Kota Bogor</option>
-                            <option value="2">Kabupaten Bogor</option>
-                        </select>
+                        <label for="sel1">Kota Kabupaten</label>
+                        <input type="text" class="form-control" name="kota_kabupaten">
                     </div>
                     <div class="form-group">
-                        <label for="sel1">Kelurahan:</label>
-                        <select class="form-control" name="kelurahan">
-                            <option value="">-- Select one --</option>
-                            <option value="1">Admin</option>
-                            <option value="2">Company</option>
-                            <option value="3">User</option>
-                        </select>
+                        <label for="sel1">Kelurahan</label>
+                        <input type="text" class="form-control" name="kelurahan">
                     </div>
                     <div class="form-group">
-                        <label for="sel1">Desa:</label>
-                        <select class="form-control" name="desa">
-                            <option value="">-- Select one --</option>
-                            <option value="1">Admin</option>
-                            <option value="2">Company</option>
-                            <option value="3">User</option>
-                        </select>
+                        <label for="sel1">Desa</label>
+                        <input type="text" class="form-control" name="desa">
                     </div>
                     <div class="form-group">
                         <label>Alamat</label>

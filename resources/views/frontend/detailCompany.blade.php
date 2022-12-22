@@ -11,8 +11,8 @@
         <div class="css-0">
             <div class="chakra-stack css-u85z97">
                 <div class="chakra-stack css-11kgd3k">
-                    <a target="_blank" rel="noopener" class="chakra-link css-spn4bz" href="{{$Company->website_perusahaan}}">
-                        <h2 class="chakra-heading css-1ram4mi">{{$Company->nama_perusahaan}}
+                    <a target="_blank" rel="noopener" class="chakra-link css-spn4bz" href="{{ $Company->website_perusahaan ?? '' }}">
+                        <h2 class="chakra-heading css-1ram4mi">{{ $Company->nama_perusahaan ?? '' }}
                             <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1otglqi">
                                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -22,7 +22,7 @@
                             </svg>
                         </h2>
                     </a>
-                    <p class="chakra-text css-10qt2wr">{{$Company->alamat}}
+                    <p class="chakra-text css-10qt2wr">{{ $Company->alamat ?? '' }}
                     </p>
                     <div class="css-gujxtr">
                         <p class="chakra-text css-0">Pimpinan :
@@ -55,7 +55,7 @@
             <div class="css-i394l7">
                 <h3>Deskripsi Perusahaan</h3>
                 <p class="chakra-text css-1y0llr0">
-                    {!! $Company->deskripsi_perusahaan !!}
+                    {!! $Company->deskripsi_perusahaan ?? '' !!}
                 </p>
             </div>
             <div class="row mb-2">

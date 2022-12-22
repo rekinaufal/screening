@@ -15,13 +15,19 @@ class ServiceEBCController
     
     public function index ()
     {
-        $About = About::all();
-        $Ourteam = Ourteam::all();
-        $Article = DB::table('article')->limit(5)->get();
+        $Service = DB::table('service')
+        ->where('category', 'EBC')
+        ->first();
+        $Article = DB::table('article')
+                    ->orderByDesc('created_at',)
+                    ->limit(3)
+                    ->get();
         $Events = DB::table('events')->first();
-
+        $ServiceDetails = DB::table('service_details')
+        ->where('category', 'EBC')
+        ->get();
         $pageTitle = "About";
-        return view ('frontend.serviceEBC', compact('pageTitle', 'About', 'Ourteam', 'Events', 'Article'));
+        return view ('frontend.serviceEBC', compact('pageTitle', 'Service', 'Article', 'Events', 'ServiceDetails'));
     }
 
 }

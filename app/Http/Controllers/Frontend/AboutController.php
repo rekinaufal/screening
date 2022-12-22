@@ -18,7 +18,10 @@ class AboutController
         // $About = About::all();
         $About = DB::table('about')->first();
         $Ourteam = Ourteam::all();
-        $Article = Article::all();
+        $Article = DB::table('article')
+                    ->orderByDesc('created_at',)
+                    ->limit(3)
+                    ->get();
         $Events = DB::table('events')->first();
 
         $pageTitle = "About";

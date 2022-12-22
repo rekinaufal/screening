@@ -166,7 +166,7 @@
                 </div>
                 <div class="css-1lpwoca">
                     <a class="chakra-link css-spn4bz" href="{{ url('/') }}">
-                        <img alt="Screening Indonesia" src="{{ url('assets/images/screening-indonesia/home/logo_ol0sdk.png')}}" class="chakra-image css-jxx8sx">
+                        <img alt="Screening Indonesia" src="{{ url('assets/images/screening-indonesia/home/sci2.png')}}" class="chakra-image css-jxx8sx">
                     </a>
                     <div class="css-1f2x772">
                         <div class="chakra-stack css-a9v878">

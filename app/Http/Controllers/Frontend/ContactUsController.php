@@ -16,7 +16,10 @@ class ContactUsController
     
     public function index ()
     {
-        $Article = DB::table('article')->limit(5)->get();
+        $Article = DB::table('article')
+                    ->orderByDesc('created_at',)
+                    ->limit(3)
+                    ->get();
         $Events = DB::table('events')->first();
 
         return view ('frontend.contact', compact ('Events', 'Article'));

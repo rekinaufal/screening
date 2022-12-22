@@ -9,11 +9,19 @@
         width: 100%; /* Will shrink image to 30% of its original width */
         height: auto;    
     }
+    .center-img-col{
+        display: block; 
+        margin:auto;
+    }
+    .no-padding{
+        padding: 0 !important; 
+        margin: 0 !important; 
+    }
 </style>
 <div class="" style="background-image: url('assets/image/r.png'); height:500px;">
     <div style="background-color:rgb(57, 76, 130, 0.7); height:500px;">
         {{-- <img src="{{ url('assets/image/r.png') }}" alt=""> --}}
-        <div class="" style="position: absolute; top:15%; left:30%; width:50%; transform: translate(-50%, -50%); font-size:3vw;">
+        <div class="" style="position: relative; top:50%; left:30%; width:50%; transform: translate(-50%, -50%); font-size:3vw;">
             <h1 class="chakra-heading text-white mb-4"><b>Employee Background Check</b></h1>
             <h5 class="chakra-heading text-white">
                 <p style="text-align: justify; text-justify: inter-word;">
@@ -41,25 +49,36 @@
         </div>
     </div> -->
     <div class="css-1u1s7a2 mb-4">
-        <h2 class="chakra-heading text-blue"><b>Why We Should Do Employee Background Check?</b></h2>
+        <h2 class="chakra-heading text-blue"><b>{{ $Service->title_1 ?? '' }}</b></h2>
     </div>
     {{-- <h2 class="chakra-heading css-12d46le">Talent Search</h2> --}}
     <p class="chakra-text css-tpvos8" text-justify="inter-word" style="padding:10px;">
-        <b>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, ex? Facere ad aliquid magni mollitia quas tenetur at libero, placeat, dolore commodi fugiat eum perspiciatis recusandae ratione. Nostrum, nisi. Fuga?
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque dolorem officiis dolore aperiam incidunt sed eius, eligendi voluptatem cum, nemo asperiores autem suscipit nihil adipisci omnis debitis sapiente rerum repudiandae.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae veritatis harum aspernatur vel repellat eum quia facilis cumque, expedita minus nam reprehenderit sint blanditiis iure in temporibus atque dignissimos aperiam.    
-        </b>
+        {!! $Service->description_1 ?? '' !!}
     </p>
+    <div class="row mt-5">
+        @foreach ($ServiceDetails as $item)
+            <div class="col-6 pb-2">
+                <div class="row">
+                    <div class="col-2 no-padding">
+                        <img class="center-img-col" src="{{ url ($item->image) }}" alt="Trulli" width="80">
+                    </div>
+                    <div class="col-10 no-padding">
+                        <div class="font-weight-bold">
+                            {{ $item->title}}
+                        </div>
+                        <div class="text-blue">
+                            {!! $item->description !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
     <div class="css-1u1s7a2 mb-4">
-        <h2 class="chakra-heading text-blue"><b>FAQ</b></h2>
+        <h2 class="chakra-heading text-blue"><b>{{ $Service->title_2 ?? '' }}</b></h2>
     </div>
     <p class="chakra-text css-tpvos8" text-justify="inter-word" style="padding:10px;">
-        <b>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, ex? Facere ad aliquid magni mollitia quas tenetur at libero, placeat, dolore commodi fugiat eum perspiciatis recusandae ratione. Nostrum, nisi. Fuga?
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque dolorem officiis dolore aperiam incidunt sed eius, eligendi voluptatem cum, nemo asperiores autem suscipit nihil adipisci omnis debitis sapiente rerum repudiandae.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem totam alias cum quis officia hic similique neque tempora, sit pariatur deleniti, autem quibusdam dolorum nostrum facere cumque, expedita quisquam voluptatem.
-        </b>
+        {!! $Service->description_2 ?? '' !!}
     </p>
     {{-- <p class="chakra-text css-jneyc">
         <a href="#"><< Start Now >></a> 

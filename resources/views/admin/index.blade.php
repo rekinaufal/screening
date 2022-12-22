@@ -176,6 +176,14 @@
                         <span>Events</span>
                     </a>
                 </li>
+
+                <!-- Nav Item - Service -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/service">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Service</span>
+                    </a>
+                </li>
             @elseif ($status == 'Company')
                 <!-- Nav Item - Company -->
                 <li class="nav-item">
@@ -183,7 +191,21 @@
                         <i class="fas fa-fw fa-table"></i>
                         <span>Company</span>
                     </a>
-                </li>            
+                </li>   
+                <!-- Nav Item - Applied -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/applied">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Applied</span>
+                    </a>
+                </li>  
+                <!-- Nav Item - Jobs -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/jobs">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Jobs</span>
+                    </a>
+                </li>       
             @else
             @endif
             <!-- Divider -->
@@ -660,6 +682,7 @@
    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
    <script>
         $('#dataTable').DataTable();
+        $('#dataTableServiceDetails').DataTable();
    </script>
    <script>
         $("#provinsi").change(function(){

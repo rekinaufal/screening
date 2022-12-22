@@ -49,9 +49,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
-
     <noscript id="__next_css__DO_NOT_USE__"></noscript>
     <style data-emotion="css-global" data-s="">
         body {
@@ -100,6 +97,24 @@
         }
 
         .centered-top .owl-1 .owl-nav {
+            top: 30% !important;
+        }
+        
+        .left {
+            position: absolute;
+            top:50%;
+            /* bottom: 5%; */
+            left: 10%;
+            width: 55%;
+            transform: translate(0%, -50%);
+            /* transform: translate(-50%, -50%); */
+        }
+
+        .left-top .left {
+            top: 30% !important;
+        }
+
+        .left-top .owl-1 .owl-nav {
             top: 30% !important;
         }
 

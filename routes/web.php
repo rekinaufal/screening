@@ -11,6 +11,7 @@ use App\Http\Controllers\PriaController;
 use App\Http\Controllers\WanitaController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\MailController;
 
 // FE screening
 // use App\Http\Controllers\Frontend\HomeController;
@@ -28,6 +29,7 @@ use App\Http\Controllers\Frontend\ServiceTSController;
 // END FRONTEND
 
 // STARTS BACKEND
+use App\Http\Controllers\JobsBackendController;
 use App\Http\Controllers\AboutBackendController;
 use App\Http\Controllers\ArticleBackendController;
 use App\Http\Controllers\NewsBackendController;
@@ -77,6 +79,8 @@ Route::get('/our-team', [OurTeamController::class, 'index']); //->middleware('gu
 Route::get('profile!', 'App\Http\Controllers\UserController@profile');
 Route::get('/detailJobfair/{id}', [JobfairController::class, 'jobfairDetail'])->name('detailJobfair.jobfairDetail');
 Route::put('Applied!', [JobfairController::class, 'Applied'])->name('Applied!.Applied');
+Route::post('/company', [CompanyController::class, 'search'])->name('company.search');
+Route::get('/jobs/{id}', [JobsBackendController::class, 'download'])->name('jobs.download');
 
 // START FRONT END
 
@@ -90,6 +94,7 @@ Route::get('/see-all-job', function () {
 
 //TEMPIRARY
 
+Route::get('/kirimemail','App\Http\Controllers\MailController@index');
 //Route::get('/post', [PostController::class, 'index']);
 
 // middleware > defaultnya itu /home, untuk mengubahnya (app/http/providers/routeservice) ganti /home
@@ -167,6 +172,10 @@ Route::resource('kategori', 'App\Http\Controllers\KategoriController');
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
 Route::resource('galeri', 'App\Http\Controllers\GaleriController');
 
+Route::get('/service', [ServiceBackendController::class, 'index'])->name('service.index');
+Route::resource('service', 'App\Http\Controllers\ServiceBackendController');
+Route::resource('service_details', 'App\Http\Controllers\ServiceDetailsBackendController');
+
 Route::prefix('galeri')->group(function () {
     // Route::get('/', [\App\Http\Controllers\GaleriController::class, 'index'])->name('galeri.index');
     // Route::get('/create', [\App\Http\Controllers\GaleriController::class, 'create'])->name('galeri.create');
@@ -205,6 +214,8 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('getDataWanita', 'App\Http\Controllers\ApiController@getDataWanita')->name('DataWanita');
     Route::get('getDataTempatAcara', 'App\Http\Controllers\ApiController@getDataTempatAcara')->name('DataTempatAcara');
 });
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });

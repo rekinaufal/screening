@@ -7,29 +7,37 @@
             @php
                 $banner = [
                     (object) [
-                        'title' => 'Managing Risk in Hiring Process',
+                        'title' => 'Managing Risks in Hiring Process',
                         'sub_title' => '',
                         'image' => $image == '' ? '' : $image[0],
                         'button' => false,
+                        'href' => '',
+                        'class' => 'centered'
                     ],
                     (object) [
                         'title' => 'Employee Background Check',
-                        'sub_title' => 'Reveals important information about Candidate’s.',
+                        'sub_title' => 'Reveals important information about Candidate’s prior behavior which can help an employer to assess potential risks posed by the Candidate.',
                         // 'sub_title' => 'Reveals important information about Candidate’s prior behavior which can help an employer to assess potential risks posed by the Candidate.',
                         'image' => $image == '' ? '' : $image[1],
                         'button' => true,
+                        'href' => '/services-ebc',
+                        'class' => 'left'
                     ],
                     (object) [
                         'title' => 'Talent Search',
-                        'sub_title' => 'Find your best talent with us!',
+                        'sub_title' => 'Find your best talent with Us!',
                         'image' => $image == '' ? '' : $image[2],
                         'button' => true,
+                        'href' => '/services-ts',
+                        'class' => 'left'
                     ],
                     (object) [
-                        'title' => 'Virtual Global Job Fair 2022',
-                        'sub_title' => '.. November - .. Desember 2022',
+                        'title' => 'Medan Job Fair 2022',
+                        'sub_title' => '26 Oktober - 27 Oktober 2022',
                         'image' => $image == '' ? '' : $image[3],
                         'button' => true,
+                        'href' => '/event',
+                        'class' => 'left'
                     ],
                 ];
             @endphp
@@ -37,13 +45,16 @@
                 <div style="background: url('{{ $b->image }}');" class="responsive-banner-image">
                     <div style="background-color:rgb(57, 76, 130, 0.5);">
                         <img src="{{ $b->image }}" alt="Image" class="img-full-height">
-                        <div class="centered">
-                            <div class="chakra-heading css-15e7php text-white" style="font-size:3vw;"><b>{{ $b->title }}</b></div>
+                        <div class="{{ $b->class }}" style="text-align:justify; text-justify:inter-word;">
+                            {{-- tambahakan class css-15e7php untuk membertebal font <div class="chakra-heading css-15e7php text-white" style="font-size:3vw;"><b>{{ $b->title }}</b></div> --}}
+                            <div class="chakra-heading text-white" style="font-size:3vw;"><b>{{ $b->title }}</b></div>
                             @if (!empty($b->sub_title))
-                                <div class="chakra-heading css-15e7php text-white" style="font-size:3vw;">{{ $b->sub_title }}</div>
+                                <div class="chakra-heading text-white" style="font-size:1.5vw;">{{ $b->sub_title }}</div>
                             @endif
                             @if ($b->button)
-                                <button type="button" class="chakra-button css-1qk6nn0">See More</button>
+                                <a href="{{ url($b->href) }}" style="text-decoration: none; color: currentColor;">
+                                    <button type="button" class="chakra-button css-1qk6nn0 mt-3" style="border-radius:20px;">See More</button>
+                                </a>
                             @endif
                         </div>
                     </div>
@@ -56,13 +67,13 @@
         {{-- <div class="w-100 top-10-area" style="background-color:#394C82;"> --}}
         <div class="w-100 top-10-area" style="background-color:	rgb(57, 76, 130, 0.7);">
             <div class="row">
-                <div class="col-8" style="padding-left:10%; margin-top:6%; margin-bottom:6%;">
+                <div class="col-8" style="padding-left:10%; margin-top:3%; margin-bottom:3%;">
                     <h2 class="chakra-heading css-19etn4f text-oren">Top 10 Pre-Employment Screening Company</h2>
                     <h2 class="chakra-text css-0 text-white"><b>in Asia Pacific by Manage HR</b></h2>
                 </div>
                 <div class="col-4">
                     <img src="{{ url('assets/image/Penghargaan.png') }}" alt="Image" class="img-fluid"
-                        style="width:60%; margin-top:0%; margin-bottom:0%;">
+                        style="width:40%; margin-top:0%; margin-bottom:0%;">
                 </div>
             </div>
             {{-- <div class="css-qnwxch">
@@ -102,6 +113,7 @@
 
     <!-- kakek Warren Buffet color ada di .css-1bxcldb - > before var(--chakra-colors-gradient-second) 2.menghilangkan padding top and bottom .css-14hro1o-->
     <div class="chakra-container css-n759ug">
+        {{-- di style.css ada yg di ganti dari grid-template-columns: repeat(2, 1fr); ke grid-template-columns: 1fr 2fr; agar si col kiri lebih kecil dari pada kanan --}}
         <div class="css-14hro1o">
             <div class="chakra-stack css-1czogta" style="display: flex; align-items: center; justify-content: center;">
                 <!-- <h2 class="chakra-heading css-15e7php">Global Job Fair 2022</h2> -->
@@ -114,13 +126,17 @@
             <div class="css-k008qs css-1czogta">
                 {{-- <cite class="chakra-text css-osn4vg text-blue"> --}}
                 <div class="chakra-text" style="text-align:justify; text-justify:inter-word;">
-                    <b>"Somebody once said that in looking for people to hire,
-                        you look for three qualities : integrity, intelligence, and energy. And if you don’t have the first,
-                        the other two will kill you"
-                    </b>
+                    <h4>
+                        <b>"Somebody once said that in looking for people to hire,
+                            you look for three qualities : integrity, intelligence, and energy. And if you don’t have the first,
+                            the other two will kill you"
+                        </b>
+                    </h4>
                 </div>
                 {{-- </cite> --}}
-                <p class="chakra-text css-1kcl85d">Warren Buffet</p>
+                <h3>
+                    <p class="chakra-text css-1kcl85d">Warren Buffet</p>
+                </h3>
             </div>
         </div>
     </div>
@@ -133,9 +149,13 @@
                 <!-- <cite class="chakra-text css-osn4vg">Somebody once said that in looking for people to hire, you look for three qualities : integrity, intelligence, and energy. And if you don’t have the first, the other two will kill you</cite> -->
                 <!-- <p class="chakra-text css-1kcl85d">Warren Buffet</p> -->
                 <div class="chakra-stack css-1v8f93">
-                    <h2 class="chakra-heading" style="color:#ECC94B;"><b>What do we offer?</b></h2>
-                    <cite class="chakra-text css-10rvbm3">The combination of our expertise and a reliable network of
-                        partners enable us to efficiently and effectively support our employment screening process.</cite>
+                    <h1 class="chakra-heading" style="color:#ECC94B;"><b>What do we offer?</b></h1>
+                    <h5>
+                        <cite class="chakra-text css-10rvbm3">
+                            The combination of our expertise and a reliable network of
+                            partners enable us to efficiently and effectively support our employment screening process.
+                        </cite>
+                    </h5>
                     {{-- <ul role="list" class="css-15neer3"> --}}
                     <ul role="list" style="padding-left:30px;">
                         <li class="css-0 text-white">

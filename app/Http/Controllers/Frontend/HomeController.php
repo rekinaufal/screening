@@ -24,7 +24,10 @@ class HomeController
         // dd($image[0]);
         $News = News::all();
         $OurClient = OurClient::all();        
-        $Article = DB::table('article')->limit(5)->get();
+        $Article = DB::table('article')
+                    ->orderByDesc('created_at',)
+                    ->limit(3)
+                    ->get();
         $Events = DB::table('events')->first();
         $pageTitle = "Home";
         return view ('frontend.home', compact('pageTitle', 'OurClient', 'News', 'Banner', 'image', 'Events', 'Article'));

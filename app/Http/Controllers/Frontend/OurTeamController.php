@@ -13,9 +13,14 @@ class OurTeamController
     public function index ()
     {
         $Ourteam = Ourteam::all();
+        $Article = DB::table('article')
+                    ->orderByDesc('created_at',)
+                    ->limit(3)
+                    ->get();
+        $Events = DB::table('events')->first();
         $pageTitle = self::$pageTitle;
         
-        return view ('frontend.ourTeam', compact('pageTitle', 'Ourteam'));
+        return view ('frontend.ourTeam', compact('pageTitle', 'Ourteam', 'Article', 'Events'));
     }
 
 }

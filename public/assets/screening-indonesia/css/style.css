@@ -2289,7 +2289,8 @@ body {
     
       @media screen and (min-width: 48em) {
         .css-14hro1o {
-          grid-template-columns: repeat(2, 1fr);
+          /* grid-template-columns: repeat(2, 1fr); */
+          grid-template-columns: 1fr 2fr;
         }
       }
     
@@ -2708,7 +2709,7 @@ body {
         margin-inline-start: auto;
         -webkit-margin-end: auto;
         margin-inline-end: auto;
-        padding-top: var(--chakra-space-10);
+        /* padding-top: var(--chakra-space-10); */
         padding-bottom: var(--chakra-space-10);
         -webkit-padding-start: var(--chakra-space-4);
         padding-inline-start: var(--chakra-space-4);

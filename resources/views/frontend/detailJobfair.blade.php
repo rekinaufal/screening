@@ -20,13 +20,13 @@
             <div class="row">
                 <div class="col-md-2">
                     {{-- <img src="assets/img/logo2.png" height="150" class="border"> --}}
-                    <img src="{{ $Jobfair->logo }}" width="100%" class="border">
+                    <img src="{{ $Jobfair->logo ?? '' }}" width="100%" class="border">
                 </div>
                 <div class="col-md-7">
                     <div class="">
-                        <a href="{{ route('detail.company', $Jobfair->id_company) }}" style="text-decoration: none;"><h3 class="mb-1 text-jobfair"><i><b>{{ $Jobfair->position }}</b></i></h3></a>
-                        <span>{{ $Jobfair->nama_perusahaan }}</span><br>
-                        <span><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;{{ $Jobfair->provinsi }}</span>
+                        <a href="{{ route('detail.company', Crypt::encrypt($Jobfair->id_company ?? '')) }}" style="text-decoration: none;"><h3 class="mb-1 text-jobfair"><i><b>{{ $Jobfair->position }}</b></i></h3></a>
+                        <span>{{ $Jobfair->nama_perusahaan ?? '' }}</span><br>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;{{ $Jobfair->provinsi ?? '' }}</span>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -61,7 +61,7 @@
             <table>
                 <tr>
                     <td>
-                        <div style="text-align: justify;"><p>{!! $Jobfair->deskripsi_perusahaan !!}</p></div>
+                        <div style="text-align: justify;"><p>{!! $Jobfair->deskripsi_perusahaan ?? '' !!}</p></div>
                     </td>
                 </tr>
                 <!-- <tr>
@@ -77,13 +77,13 @@
                 <tr>
                     <td>
                         <h5><b>Requirements</b></h5>
-                        <h6><p>{!! $Jobfair->recuirement !!}</p></h6>
+                        <h6><p>{!! $Jobfair->recuirement ?? '' !!}</p></h6>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <h5><b>Job Description</b></h5>
-                        <h6><p>{!! $Jobfair->job_description !!}</p></h6>
+                        <h6><p>{!! $Jobfair->job_description ?? '' !!}</p></h6>
                     </td>
                 </tr>
             </table>
@@ -105,11 +105,11 @@
                 </tr>
                 <tr>
                     <td>
-                        <p>IDR  {{ number_format($Jobfair->sallary ,2,',','.') }}</p>
+                        <p>IDR  {{ number_format($Jobfair->sallary ?? '' ,2,',','.') }}</p>
                         <!-- <p>{{ $Jobfair->experience_level }}</p> -->
                     </td>
                     <td>
-                        <p>{{ $Jobfair->qualification_degree }}</p>
+                        <p>{{ $Jobfair->qualification_degree ?? '' }}</p>
                     </td>
                 </tr>
                 <tr>
@@ -122,10 +122,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <p> {{ $Jobfair->year_of_experience }} Years</p>
+                        <p> {{ $Jobfair->year_of_experience ?? '' }} Years</p>
                     </td>
                     <td>
-                        <p> {{ $Jobfair->job_type }}</p>
+                        <p> {{ $Jobfair->job_type ?? '' }}</p>
                     </td>
                 </tr>
                 <tr>

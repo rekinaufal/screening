@@ -12,6 +12,7 @@ use DB;
 use File;
 use Illuminate\Support\Facades\Auth;
 use Session;
+use ZipArchive;
 
 class JobsBackendController extends Controller
 {
@@ -24,13 +25,68 @@ class JobsBackendController extends Controller
             Session::flash('alert-class', 'alert-danger'); 
             return redirect('/login');
         }
-        // $Ourteam = DB::table('ourteam')
-        // ->where('status', 1)
-        // ->get();
         $Jobs = Jobs::all();
-        // dd($Jobs); die;
+        // dd($Jobs);
         $pageTitle = self::$pageTitle;
         return view ('jobs.index', compact('pageTitle', 'Jobs'));
+    }
+
+    public function download ($id) 
+    {
+        $Applied = DB::table('applied')
+        ->select('talent.file_cv', 'jobfair.position')
+        ->join('jobfair', 'applied.id_jobfair', '=', 'jobfair.id')
+        ->join('company', 'jobfair.id_company', '=', 'company.id')
+        ->join('talent', 'applied.id_user', '=', 'talent.id_user')
+        ->where('applied.id_jobfair', $id)
+        ->get();
+
+        // $zip = new ZipArchive;
+        // $fileName = 'myNewFile.zip';
+        // if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE)
+        // {
+        //     $files = File::files(public_path('/assets/cv/'));
+        //     dd($files);
+        //     foreach ($files as $key => $value) {
+        //         $relativeNameInZipFile = basename($value);
+        //         dd($zip->addFile($value, $relativeNameInZipFile));
+        //         $zip->addFile($value, $relativeNameInZipFile);
+        //     }
+             
+        //     $zip->close();
+        // }
+    
+        // return response()->download(public_path($fileName));
+// dd($Applied);
+        // if (!empty($Applied)) {
+        //     if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE)
+        //     {
+        //         foreach ($Applied as $key => $value) {
+        //             // $file = str_replace("/assets/cv/", "", $value->file_cv);
+        //             // $relativeNameInZipFile = $file;
+        //             // dd(public_path($value->file_cv));
+        //             $path =  public_path($value->file_cv);
+        //             $relativeName = basename($path);
+        //             $zip->addFile($path, $relativeName);
+        //         }
+        //         $zip->close();
+        //     }
+        
+        //     return response()->download(public_path($fileName));
+        // }
+        // dd($Applied);
+        $randomString = Str::random(10);
+        $zip_file = $randomString.'_'.'Jobs.zip';
+        // dd($zip_file); 
+        $zip = new \ZipArchive();
+        
+        $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
+        foreach ($Applied as $key => $value) {
+            $invoice_file = $value->file_cv;
+            $zip->addFile(public_path($invoice_file), $invoice_file);
+        }
+        $zip->close();
+        return response()->download($zip_file);
     }
 
     public function create()

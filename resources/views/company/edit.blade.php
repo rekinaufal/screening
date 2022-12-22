@@ -13,39 +13,20 @@
                             <input type="text" class="form-control" name="nama_perusahaan" value="{{ $Company->nama_perusahaan }}">
                         </div>
                         <div class="form-group">
-                            <label for="sel1">Provinsi:</label>
-                            <select class="form-control" name="provinsi">
-                                <option value="">-- Select one --</option>
-                                <option value="1" {{ $Company->provinsi === 1 ? "selected" : null }}>Jawa Barat</option>
-                                <option value="2" {{ $Company->provinsi === 2 ? "selected" : null }}>DKI Jakarta</option>
-                                <option value="3" {{ $Company->provinsi === 3 ? "selected" : null }}>Jawa Timur</option>
-                            </select>
+                            <label for="sel1">Provinsi</label>
+                            <input type="text" class="form-control" name="provinsi" value="{{$Company->provinsi}}">
                         </div>
                         <div class="form-group">
-                            <label for="sel1">Kota Kabupaten:</label>
-                            <select class="form-control" name="kota_kabupaten">
-                                <option value="">-- Select one --</option>
-                                <option value="1" {{ $Company->provinsi === 1 ? "selected" : null }}>Kota Bogor</option>
-                                <option value="2" {{ $Company->provinsi === 2 ? "selected" : null }}>Kabupaten Bogor</option>
-                            </select>
+                            <label for="sel1">Kota Kabupaten</label>
+                            <input type="text" class="form-control" name="kota_kabupaten" value="{{ $Company->kota_kabupaten}}">
                         </div>
                         <div class="form-group">
-                            <label for="sel1">Kelurahan:</label>
-                            <select class="form-control" name="kelurahan">
-                                <option value="">-- Select one --</option>
-                                <option value="Admin">Admin</option>
-                                <option value="Company">Company</option>
-                                <option value="User">User</option>
-                            </select>
+                            <label for="sel1">Kelurahan</label>
+                            <input type="text" class="form-control" name="kelurahan" value="{{ $Company->kelurahan}}">
                         </div>
                         <div class="form-group">
-                            <label for="sel1">Desa:</label>
-                            <select class="form-control" name="desa">
-                                <option value="">-- Select one --</option>
-                                <option value="Admin">Admin</option>
-                                <option value="Company">Company</option>
-                                <option value="User">User</option>
-                            </select>
+                            <label for="sel1">Desa</label>
+                            <input type="text" class="form-control" name="desa" value="{{ $Company->desa}}">
                         </div>
                         <div class="form-group">
                             <label>Alamat</label>

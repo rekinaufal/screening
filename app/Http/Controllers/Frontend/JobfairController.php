@@ -29,10 +29,10 @@ class JobfairController
         }
 
         $Jobfair = DB::table('jobfair')
-        ->select('*', 'jobfair.id as id_jobfair')
-        ->join('company', 'jobfair.id_company', '=', 'company.id')
-        ->where('jobfair.id',decrypt($id))
-        ->first();
+                    ->select('*', 'jobfair.id as id_jobfair')
+                    ->join('company', 'jobfair.id_company', '=', 'company.id')
+                    ->where('jobfair.id',decrypt($id))
+                    ->first();
         // dd($Jobfair);
         $id_jobfair = $Jobfair->id_jobfair;
         $id_user =  Session::get('id');
@@ -44,11 +44,12 @@ class JobfairController
         $results  = DB::select(DB::raw($Sql));
         $ValidasiApply = json_decode(json_encode($results), true);
         // dd($ValidasiApply);
-        $Abouts = DB::table('about')
-        ->first();
+        $Abouts = DB::table('about')->first();
         
-        $Article = DB::table('article')->limit(5)->get();
-
+        $Article = DB::table('article')
+                    ->orderByDesc('created_at',)
+                    ->limit(3)
+                    ->get();
         $Events = DB::table('events')->first();
 
         $Categories = DB::table('categories')
@@ -74,7 +75,7 @@ class JobfairController
 
         // dd($Talent);
         if ($Talent == null) {
-            Session::flash('message', 'Error, Please Contact IT !'); 
+            Session::flash('message', 'Error, Data Talent Is Not Found. Please Contact IT !'); 
             Session::flash('alert-class', 'alert-danger'); 
             return redirect()->back();
         } elseif ($Talent->provinsi == null) {
@@ -90,9 +91,9 @@ class JobfairController
             ]);
     
             $Jobfair = DB::table('jobfair')
-            ->select('*')
-            ->join('company', 'jobfair.id_company', '=', 'company.id')
-            ->get();
+                        ->select('*')
+                        ->join('company', 'jobfair.id_company', '=', 'company.id')
+                        ->get();
             // dd($Jobfair);
             Session::flash('message', 'Congratulations! Your application has been submitted'); 
             Session::flash('alert-class', 'alert-success'); 

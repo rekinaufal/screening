@@ -97,7 +97,8 @@ class ArticleBackendController extends Controller
            Session::flash('message', 'Session Expired, Please Login Again!'); 
            Session::flash('alert-class', 'alert-danger'); 
            return redirect('/login');
-       }
+        }
+
         if($request->hasFile('image')){
 	        File::delete(base_path() . '/public' . $request->input('imageold')); //hapus foto old
 
