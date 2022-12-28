@@ -33,6 +33,7 @@ use App\Http\Controllers\JobsBackendController;
 use App\Http\Controllers\AboutBackendController;
 use App\Http\Controllers\ArticleBackendController;
 use App\Http\Controllers\NewsBackendController;
+use App\Http\Controllers\EmailController;
 // END BACKEND
 
 use App\Models\Category;
@@ -154,6 +155,8 @@ Route::resource('news', 'App\Http\Controllers\NewsBackendController');
 Route::get('/events', [EventBackendController::class, 'index'])->name('events.index');
 Route::resource('events', 'App\Http\Controllers\EventBackendController');
 
+Route::post('sendMessage', [\App\Http\Controllers\Frontend\ContactUsController::class, 'SendMessage'])->name('message.SendMessage');
+
 // END BACKEND
 
 Route::get('/mempelai', [MempelaiController::class, 'index'])->name('mempelai.index');
@@ -215,7 +218,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('getDataTempatAcara', 'App\Http\Controllers\ApiController@getDataTempatAcara')->name('DataTempatAcara');
 });
 
-
+Route::get('kirim-email','App\Http\Controllers\EmailController@index');
 // Route::get('/', function () {
 //     return view('welcome');
 // });

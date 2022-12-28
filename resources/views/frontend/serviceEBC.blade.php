@@ -27,7 +27,7 @@
                 <p style="text-align: justify; text-justify: inter-word;">
                     Employee Background Check reveals important information about a candidate's prior behavior which can help an employer assess potential risks posed by the candidate such as substance abuse, bankruptcy, criminal history, civil litigation and many more.</h5>
                 </p>
-            <button type="button" class="chakra-button css-1qk6nn0 mt-3">Start Now!</button>
+            <a type="button" class="chakra-button css-1qk6nn0 mt-3 text-blue" href="/login">Start Online Screening</a>
         </div>
     </div>
 </div>

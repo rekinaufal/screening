@@ -39,10 +39,8 @@ class RegisterController extends Controller
     }
 
     public function storeTalent(Request $request) {
-        // dd($request);
         $validateData = $request->validate([
             'nama_lengkap' => 'required|max:255',
-            'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:1|max:255',
             'status' => 'required|min:1|max:255'
             
@@ -50,6 +48,12 @@ class RegisterController extends Controller
 //        $validateData['password'] = bcrypt($validateData['password']);
        $validateData['password'] = Hash::make($validateData['password']); 
        $validateData['remember_token'] = substr(mt_rand(1000, 9999), 0, 5);
+
+        // validation email already registered in table users before insert users, company data
+        $validateUser = DB::table('users')->where('email', $request->email)->first();
+        if (!empty($validateUser)) {
+            return redirect ('/register?type=talent')->with('failed', 'Email Already Registered');
+        }
 
         if(!empty($_FILES['file_cv']['name'])) { 
             $request->hasFile('file_cv');
@@ -59,7 +63,6 @@ class RegisterController extends Controller
                 $name = $file_cv->getClientOriginalName();
                 $file_name = Str::random(30) . '_' . $name;
                 $file_cv->move(base_path() . '/public/assets/cv', $file_name);
-                // $file->move(base_path() . '/public/assets/cv', $file_name);
                 $data[] = $file_name;
                 if($_FILES['file_cv']['size'][0] < 5097152){
                     $file_cv = User::create([
@@ -87,6 +90,11 @@ class RegisterController extends Controller
                 }
             }
         }
+
+        $nameRegist = $request->nama_lengkap;
+        $emailRegist = $request->email;
+        $passRegist = $request->password;
+        $this->sendEmailRegister($nameRegist, $emailRegist, $passRegist);
        return redirect ('/login')->with('success', 'Registration successfully, Please login');
     }
 
@@ -94,7 +102,6 @@ class RegisterController extends Controller
         // dd($request);
         $validateData = $request->validate([
             'nama'          => 'required|max:255',
-            'email'         => 'required|email:dns|unique:users',
             'password'      => 'required|min:1|max:255',
             'status'        => 'required|min:1|max:255'
             
@@ -102,7 +109,12 @@ class RegisterController extends Controller
 //        $validateData['password'] = bcrypt($validateData['password']);
         $validateData['password'] = Hash::make($validateData['password']); 
         $validateData['remember_token'] = substr(mt_rand(1000, 9999), 0, 5);
-        // dd($validateData['password']);
+
+        // validation email already registered in table users before insert users, company data
+        $validateUser = DB::table('users')->where('email', $request->email)->first();
+        if (!empty($validateUser)) {
+            return redirect ('/register?type=company')->with('failed', 'Email Already Registered');
+        }
 
         $User = User::create([
             'name'          => $request->nama,
@@ -115,13 +127,29 @@ class RegisterController extends Controller
         $email = $request->email;
         $User               = DB::table('users')->where('email', $email)->first();
         $GetDataUserEmail 	= json_decode(json_encode($User), true);
-        // dd($GetDataUserEmail['id']);
 
         $Company = Company::create([
             'id_user' => $GetDataUserEmail['id'],
             'nama_perusahaan' => $request->nama,
         ]);
-                 
+              
+        $nameRegist = $request->nama;
+        $emailRegist = $request->email;
+        $passRegist = $request->password;
+        $this->sendEmailRegister($nameRegist, $emailRegist, $passRegist);
+
        return redirect ('/login')->with('success', 'Registration successfully, Please login');
+    }
+
+    public function sendEmailRegister ($name, $email, $password) {
+        // dd($name . '-' . $email . '-' . $password);
+        $details = [
+            'title' => 'Registration Screening Indonesia',
+            'body1' => 'Hai ' . $name . ' Registration successfully, Please login.',
+            'body2' => 'Your Email : ' . $email, 
+            'body3' => 'Your Password : ' . $password 
+            ];
+           
+            \Mail::to($email)->send(new \App\Mail\Email($details));
     }
 }

@@ -205,7 +205,6 @@
     @if(session()->has('loginError'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>{{ session('loginError') }}</strong>
-            {{-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> --}}
         </div>
     @endif
     <div class="card card0 border-0">
@@ -345,7 +344,7 @@
                     </div>   
                     {{-- form company --}}
                     <div class="row mb-1 px-3">
-                        <small class="font-weight-bold">Don't have an account? <a class="text-danger" href="/register">Register</a></small>
+                        <small class="font-weight-bold">Don't have an account? <a class="text-danger" href="/register?type=talent">Register</a></small>
                     </div>
                 </div>
             </div>

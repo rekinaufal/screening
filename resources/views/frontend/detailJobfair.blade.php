@@ -45,7 +45,6 @@
                                 @else
                                     <p class="chakra-button text-white" style="border-radius:20px; width: 150px; padding:9px; background-color: #dc3545;" align="center">Close</p>
                                 @endif
-                                    <!-- <a href="/register" class="btn btn-secondary mt-3 mr-3" style="background-color: rgb(33, 156, 189);">Register</a> -->
                             </form>
                         @endif
                     </div>

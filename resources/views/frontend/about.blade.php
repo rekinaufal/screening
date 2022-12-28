@@ -211,7 +211,9 @@
                                         <p><h3> {{$item->name}}</h3></p>
                                         <p><h6> {{$item->position}}</h6></p>
                                         <hr>
-                                        <p maxresults="10">{!! $item->description !!}</p>
+                                        <div style="text-align:justify; text-justify:inter-word;">
+                                            <p maxresults="10">{!! $item->description !!} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, eum rem facere magnam blanditiis maxime quas eius rerum accusantium repudiandae, cum at, quia minima sequi molestias itaque qui aliquam nisi?</p>
+                                        </div>
                                     </div>
                                     <div class="col-4">
                                         <img src="{{ url('assets/images/screening-indonesia/our-team/logolci.png') }}" style="position: absolute; opacity:0.25;width:90%;">
@@ -219,7 +221,7 @@
                                 </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="chakra-button css-e5a8s0" style="border-radius:20px;"  data-dismiss="modal">Close</button>
+                                    <button type="button" class="chakra-button css-e5a8s0" style="border-radius:20px;" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>

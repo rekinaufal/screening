@@ -8,6 +8,21 @@
     </div>
 </div>
 <div class="chakra-container css-n759ug">
+    @if(Session::has('message'))
+    <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+    @endif
+    @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session('success') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    
+    @if(session()->has('failed'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{ session('failed') }}</strong>
+        </div>
+    @endif
     <div class="chakra-aspect-ratio text-blue mt-4" align="center">
         {{-- <h5><i>Please contact us using the information below.</i></h5>
         <h5><i>To locate contacts in the business office closent to you, visit our office websites.</i></h5> --}}
@@ -38,47 +53,50 @@
         <h2><b>Let me help you.</b></p>
     </div>
     {{-- <a href="/kirimemail">send</a> --}}
-    <div style="justify-content:center; align-items:center; display:flex;">
-        <div style="background-color:white; border-radius:5px; border: 1px solid; width:50%;">
-            <div class="card-body">
-                <p class="m-0 text-jobfair" style="font-size:18px; text-align: center">
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" class="form-control" name="name">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" class="form-control" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label>Job Title</label>
-                        <input type="text" class="form-control" name="job_title">
-                    </div>
-                    <div class="form-group">
-                        <label>Company Name</label>
-                        <input type="text" class="form-control" name="company">
-                    </div>
-                    {{-- email terkirim langsung ke contactus@screeningindonesia.com --}}
-                    <!-- <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" class="form-control" name="nama_panggilan">
-                    </div> -->
-                    <!-- <div class="form-group">
-                        <label>Subject</label>
-                        <input type="text" class="form-control" name="nama_panggilan">
-                    </div> -->
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="message" id="" cols="30" rows="10" class="form-control"></textarea>
-                    </div>
-                </p>
+    <form method="POST" action="{{ route('message.SendMessage') }}"  role="form" enctype="multipart/form-data">
+        @csrf
+        <div style="justify-content:center; align-items:center; display:flex;">
+            <div style="background-color:white; border-radius:5px; border: 1px solid; width:50%;">
+                <div class="card-body">
+                    <p class="m-0 text-jobfair" style="font-size:18px; text-align: center">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" name="full_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Job Title</label>
+                            <input type="text" class="form-control" name="job_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" class="form-control" name="company_name" required>
+                        </div>
+                        {{-- email terkirim langsung ke contactus@screeningindonesia.com --}}
+                        <!-- <div class="form-group">
+                            <label>Country</label>
+                            <input type="text" class="form-control" name="nama_panggilan">
+                        </div> -->
+                        <!-- <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" class="form-control" name="nama_panggilan">
+                        </div> -->
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="message" id="" cols="30" rows="10" class="form-control" required></textarea>
+                        </div>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div style="justify-content:center; align-items:center; display:flex;">
-        <button type="button" class="chakra-button css-e5a8s0 mt-3 mb-4" style="border-radius:10px;">Send Message</button>
-    </div>
-    {{-- OLD --}}
+        <div style="justify-content:center; align-items:center; display:flex;">
+            <button type="submit" class="chakra-button css-e5a8s0 mt-3 mb-4" style="border-radius:10px;">Send Message</button>
+        </div>
+    </form>
+                {{-- OLD --}}
     {{-- <div class="css-fxrbma">
         <div class="css-1nghwg2 mb-5" style="height: 100% !important; max-height: 100% !important; padding:10px;">
         <h2 class="chakra-heading css-6oi6xv">CONTACT US</h2>

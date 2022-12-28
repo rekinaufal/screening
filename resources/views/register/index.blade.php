@@ -12,10 +12,9 @@
         </div>
     @endif
 
-    @if(session()->has('loginError'))
+    @if(session()->has('failed'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>{{ session('loginError') }}</strong>
-            {{-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> --}}
+            <strong>{{ session('failed') }}</strong>
         </div>
     @endif
     <div class="row justify-content-center">
@@ -26,7 +25,7 @@
                     <button type="submit" class="chakra-button css-1fwz9f4" style="border-radius:100px; width: 100px;" onclick="registcompany()">Company</button>
                 </div>
                 {{-- form register talent --}}
-                <div id="registtalent">
+                <div id="registtalent" style="display:none;">
                     <h1 class="h3 mb-3 fw-normal text-center">Registrasi Form Talent</h1>
                     <form action="/registertalent" method="post" role="form" enctype="multipart/form-data">
                         @csrf
@@ -42,6 +41,10 @@
                         <div class="form-floating mb-3">
                             <label for="password">Upload CV</label>
                             <input type="file" class="rounded-button" name="file_cv[]" multiple placeholder="Upload CV" required>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input id="checkbox" type="checkbox" required />
+                            <label for="checkbox"> I agree to these <a href="#">Terms and Conditions</a>.</label>
                         </div>
                         <input type="hidden" class="form-control" name="status" id="status" placeholder="status" value="Talent" required readonly>
                         <!-- captcha -->
@@ -115,6 +118,19 @@
 @endsection
 @section('javascript')
     <script>
+        window.addEventListener('load', function() {
+            let params = new URLSearchParams(location.search);
+            var type = params.get('type');
+            // params.get('name') # => "n1" untuk data 1
+            // params.getAll('name') # => ["n1", "n2"] unutk data array
+            if (type === 'talent'){
+                registtalent()
+            } else if (type === 'company') {
+                registcompany()
+            }
+            console.log(params.get('type'));
+        })
+
         function registtalent() {
             var x = document.getElementById('registtalent');
             var y = document.getElementById('registcompany');

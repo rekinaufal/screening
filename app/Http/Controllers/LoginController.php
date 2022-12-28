@@ -75,7 +75,7 @@ class LoginController extends Controller
         if($_POST['Hasil'] == $_POST['_answer']){
             $GetDataUser1           = DB::table('users')->where('email', $credentials['email'])->first();
             if (!empty($GetDataUser1)) {
-            $GetDataUserStatus 	    = json_decode(json_encode($GetDataUser1), true);
+                $GetDataUserStatus 	    = json_decode(json_encode($GetDataUser1), true);
             }else{
                 return back()->with('loginError', 'Email Not Found');
             }

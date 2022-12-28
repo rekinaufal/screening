@@ -118,7 +118,8 @@
                 <p style="text-align: justify; text-justify: inter-word;">
                     Sreening Indonesia Talent Search is a service specialize in recruitment field, We are supported with an integrated database. know-how consultants and professional recruiting system.</h5>
                 </p>
-            <button type="button" class="chakra-button css-1qk6nn0 mt-3">Start Now!</button>
+                <a type="button" class="chakra-button css-1qk6nn0 mt-3 text-blue" href="/register?type=company">Hire With Us !</a>
+                <a type="button" class="chakra-button css-1qk6nn0 mt-3 text-blue" href="/register?type=talent">Join Us !</a>
         </div>
     </div>
 </div>
